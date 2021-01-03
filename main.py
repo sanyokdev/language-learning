@@ -1,6 +1,7 @@
 import tts
 import definition
 
-# tts.convert_word(0, "grande", "AdjectivesPT")
-
-definition.get_all_word_from_file_to_file("VerbsPT.txt", "VerbsPTAnki.txt", "verb")
+# Verbs
+verb_file = "Input/Words/Verbs.txt"
+tts.convert_file(verb_file, "Output/Audio/Verbs")
+definition.convert_file_into_anki_import(verb_file, "Output/Anki/VerbsImport.txt", "verb")

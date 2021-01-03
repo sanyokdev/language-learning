@@ -42,10 +42,10 @@ def convert_word(word_id, input_text, output_path):
         # print("Audio content written to file" + str(word_id) + ".mp3")
 
 
-def convert_file(type_of_word):
+def convert_file(input_file, output_folder):
     words = []
 
-    with open("Data/Input/" + str(type_of_word) + ".txt", 'r', encoding='utf8') as out:
+    with open(str(input_file), 'r', encoding='utf8') as out:
         words = out.read().splitlines()
 
     amount_of_words = len(words)
@@ -54,4 +54,4 @@ def convert_file(type_of_word):
     for i in range(amount_of_words):
         percentage = round(100.0 * i / float(amount_of_words), 1)
         print("Progress: " + str(percentage) + "%")
-        convert_word(i, words[i], str(type_of_word))
+        convert_word(i, words[i], str(output_folder))
