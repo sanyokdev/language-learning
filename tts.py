@@ -4,7 +4,7 @@ from google.cloud import texttospeech
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "Credentials/mykey.json"
 
 
-def convert_word(word_id, input_text, output_path):
+def convert_word(word_id, sound_base_name, input_text, output_path):
     # Instantiates a client
     client = texttospeech.TextToSpeechClient()
 
@@ -36,22 +36,21 @@ def convert_word(word_id, input_text, output_path):
     )
 
     # The response's audio_content is binary.
-    with open("Data/Output/" + str(output_path) + "/" + str(output_path) + "_" + str(word_id) + ".mp3", "wb") as out:
+    with open(str(output_path) + "/" + str(sound_base_name) + "_" + str(word_id) + ".mp3", "wb") as out:
         # Write the response to the output file.
         out.write(response.audio_content)
         # print("Audio content written to file" + str(word_id) + ".mp3")
 
 
-def convert_file(input_file, output_folder):
+def convert_file(input_file, sound_base_name, output_folder):
     words = []
 
     with open(str(input_file), 'r', encoding='utf8') as out:
         words = out.read().splitlines()
 
     amount_of_words = len(words)
-    print(words)
 
     for i in range(amount_of_words):
         percentage = round(100.0 * i / float(amount_of_words), 1)
         print("Progress: " + str(percentage) + "%")
-        convert_word(i, words[i], str(output_folder))
+        convert_word(i, sound_base_name, words[i], str(output_folder))

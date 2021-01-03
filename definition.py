@@ -49,13 +49,17 @@ def get_word(input_word, word_tense):
             return ["DON'T RECOGNIZE WORD", "", ""]
 
 
-def convert_file_into_anki_import(input_file, output_file, word_type):
-    with open(str(output_file), newline='', mode="w", encoding='utf8') as file_out:
+def convert_file_into_anki_import(word_file, meaning_file, sound_base_name, output_file, word_type):
+    with open(str(output_file), newline='', mode="w+", encoding='utf8') as file_out:
         word_list = []
-
-        with open("Data/Input/" + str(input_file) + ".txt") as file_in:
-            for line in file_in:
+        with open(word_file) as words_in:
+            for line in words_in:
                 word_list.append(line.strip())
+
+        meaning_list = []
+        with open(meaning_file) as meanings_in:
+            for line in meanings_in:
+                meaning_list.append(line.strip())
 
         progress_count = 0
         for word in word_list:
@@ -64,13 +68,13 @@ def convert_file_into_anki_import(input_file, output_file, word_type):
             data = get_word(word_to_add, word_type)
 
             all_definitions = ""
-
             for cur_dat in data:
                 cur_definition = ";" + cur_dat.lower().capitalize()
                 all_definitions += cur_definition
 
-            sound_file = ";" + "[sound:" + input_file + "_" + str(progress_count) + ".mp3]"
-            file_out.writelines(word_to_add.capitalize() + sound_file + all_definitions + "\n")
+            sound_file = ";" + "[sound:" + sound_base_name + "_" + str(progress_count) + ".mp3]"
+            word_meaning = ";" + meaning_list[progress_count]
+            file_out.writelines(word_to_add.capitalize() + sound_file + word_meaning + all_definitions + "\n")
 
             progress_count += 1
             percentage = round(100.0 * progress_count / len(word_list), 1)
