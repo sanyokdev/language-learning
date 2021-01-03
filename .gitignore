@@ -7,3 +7,6 @@ Credentials/
 # virtualenv
 venv/
 ENV/
+
+# File Types
+*.mp3
