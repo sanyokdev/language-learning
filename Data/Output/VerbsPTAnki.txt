@@ -1,0 +1,10 @@
+Adadada;Don't recognize word;;
+Ter;Possuir;Conter;Gozar de
+Fazer;Exercer profissão, actividade;Causar;
+Poder;Ser possível;;
+Estar;Encontrar-se num sítio;Indica um estado, condição;
+Ir;No definition found;;
+Dizer;Exprimir algo por palavras;;
+Saber;Ter conhecimento;;
+Ver;Ter o sentido da vista;;
+Ficar;Não se ir embora;Estar situado;Hospedar-se
