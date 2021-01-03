@@ -1,0 +1,1000 @@
+Ser;[sound:VerbSND_0.mp3];be, (go);Ter determinada característica ou qualidade;Ter como profissão ou ocupação;Ter como nacionalidade
+Ter;[sound:VerbSND_1.mp3];have, (be);Possuir;Conter;Gozar de
+Fazer;[sound:VerbSND_2.mp3];do, make, (ask);Exercer profissão, actividade;Causar;
+Poder;[sound:VerbSND_3.mp3];can, may, might, power, (could);Ser possível;;
+Estar;[sound:VerbSND_4.mp3];be, (go);Encontrar-se num sítio;Indica um estado, condição;
+Ir;[sound:VerbSND_5.mp3];go, leave, (run);No definition found;;
+Dizer;[sound:VerbSND_6.mp3];say, tell, (speak);Exprimir algo por palavras;;
+Saber;[sound:VerbSND_7.mp3];know, (have);Ter conhecimento;;
+Ver;[sound:VerbSND_8.mp3];see, (be);Ter o sentido da vista;;
+Ficar;[sound:VerbSND_9.mp3];stay, be, remain, (go);Não se ir embora;Estar situado;Hospedar-se
+Querer;[sound:VerbSND_10.mp3];want, love, wish, (will);Ter vontade, desejar;Gostar de;Exigir, pedir
+Dever;[sound:VerbSND_11.mp3];owe, must, (would);Ser necessário;Indica a possibilidade;Indica a intenção
+Dar;[sound:VerbSND_12.mp3];give, deal, (hold);Oferecer;;
+Passar;[sound:VerbSND_13.mp3];pass, spend, exceed, go by, (come);Atravessar;Sofrer, suportar;Exceder, ultrapassar
+Falar;[sound:VerbSND_14.mp3];say, talk, speak, (tell);Conhecer uma língua;;
+Vir;[sound:VerbSND_15.mp3];come, (arrive);Caminhar para o lugar onde nós estamos;Chegar;Surgir
+Deixar;[sound:VerbSND_16.mp3];leave, let, allow, (have);Permitir;Legar;Abandonar algo ou alguém
+Conseguir;[sound:VerbSND_17.mp3];obtain, get, (make);Ser capaz de;Obter;
+Usar;[sound:VerbSND_18.mp3];use, wear, (have);Utilizar;Trazer habitualmente;
+Achar;[sound:VerbSND_19.mp3];think, find, (be);Encontrar, descobrir;Julgar, considerar;
+Chegar;[sound:VerbSND_20.mp3];arrive, (come);Alcançar um lugar;Ser suficiente, bastar;
+Haver;[sound:VerbSND_21.mp3];(have);Existir;Exprime tempo;Exprime obrigação
+Comeã‡ar;[sound:VerbSND_22.mp3];begin, start, (go);Don't recognize word;;
+Conhecer;[sound:VerbSND_23.mp3];know, meet, (discover);Ter visto, ouvido ou sentido algo;Encontrar alguém pela primeira vez;Ter relações com alguém
+Pensar;[sound:VerbSND_24.mp3];think, imagine, (believe);Reflectir;Ter a intenção de;
+Gostar;[sound:VerbSND_25.mp3];like, (drop);Apreciar;Sentir simpatia por;
+Encontrar;[sound:VerbSND_26.mp3];find, meet, come across, (be);Descobrir, achar;Ver;
+Levar;[sound:VerbSND_27.mp3];take, carry, go, lead, (do);Transportar consigo;Conduzir alguém a algum lugar;Usar vestido
+Precisar;[sound:VerbSND_28.mp3];need, specify, (take);Ser pobre;;
+Acontecer;[sound:VerbSND_29.mp3];happen, occur, (come);Ocorrer, ter lugar;;
+Viver;[sound:VerbSND_30.mp3];live, (have);Existir;Morar;Continuar vivo
+Parecer;[sound:VerbSND_31.mp3];seem, appear, (take);Ter o aspecto de;;
+Sentir;[sound:VerbSND_32.mp3];feel, (receive);Ter uma sensação física;Ter uma sensação psicológica;
+Ler;[sound:VerbSND_33.mp3];read, (call);Identificar e compreender o que está escrito;Adivinhar;
+Criar;[sound:VerbSND_34.mp3];create, make, raise, breed, (grow);Fazer uma coisa nova;Educar;Promover a reprodução
+Escrever;[sound:VerbSND_35.mp3];write, (create);Traçar letras;Redigir um texto;Compor
+Continuar;[sound:VerbSND_36.mp3];continue, go on, (keep);Insistir;Estender-se, prolongar-se;
+Receber;[sound:VerbSND_37.mp3];receive, entertain, (do);Ter visitas, acolher;;
+Acabar;[sound:VerbSND_38.mp3];end, finish, (complete);Chegar ao fim;Romper o namoro;
+Colocar;[sound:VerbSND_39.mp3];put, place, (set);Pôr num lugar;Apresentar;Dar emprego a
+Sair;[sound:VerbSND_40.mp3];leave, go out, (quit);Ir para o exterior;Deixar um local;Ir a algum lado para se divertir
+Tentar;[sound:VerbSND_41.mp3];try, tempt, attempt, (seek);Provocar desejo;Experimentar;
+Trabalhar;[sound:VerbSND_42.mp3];work, (act);Dar forma, submeter a uma acção;Lavrar;
+Mostrar;[sound:VerbSND_43.mp3];show, (prove);Dar a ver;Explicar, demonstrar;
+Perder;[sound:VerbSND_44.mp3];lose, miss, waste, (go);Ficar sem;Não ganhar;Não chegar a tempo
+Apresentar;[sound:VerbSND_45.mp3];present, introduce, (report);Dar a conhecer pessoas a outras;Revelar;Explicar
+Voltar;[sound:VerbSND_46.mp3];return, (turn);Regressar;Ir de novo;
+Existir;[sound:VerbSND_47.mp3];exist, (be);Ter vida real;Viver;Haver
+Ajudar;[sound:VerbSND_48.mp3];help, (support);Auxiliar;;
+Entrar;[sound:VerbSND_49.mp3];enter, get in, (come);Passar para dentro;Participar em;Fazer parte integrante
+Tomar;[sound:VerbSND_50.mp3];take, seize, (make);Ingerir (alimento, bebida);Considerar, julgar;Conquistar
+Seguir;[sound:VerbSND_51.mp3];follow, (go);Ir atrás de alguém ou algo;Ir em direcção;Acompanhar algo de perto
+Contar;[sound:VerbSND_52.mp3];count, tell, (think);Dizer os números;Ter importância;
+Acreditar;[sound:VerbSND_53.mp3];believe, guarantee, credit, (think);Aceitar o que se diz;Ter fé;
+Esperar;[sound:VerbSND_54.mp3];wait, expect, hope, wait for, (anticipate);Ter confiança em;;
+Tornar;[sound:VerbSND_55.mp3];return, (become);Voltar, regressar;Repetir acto;Transformar, mudar
+Abrir;[sound:VerbSND_56.mp3];open, unlock, unfasten, (make);Tirar ou desviar o que impede de passar;Descerrar;Destapar
+Realizar;[sound:VerbSND_57.mp3];achieve, realize, perform, accomplish, transact, carry out, (do);Pôr em prática, executar;Dirigir um filme, uma emissão;
+Ganhar;[sound:VerbSND_58.mp3];earn, win, (get);Conseguir algo pelo seu trabalho;Ganhar algo através de um jogo ou concurso;Vencer
+Pedir;[sound:VerbSND_59.mp3];ask, demand, beg, ask for, (order);Dizer a alguém o que se quer;;
+Permitir;[sound:VerbSND_60.mp3];allow, permit, (admit);Deixar alguém fazer algo, autorizar,;;
+Chamar;[sound:VerbSND_61.mp3];call, attract, (draw);Pedir para vir;Dizer em voz alta o nome;Mandar vir
+Ouvir;[sound:VerbSND_62.mp3];hear, listen, (attend);Escutar;;
+Utilizar;[sound:VerbSND_63.mp3];use, utilize, (resort);Servir-se de algo;;
+Pagar;[sound:VerbSND_64.mp3];pay, (give);Dar dinheiro;Dar dinheiro que se deve;
+Entender;[sound:VerbSND_65.mp3];understand, (think);Compreender o significado;;
+Manter;[sound:VerbSND_66.mp3];keep, maintain, support, (have);Conservar, guardar;Cumprir;Sustentar
+Considerar;[sound:VerbSND_67.mp3];consider, respect, (think);Pensar, julgar;;
+Mudar;[sound:VerbSND_68.mp3];change, move, (turn);Transformar-se;Ir viver para outro lugar;Variar
+Afirmar;[sound:VerbSND_69.mp3];assert, affirm, claim, declare, (guarantee);Declarar alguma coisa;;
+Procurar;[sound:VerbSND_70.mp3];look for, (seek);Andar em busca de algo;;
+Comprar;[sound:VerbSND_71.mp3];buy, purchase, (bribe);Adquirir com dinheiro;;
+Tratar;[sound:VerbSND_72.mp3];treat, deal with, (agree);Comportar-se com alguém de certa forma;Qualificar, chamar;
+Perceber;[sound:VerbSND_73.mp3];perceive, see, realize, (hear);Entender, compreender;Dar-se conta;
+Trazer;[sound:VerbSND_74.mp3];bring, (get);Levar consigo para algum lado;Vir acompanhado de;Vestir
+Publicar;[sound:VerbSND_75.mp3];publish, announce, (create);Editar, imprimir um escrito;Dar a conhecer, divulgar;
+Lembrar;[sound:VerbSND_76.mp3];remember, (remind);Recordar;Assemelhar-se a, parecer-se com;Sugerir
+Amar;[sound:VerbSND_77.mp3];love, (endure);Gostar muito de;;
+Explicar;[sound:VerbSND_78.mp3];explain, (advance);Fazer compreender;Dar uma justificação;
+Andar;[sound:VerbSND_79.mp3];walk, go, (work);Deslocar-se a pé, caminhar;Frequentar, seguir um curso;Estar, sentir-se
+Aprender;[sound:VerbSND_80.mp3];learn, (get);Adquirir conhecimentos;;
+Ocorrer;[sound:VerbSND_81.mp3];happen, occur, (come);Acontecer;Vir à memória;
+Servir;[sound:VerbSND_82.mp3];serve, fit, (help);Ser útil, ser utilizado como;Adequar-se ao corpo de alguém;Atender clientes
+Morrer;[sound:VerbSND_83.mp3];die, (fade);Don't recognize word;;
+Tirar;[sound:VerbSND_84.mp3];take, remove, take away, pull out, (have);Fazer sair, retirar;Fazer, tomar;Despir, descalçar
+Aparecer;[sound:VerbSND_85.mp3];appear, turn up, show up, be published, (show);Vir, chegar;Surgir;Manifestar-se
+Exir;[sound:VerbSND_86.mp3];(show);Don't recognize word;;
+Responder;[sound:VerbSND_87.mp3];answer, respond, reply, (return);Dizer ou escrever algo de volta;;
+Jogar;[sound:VerbSND_88.mp3];play, (throw);Tomar parte em jogo ou desporto;Ter o vício do jogo;
+Olhar;[sound:VerbSND_89.mp3];look, watch, (consider);No definition found;;
+Ligar;[sound:VerbSND_90.mp3];tie, (call);Juntar, unir;Pôr em funcionamento;
+Aceitar;[sound:VerbSND_91.mp3];accept, (assume);Receber o que é dado;Admitir algo ou alguém;
+Oferecer;[sound:VerbSND_92.mp3];offer, give, (present);Dar como prenda;Propor;Proporcionar, facultar
+Possuir;[sound:VerbSND_93.mp3];own, possess, (have);Ter;;
+Resolver;[sound:VerbSND_94.mp3];solve, resolve, decide, settle, (find);Decidir;Dar solução a;
+Descobrir;[sound:VerbSND_95.mp3];discover, uncover, (find);Encontrar;Compreender;Destapar
+Incluir;[sound:VerbSND_96.mp3];include, enclose, (add);Fazer entrar em;;
+Sofrer;[sound:VerbSND_97.mp3];have, suffer, (experience);Ser vítima de;;
+Determinar;[sound:VerbSND_98.mp3];determine, (cause);Calcular;Indicar de forma precisa;Decidir
+Decidir;[sound:VerbSND_99.mp3];decide, resolve, (will);Escolher fazer algo;;
+Garantir;[sound:VerbSND_100.mp3];guarantee, (ensure);Dar a certeza;Responsabilizar-se por;
+Desenvolver;[sound:VerbSND_101.mp3];develop, advance, (evolve);Fazer crescer;Melhorar;
+Nascer;[sound:VerbSND_102.mp3];be born, (rise);Vir ao mundo;Brotar, rebentar;Aparecer no horizonte
+Aumentar;[sound:VerbSND_103.mp3];increase, add, raise, (rise);Tornar maior;;
+Produzir;[sound:VerbSND_104.mp3];produce, cause, (have);Criar, fabricar;Ter como resultado, causar;Financiar
+Defender;[sound:VerbSND_105.mp3];defend, protect;Proteger;Apoiar;
+Representar;[sound:VerbSND_106.mp3];represent, act, (play);Dar uma imagem de algo;Ser, constituir;Mostrar ao público
+Acompanhar;[sound:VerbSND_107.mp3];accompany, escort, go along with, keep up with, (see);Ir com alguém;Acompanhar um programa, uma situação;Tocar instrumento musical
+Comer;[sound:VerbSND_108.mp3];eat, take, capture, (consume);Ingerir alimentos;;
+Parar;[sound:VerbSND_109.mp3];stop, cease, halt, (stay);Interromper o movimento, deter;;
+Cair;[sound:VerbSND_110.mp3];fall, (drop);Ir ao chão, tombar;Escorregar, rebolar;Desprender-se
+Significar;[sound:VerbSND_111.mp3];mean, signify, (intend);Querer dizer;Ser sinal de;
+Participar;[sound:VerbSND_112.mp3];participate, (announce);Tomar parte em;;
+Perguntar;[sound:VerbSND_113.mp3];ask, question, (put);Fazer pergunta(s), interrogar;;
+Correr;[sound:VerbSND_114.mp3];run, flow, speed, (go);Deslocar-se muito rapidamente;;
+Funcionar;[sound:VerbSND_115.mp3];work, function, (run);Estar em estado de trabalhar;;
+Referir;[sound:VerbSND_116.mp3];tell, relate, refer, (report);Mencionar, citar;;
+Desejar;[sound:VerbSND_117.mp3];desire, (will);Querer;Fazer votos;Sentir atracção física
+Escolher;[sound:VerbSND_118.mp3];choose, select, (take);Optar entre várias coisas;;
+Envolver;[sound:VerbSND_119.mp3];involve, (cover);Embrulhar;Rodear;Fazer participar
+Surgir;[sound:VerbSND_120.mp3];appear, arise, (come);Aparecer;Ocorrer;
+Esquecer;[sound:VerbSND_121.mp3];forget, (escape);Não se lembrar;Não fazer caso de;
+Revelar;[sound:VerbSND_122.mp3];develop, reveal, (show);Dar a conhecer;Fazer aparecer a imagem fotográfica;
+Evitar;[sound:VerbSND_123.mp3];avoid, (prevent);Fugir a algo;Impedir;
+Indicar;[sound:VerbSND_124.mp3];indicate, direct, register, nominate, designate, (show);Mostrar, apontar;Informar;
+Vender;[sound:VerbSND_125.mp3];sell, (keep);Dar algo a alguém em troca de dinheiro;Trair, denunciar;
+Construir;[sound:VerbSND_126.mp3];construct, build, (make);Edificar;Criar;
+Formar;[sound:VerbSND_127.mp3];form, constitute, educate, make up, (create);Criar;Educar;Fazer parte da composição de algo
+Obter;[sound:VerbSND_128.mp3];gain, obtain, get, acquire, (make);Conseguir, atingir;;
+Crescer;[sound:VerbSND_129.mp3];grow, (develop);Desenvolver-se;Aumentar, tornar-se maior;
+Lanã‡ar;[sound:VerbSND_130.mp3];throw, release, (enter);Don't recognize word;;
+Causar;[sound:VerbSND_131.mp3];cause, induce, (put);Provocar;;
+Marcar;[sound:VerbSND_132.mp3];mark, score, dial, brand, (show);Pôr marca, assinalar;Reservar;Fixar data
+Mandar;[sound:VerbSND_133.mp3];order, send, (have);Ordenar;Enviar;
+Pretender;[sound:VerbSND_134.mp3];intend, (mean);Querer, desejar;;
+Buscar;[sound:VerbSND_135.mp3];fetch, seek, search, look for, (find);Procurar;Pesquisar;Ir ao encontro e trazer
+Pegar;[sound:VerbSND_136.mp3];catch, get, pick up, (take);Agarrar;;
+Pã”r;[sound:VerbSND_137.mp3];put, lay, (make);Don't recognize word;;
+Matar;[sound:VerbSND_138.mp3];kill, slaughter, quench, (get);Acto de tirar a vida;;
+Reconhecer;[sound:VerbSND_139.mp3];recognize, acknowledge, (admit);Identificar algo ou alguém que se conhece;Admitir, confessar;Admitir, aceitar
+Valer;[sound:VerbSND_140.mp3];(serve);Ter como preço ou valor;Ser válido para;
+Juntar;[sound:VerbSND_141.mp3];join, (add);Reunir;;
+Estabelecer;[sound:VerbSND_142.mp3];establish, (set);Pôr em vigor;Fundar;
+Preparar;[sound:VerbSND_143.mp3];prepare, (do);Arranjar algo de modo a poder ser utilizado;Organizar;Estudar para
+Melhorar;[sound:VerbSND_144.mp3];improve, get better, (recover);Sentir-se melhor;Ficar melhor;
+Assumir;[sound:VerbSND_145.mp3];assume, accept, admit, take on, (affect);Aceitar uma responsabilidade;Admitir qq coisa;Revelar, declarar
+Definir;[sound:VerbSND_146.mp3];define, (draw);Explicar o significado de;Marcar, determinar;
+Terminar;[sound:VerbSND_147.mp3];finish, (stop);Acabar;;
+Obrigar;[sound:VerbSND_148.mp3];compel, oblige, (force);Forçar;;
+Enviar;[sound:VerbSND_149.mp3];send, (commit);Fazer chegar algo a alguém;Mandar alguém a algum lado;
+Adorar;[sound:VerbSND_150.mp3];worship, adore, love, (bless);Prestar culto a uma divindade;Amar imenso;
+Atingir;[sound:VerbSND_151.mp3];reach, hit, (arrive);Alcançar;Chegar a, elevar-se;Acertar
+Iniciar;[sound:VerbSND_152.mp3];begin, start, initiate, (enlist);Começar;Ensinar as bases a alguém;
+Gerar;[sound:VerbSND_153.mp3];generate, (create);Dar vida, conceber;Produzir;
+Exigir;[sound:VerbSND_154.mp3];demand, (want);Pedir com muita força, reclamar;Ter necessidade de;
+Assistir;[sound:VerbSND_155.mp3];attend, assist, (watch);Prestar ajuda;;
+Imaginar;[sound:VerbSND_156.mp3];imagine, (suppose);Representar algo em pensamento;Inventar, criar;
+Cumprir;[sound:VerbSND_157.mp3];fulfill, carry out, (keep);Respeitar;Executar;Realizar
+Faltar;[sound:VerbSND_158.mp3];fail, lack, (miss);Não haver;Não ir;Não cumprir
+Comentar;[sound:VerbSND_159.mp3];comment, (observe);Fazer observações, críticas;Explicar;
+Aplicar;[sound:VerbSND_160.mp3];apply, invest, (put);Colocar;Cumprir, executar;Investir
+Transformar;[sound:VerbSND_161.mp3];transform, turn, (change);Tornar diferente, mudar;Fazer mudar de estado, aspecto;Fazer mudar o estado moral ou físico
+Relacionar;[sound:VerbSND_162.mp3];(tell);Estabelecer relação entre;;
+Estudar;[sound:VerbSND_163.mp3];study, (cross);Aprender;Reflectir sobre, analisar;Decorar algo
+Tocar;[sound:VerbSND_164.mp3];play, touch, ring, (feel);Fazer soar;Comover;
+Depender;[sound:VerbSND_165.mp3];depend, (lean);No definition found;Estar submetido a;
+Compreender;[sound:VerbSND_166.mp3];understand, realize, comprehend, (get);Incluir, conter;Entender;Sentir, partilhar
+Promover;[sound:VerbSND_167.mp3];promote, (cause);Conceder um cargo superior;Favorecer o desenvolvimento de algo;
+Observar;[sound:VerbSND_168.mp3];observe, (look);Olhar com atenção;Cumprir, respeitar;Reparar em, notar
+Errar;[sound:VerbSND_169.mp3];miss, err, (wander);Cometer erros;;
+Informar;[sound:VerbSND_170.mp3];inform, (brief);Dar informações;;
+Importar;[sound:VerbSND_171.mp3];import, matter, bring in, (cause);Trazer do estrangeiro;;
+Partir;[sound:VerbSND_172.mp3];depart, leave, split, (go);Quebrar;;
+Virar;[sound:VerbSND_173.mp3];turn, (become);Dirigir para outra direcção;;
+Ensinar;[sound:VerbSND_174.mp3];teach, (manage);Transmitir conhecimentos a alguém;;
+Preferir;[sound:VerbSND_175.mp3];prefer, (choose);Gostar mais de;Optar por, escolher;
+Identificar;[sound:VerbSND_176.mp3];identify;Reconhecer alguém;Reconhecer a natureza de algo;
+Conter;[sound:VerbSND_177.mp3];contain, hold, (include);Incluir;Reter, deter;Dominar, controlar
+Constituir;[sound:VerbSND_178.mp3];constitute, form, (make);Estabelecer;Formar;
+Entregar;[sound:VerbSND_179.mp3];deliver, hand in, (return);Fazer chegar algo a alguém;Dar, distribuir;
+Reduzir;[sound:VerbSND_180.mp3];reduce, (convert);Tornar menor;;
+Merecer;[sound:VerbSND_181.mp3];deserve, merit, (earn);Ser digno de, estar em condições de;Valer;
+Morar;[sound:VerbSND_182.mp3];live, (hurt);Habitar;;
+Contribuir;[sound:VerbSND_183.mp3];contribute, (concur);Ajudar a fazer algo, colaborar;;
+Fechar;[sound:VerbSND_184.mp3];close, shut, turn off, (make);Tapar uma abertura;Impedir a passagem de;Concluir
+Divulgar;[sound:VerbSND_185.mp3];divulge, publish, spread, disclose, (market);Tornar público;;
+Aproveitar;[sound:VerbSND_186.mp3];take, (use);Gozar;Utilizar;
+Demonstrar;[sound:VerbSND_187.mp3];demonstrate, show, prove, (argue);Provar;;
+Citar;[sound:VerbSND_188.mp3];quote, cite, summon, (incorporate);Mencionar palavras ou textos;Convocar em justiça;
+Prever;[sound:VerbSND_189.mp3];foresee, (tell);Ver antes, imaginar;;
+Dispor;[sound:VerbSND_190.mp3];order, arrange, (make);Arranjar;;
+Dormir;[sound:VerbSND_191.mp3];sleep, (lie);Estar em estado de sono;Ter relação sexual com;
+Julgar;[sound:VerbSND_192.mp3];judge, (think);Decidir em justiça;Supor;Dar a sua opinião sobre, avaliar
+Anunciar;[sound:VerbSND_193.mp3];announce, advertise, (say);Divulgar;Informar;
+Bater;[sound:VerbSND_194.mp3];beat, strike, (take);Palpitar;Dar pancadas;Incidir
+Provocar;[sound:VerbSND_195.mp3];provoke, (bring);Causar;Desafiar, levar alguém a agir;Excitar, seduzir
+Apontar;[sound:VerbSND_196.mp3];point, aim, (indicate);Fazer pontaria;Tomar nota;
+Bastar;[sound:VerbSND_197.mp3];suffice, (water);Chegar;;
+Concordar;[sound:VerbSND_198.mp3];agree, consent, (let);Aceitar;;
+Preocupar;[sound:VerbSND_199.mp3];worry, (occupy);Causar inquietação;;
+Impedir;[sound:VerbSND_200.mp3];block, impede, obstruct, (prevent);Dificultar algo;Opor-se a;
+Lutar;[sound:VerbSND_201.mp3];fight, struggle, wrestle, (do);Combater;Travar acção a favor ou contra algo;
+Visitar;[sound:VerbSND_202.mp3];visit, (do);Ir a casa de alguém;Ir ver um lugar;
+Propor;[sound:VerbSND_203.mp3];offer, propose, (start);Sugerir;Apresentar como escolha;
+Atender;[sound:VerbSND_204.mp3];answer, attend, (serve);Servir alguém;Responder ao telefone;
+Analisar;[sound:VerbSND_205.mp3];analyze, analyse, (think);Estudar profundamente;Estudar as partes de um todo;Comentar
+Prestar;[sound:VerbSND_206.mp3];render, (do);Dispensar, fornecer;;
+Interessar;[sound:VerbSND_207.mp3];interest, concern;Despertar a atenção;Ser importante;
+Retirar;[sound:VerbSND_208.mp3];withdraw, remove, retire, take away, (make);Fazer sair;Tirar roupa;Cancelar, suprimir
+Agir;[sound:VerbSND_209.mp3];act, (behave);Fazer qq coisa;Proceder;
+Respeitar;[sound:VerbSND_210.mp3];respect, honor, (regard);Tratar com respeito, consideração;Cumprir, aceitar;
+Casar;[sound:VerbSND_211.mp3];marry, wed, (settle);Unir pelo casamento;;
+Organizar;[sound:VerbSND_212.mp3];organize, arrange, (form);Preparar, planear;;
+Confirmar;[sound:VerbSND_213.mp3];confirm, approve, affirm, sanction, (fight);Comprovar a verdade de algo;;
+Vencer;[sound:VerbSND_214.mp3];win, (pass);Alcançar uma vitória;Ultrapassar, dominar;
+Alcanã‡ar;[sound:VerbSND_215.mp3];reach, achieve, attain, (get);Don't recognize word;;
+Praticar;[sound:VerbSND_216.mp3];practice, (use);Seguir as regras;Exercer, fazer;Fazer regularmente
+Apoiar;[sound:VerbSND_217.mp3];support, base, back, (carry);Dar apoio ou ajuda;Subsidiar;
+Ocupar;[sound:VerbSND_218.mp3];occupy, (take);Preencher;Desempenhar um cargo;Conquistar
+Aprovar;[sound:VerbSND_219.mp3];(allow);Aceitar;Passar;
+Discutir;[sound:VerbSND_220.mp3];discuss, argue, (debate);Trocar ideias sobre um assunto;;
+Dirigir;[sound:VerbSND_221.mp3];drive, manage, direct, (turn);Guiar e orientar;Voltar numa direcção;Endereçar
+Prender;[sound:VerbSND_222.mp3];tie, fasten, (keep);Ligar, atar;Deter (um ladrão);Meter na prisão
+Proteger;[sound:VerbSND_223.mp3];protect, (nurse);Defender algo ou alguém, abrigar;;
+Controlar;[sound:VerbSND_224.mp3];control, (contain);Dominar, ter poder sobre;Verificar;Vigiar
+Enfrentar;[sound:VerbSND_225.mp3];face, confront, (deal);Don't recognize word;;
+Adquirir;[sound:VerbSND_226.mp3];acquire, obtain, (get);Comprar;Obter;
+Destacar;[sound:VerbSND_227.mp3];detach, highlight, (feature);Pôr em evidência;Enviar em missão;
+Variar;[sound:VerbSND_228.mp3];vary, (range);Mudar, tornar diferente;;
+Concluir;[sound:VerbSND_229.mp3];conclude, end, (complete);Terminar;Deduzir;
+Basear;[sound:VerbSND_230.mp3];base, (found);Fundamentar;;
+Conversar;[sound:VerbSND_231.mp3];talk, (speak);Falar com alguém;;
+Permanecer;[sound:VerbSND_232.mp3];remain, keep, stay, (live);Ficar, manter-se;;
+Subir;[sound:VerbSND_233.mp3];raise, rise, climb, (hike);Ir de baixo para cima;Aumentar;Deslocar de baixo para cima
+Salvar;[sound:VerbSND_234.mp3];save, rescue, (deliver);Livrar alguém de um perigo, da morte;Libertar;Fazer com que algo não desapareça
+Repetir;[sound:VerbSND_235.mp3];repeat, (rehearse);Dizer ou fazer novamente a mesma coisa;Frequentar de novo o mesmo ano ou disciplina;Comer mais
+Acrescentar;[sound:VerbSND_236.mp3];add;Juntar mais, adicionar;;
+Crer;[sound:VerbSND_237.mp3];believe, (develop);Ter confiança;Ter fé;
+Trocar;[sound:VerbSND_238.mp3];change, exchange, (switch);Dar uma coisa contra outra;Converter em dinheiro miúdo;Partilhar
+Atuar;[sound:VerbSND_239.mp3];act, (operate);Don't recognize word;;
+Dividir;[sound:VerbSND_240.mp3];share, divide, (break);Separar um todo em partes;Distribuir, repartir;Pôr em desacordo
+Descrever;[sound:VerbSND_241.mp3];describe, (account);Dizer como é uma coisa ou uma pessoa;;
+Verificar;[sound:VerbSND_242.mp3];check, verify, (happen);Examinar, constatar;;
+Levantar;[sound:VerbSND_243.mp3];raise, lift, get up, stand up, (arouse);Erguer;;
+Gastar;[sound:VerbSND_244.mp3];waste, spend, (use);Dissipar;Consumir;
+Refletir;[sound:VerbSND_245.mp3];reflect, think, (see);Don't recognize word;;
+Criticar;[sound:VerbSND_246.mp3];criticize, review, (comment);Dizer mal de, censurar;Fazer um comentário sobre;
+Reunir;[sound:VerbSND_247.mp3];meet, (join);Agrupar, pôr em conjunto;Ter, possuir;
+Dedicar;[sound:VerbSND_248.mp3];dedicate, devote, (touch);Oferecer;;
+Provar;[sound:VerbSND_249.mp3];prove, taste, try, test, try on, (show);Demonstrar;Experimentar um alimento ou uma bebida;Experimentar roupa
+Assinar;[sound:VerbSND_250.mp3];sign, subscribe, underwrite, (help);Escrever o seu nome;Subscrever um serviço;
+Chorar;[sound:VerbSND_251.mp3];cry, weep, (mourn);Verter lágrimas por;Arrepender-se de;
+Sugerir;[sound:VerbSND_252.mp3];suggest, (hint);Dar a entender;Propor;
+Integrar;[sound:VerbSND_253.mp3];integrate, (form);Acto de entrar num conjunto;;
+Beber;[sound:VerbSND_254.mp3];drink, (carouse);Ingerir líquidos;;
+Cometer;[sound:VerbSND_255.mp3];commit, perpetrate, (menace);Executar, praticar;;
+Investir;[sound:VerbSND_256.mp3];invest, (charge);Aplicar capital em;;
+Avaliar;[sound:VerbSND_257.mp3];assess, evaluate, estimate, value, (put);Determinar o valor de;Calcular, estimar;
+Guardar;[sound:VerbSND_258.mp3];keep, guard, (remember);Vigiar para defender;Conservar, preservar;Arrumar
+Fugir;[sound:VerbSND_259.mp3];flee, elope, run away, (escape);Escapar a algo;;
+Destruir;[sound:VerbSND_260.mp3];destroy, (ruin);Fazer desaparecer algo;;
+Diminuir;[sound:VerbSND_261.mp3];reduce, diminish, decrease, lessen, (lower);Tornar menor;Subtrair;
+Compor;[sound:VerbSND_262.mp3];compose, arrange, (make);Escrever música;Produzir;Arranjar
+Cantar;[sound:VerbSND_263.mp3];sing, (render);Emitir sons musicais com a voz;;
+Cuidar;[sound:VerbSND_264.mp3];(care);No definition found;;
+Impor;[sound:VerbSND_265.mp3];impose, command, (bind);Obrigar alguém a aceitar algo;;
+Declarar;[sound:VerbSND_266.mp3];declare, (state);Anunciar;Dar a conhecer oficialmente;
+Alterar;[sound:VerbSND_267.mp3];(change);Mudar, transformar;Corromper, adulterar;
+Justificar;[sound:VerbSND_268.mp3];justify, (vindicate);Apresentar um motivo ou explicação;;
+Agradecer;[sound:VerbSND_269.mp3];(thank);Mostrar reconhecimento;;
+Fornecer;[sound:VerbSND_270.mp3];provide, supply, (give);Dar;Abastecer;
+Resultar;[sound:VerbSND_271.mp3];(come);Ser efeito de;Converter-se em, dar origem a;
+Expor;[sound:VerbSND_272.mp3];expose, show, exhibit, (put);Mostrar;Explicar;
+Pertencer;[sound:VerbSND_273.mp3];belong, (go);Ser propriedade de;Ser membro de;
+Instalar;[sound:VerbSND_274.mp3];install, (place);Colocar num lugar;Colocar e pôr em funcionamento;
+Viajar;[sound:VerbSND_275.mp3];travel, (go);Partir em viagem;;
+Abandonar;[sound:VerbSND_276.mp3];abandon, leave, reject, neglect, give up, (quit);Deixar para sempre;Deixar alguém desamparado;Renunciar a
+Conquistar;[sound:VerbSND_277.mp3];conquer, achieve, (get);Tomar pela força das armas;Conseguir com esforço;Seduzir
+Prometer;[sound:VerbSND_278.mp3];promise, (make);Comprometer-se a fazer algo;;
+Votar;[sound:VerbSND_279.mp3];vote, devote, (pass);Aprovar algo por meio de voto;;
+Admitir;[sound:VerbSND_280.mp3];admit, (allow);Deixar entrar;Contratar;Aceitar
+Exercer;[sound:VerbSND_281.mp3];exercise, exert, (perform);Praticar;Fazer;
+Recomendar;[sound:VerbSND_282.mp3];recommend, commend, (advise);Aconselhar algo a alguém;Confiar aos cuidados de alguém;Falar de maneira favorável de algo
+Notar;[sound:VerbSND_283.mp3];notice, note, (see);Reparar, ver algo;;
+Afetar;[sound:VerbSND_284.mp3];affect, feign, (concern);Don't recognize word;;
+Conduzir;[sound:VerbSND_285.mp3];lead, drive, manage, conduct, (run);Orientar, guiar;Guiar um veículo;
+Separar;[sound:VerbSND_286.mp3];separate, (divide);Fazer com que pessoas ou coisas não estejam juntas;Dividir um espaço;
+Partilhar;[sound:VerbSND_287.mp3];share, (divide);Fazer a divisão de;;
+Compartilhar;[sound:VerbSND_288.mp3];share, (force);Partilhar algo com alguém;;
+Custar;[sound:VerbSND_289.mp3];cost, (come);Ter um certo preço;;
+Costumar;[sound:VerbSND_290.mp3];(accustom);Ser comum, habitual;;
+Negar;[sound:VerbSND_291.mp3];deny, (refuse);Dizer que algo não é verdadeiro;;
+Cortar;[sound:VerbSND_292.mp3];cut, chop, cut off, (stop);Separar em bocados;Retirar uma parte ou tudo;Interromper
+Acordar;[sound:VerbSND_293.mp3];wake up, awaken, (wake);Despertar alguém do sono;Combinar, resolver;
+Afastar;[sound:VerbSND_294.mp3];remove, (separate);Distanciar;Desviar;
+Eleger;[sound:VerbSND_295.mp3];choose, elect, (constitute);Escolher;Escolher por votos;
+Carregar;[sound:VerbSND_296.mp3];load, carry, (charge);Fazer pressão;;
+Lidar;[sound:VerbSND_297.mp3];(set);No definition found;;
+Condenar;[sound:VerbSND_298.mp3];condemn, sentence, (convict);Declarar culpado e punir;Censurar;
+Comparar;[sound:VerbSND_299.mp3];compare, (measure);Confrontar coisas;;
+Necessitar;[sound:VerbSND_300.mp3];require, (ask);Precisar de;Exigir, requerer;
+Transmitir;[sound:VerbSND_301.mp3];transmit, carry, transfer, pass on, (give);Comunicar;Conduzir, transportar;Pegar a alguém
+Experimentar;[sound:VerbSND_302.mp3];experience, try out, (try);Provar;Tentar;
+Substituir;[sound:VerbSND_303.mp3];substitute, (exist);Pôr no lugar de algo ou de alguém;;
+Associar;[sound:VerbSND_304.mp3];associate, (join);Unir;;
+Postar;[sound:VerbSND_305.mp3];(place);Don't recognize word;;
+Limitar;[sound:VerbSND_306.mp3];limit, restrict;Reduzir;;
+Visar;[sound:VerbSND_307.mp3];aim, aim at, (drive);Ter por fim;Apontar para um objectivo definido;Pôr um visto num documento
+Assegurar;[sound:VerbSND_308.mp3];ensure, assure, secure, insure, (preserve);Garantir;;
+Adequar;[sound:VerbSND_309.mp3];adapt, (conduct);Adaptar a, ajustar a;;
+Completar;[sound:VerbSND_310.mp3];complete, (fill);Concluir, terminar;Atingir um número;
+Horar;[sound:VerbSND_311.mp3];(time);Don't recognize word;;
+Satisfazer;[sound:VerbSND_312.mp3];satisfy, (fulfill);Ser suficiente;;
+Mencionar;[sound:VerbSND_313.mp3];mention, (observe);Referir;;
+Quebrar;[sound:VerbSND_314.mp3];break, fracture, (beat);Partir, fracturar;Romper, desfazer;
+Destinar;[sound:VerbSND_315.mp3];destine, (appropriate);Guardar para certo fim;;
+Questionar;[sound:VerbSND_316.mp3];question, (open);Fazer uma pergunta;Discutir, contestar;
+Cobrir;[sound:VerbSND_317.mp3];cover, coat, (blanket);Tapar;Encher;Proteger, abrigar
+Convidar;[sound:VerbSND_318.mp3];invite, (ask);Pedir a alguém para vir a sua casa ou a outro sítio;;
+Atribuir;[sound:VerbSND_319.mp3];attribute, (refer);Conceder, dar;;
+Registrar;[sound:VerbSND_320.mp3];record, register, list, write down, (read);Don't recognize word;;
+Sonhar;[sound:VerbSND_321.mp3];dream, (set);Ter imagens e sons a dormir;Desejar muito;
+Vestir;[sound:VerbSND_322.mp3];wear, dress, clothe, (cover);Cobrir com roupa;;
+Roubar;[sound:VerbSND_323.mp3];steal, rob, (grab);Apropriar-se de algo que não nos pertence;;
+Fixar;[sound:VerbSND_324.mp3];fix, (set);Prender;Determinar;Fitar
+Contratar;[sound:VerbSND_325.mp3];hire, contract, (sign);Empregar;Ajustar um serviço;
+Optar;[sound:VerbSND_326.mp3];choose, opt, (settle);Escolher, decidir por;;
+Abordar;[sound:VerbSND_327.mp3];board, approach, tackle, (broach);Aproximar-se de alguém para lhe falar;Começar a tratar de uma questão;
+Proibir;[sound:VerbSND_328.mp3];prohibit, forbid, ban, (deny);Não permitir, não deixar;;
+Esconder;[sound:VerbSND_329.mp3];hide, conceal, (tuck);Pôr num lugar em que não se possa descobrir;Guardar segredo;
+Reclamar;[sound:VerbSND_330.mp3];(call);Exigir, reivindicar;;
+Sentar;[sound:VerbSND_331.mp3];seat, (sit);Pôr num assento;;
+Proporcionar;[sound:VerbSND_332.mp3];provide, (give);Oferecer, pôr à disposição;;
+Caber;[sound:VerbSND_333.mp3];fit;Entrar dentro;Pertencer;
+Manifestar;[sound:VerbSND_334.mp3];express, (show);Participar numa manifestação de rua;;
+Cobrar;[sound:VerbSND_335.mp3];charge, take, collect, (serve);Exigir o pagamento de algo;;
+Brincar;[sound:VerbSND_336.mp3];play, joke, toy, (kid);Jogar, divertir-se;Dizer piadas;Não levar as coisas a sério
+Desaparecer;[sound:VerbSND_337.mp3];disappear, vanish;Deixar de ser;Deixar de ser visto;Ir-se embora
+Rir;[sound:VerbSND_338.mp3];laugh;Manifestar alegria ou divertimento;;
+Acusar;[sound:VerbSND_339.mp3];accuse, blame, (reveal);Culpar alguém de algo;;
+Consumir;[sound:VerbSND_340.mp3];consume, devour, (absorb);Utilizar, gastar;Comer, beber;
+Complicar;[sound:VerbSND_341.mp3];complicate, thicken, become complicated, (set);Tornar difícil;;
+Duvidar;[sound:VerbSND_342.mp3];doubt, (question);Não ter a certeza;;
+Demorar;[sound:VerbSND_343.mp3];linger, delay, be late, (wait);Levar tempo;Tardar;
+Ultrapassar;[sound:VerbSND_344.mp3];exceed, surpass, (break);Passar à frente de;Exceder;
+Expressar;[sound:VerbSND_345.mp3];express, (tell);No definition found;;
+Adiantar;[sound:VerbSND_346.mp3];advance, (progress);Antecipar;Fazer progredir, avançar;Dar dinheiro antes da data
+Adotar;[sound:VerbSND_347.mp3];adopt, (make);Don't recognize word;;
+Aguardar;[sound:VerbSND_348.mp3];expect, await, wait, wait for, (hold);Esperar;;
+Confiar;[sound:VerbSND_349.mp3];confide, entrust, (hope);Contar, revelar;Entregar, dar;
+Solicitar;[sound:VerbSND_350.mp3];beg, (ask);Pedir;;
+Executar;[sound:VerbSND_351.mp3];carry out, perform, execute, (play);Realizar, cumprir;Aplicar a pena de morte;Interpretar
+Atacar;[sound:VerbSND_352.mp3];attack, assail, (strike);Agredir;Criticar;Contagiar
+Dominar;[sound:VerbSND_353.mp3];dominate, (overcome);Controlar;Ter conhecimento de;Estar acima de
+Recuperar;[sound:VerbSND_354.mp3];recover, restore, retrieve, regain, (resume);Reaver o que se perdeu;Readquirir, recobrar;
+Divertir;[sound:VerbSND_355.mp3];amuse, entertain;Distrair;;
+Facilitar;[sound:VerbSND_356.mp3];facilitate, (miss);Tornar fácil;;
+Conceder;[sound:VerbSND_357.mp3];grant, concede, give, allow, accord, (agree);Dar;;
+Interpretar;[sound:VerbSND_358.mp3];interpret, (play);Explicar;Representar um papel ou tocar uma música;
+Localizar;[sound:VerbSND_359.mp3];locate, localize, (place);Determinar o lugar em que se encontra;;
+Corresponder;[sound:VerbSND_360.mp3];correspond, (answer);Estar em relação, condizer com;;
+Explorar;[sound:VerbSND_361.mp3];explore, exploit, (work);Estudar uma região;Utilizar abusivamente outros;Utilizar um recurso natural
+Caminhar;[sound:VerbSND_362.mp3];walk, go, (pass);Andar a pé;;
+Alimentar;[sound:VerbSND_363.mp3];feed, (nurture);Dar de comer;Abastecer ou carregar;Fomentar
+Aproximar;[sound:VerbSND_364.mp3];(begin);Trazer para mais perto;Unir;
+Beneficiar;[sound:VerbSND_365.mp3];benefit, improve, (protect);Favorecer, melhorar;Gozar de;
+Superar;[sound:VerbSND_366.mp3];overcome, (beat);Vencer;Ultrapassar, exceder;
+Avanã‡ar;[sound:VerbSND_367.mp3];advance, (go);Don't recognize word;;
+Enganar;[sound:VerbSND_368.mp3];(fool);Fazer crer a alguém algo que não é verdade;Ser infiel;
+Inspirar;[sound:VerbSND_369.mp3];inspire, (suggest);Causar, fazer nascer sentimento;Fazer nascer ideia criativa;
+Sustentar;[sound:VerbSND_370.mp3];support, sustain, maintain, hold up, (hold);Suportar o peso de;Garantir os meios de sobrevivência;
+Supor;[sound:VerbSND_371.mp3];think, suppose, assume, (see);Pensar sem ter a certeza;;
+Prejudicar;[sound:VerbSND_372.mp3];damage, harm, (hurt);Causar prejuízo a, fazer mal a;;
+Descer;[sound:VerbSND_373.mp3];descend, go down, (lower);Passar de cima para baixo;Baixar;
+Atrair;[sound:VerbSND_374.mp3];attract, fascinate, (magnetize);Trazer a si;Seduzir;
+Desistir;[sound:VerbSND_375.mp3];give up, (quit);No definition found;;
+Apaixonar;[sound:VerbSND_376.mp3];to fall in love with;Inspirar paixão;;
+Ignorar;[sound:VerbSND_377.mp3];ignore, (match);Não saber, desconhecer;Fazer de conta que não se conhece;
+Eliminar;[sound:VerbSND_378.mp3];eliminate, (remove);Acabar com;Afastar;Expelir do organismo
+Conferir;[sound:VerbSND_379.mp3];check, grant, confer, bestow, (give);Verificar, controlar;;
+Confessar;[sound:VerbSND_380.mp3];confess, (recognize);Reconhecer, admitir;Contar os pecados ao padre;
+Gravar;[sound:VerbSND_381.mp3];carve, record, engrave, (fix);Fixar sons ou imagens em disco;Traçar algo numa superfície com um objecto pontiagudo;Reter na memória
+Desconhecer;[sound:VerbSND_382.mp3];(ignore);Não saber;;
+Misturar;[sound:VerbSND_383.mp3];mix, (mingle);Juntar coisas diferentes;;
+Atualizar;[sound:VerbSND_384.mp3];update, modernize, (function);Don't recognize word;;
+Durar;[sound:VerbSND_385.mp3];last, endure, (continue);Prolongar-se;Conservar-se;
+Recorrer;[sound:VerbSND_386.mp3];(search);Servir-se de;Pedir a ajuda de um amigo;
+Elevar;[sound:VerbSND_387.mp3];elevate, (raise);Levantar;Aumentar;
+Reforã‡ar;[sound:VerbSND_388.mp3];reinforce, (strengthen);Don't recognize word;;
+Esclarecer;[sound:VerbSND_389.mp3];explain, clarify, enlighten, (solve);Tornar claro ou compreensível;Explicar, informar;
+Denunciar;[sound:VerbSND_390.mp3];denounce, (reveal);Designar alguém como culpado;Criticar publicamente;
+Baixar;[sound:VerbSND_391.mp3];lower, download, (fall);Fazer descer;Diminuir;
+Surpreender;[sound:VerbSND_392.mp3];surprise, astonish, (catch);Causar surpresa;Apanhar alguém em flagrante;
+Comunicar;[sound:VerbSND_393.mp3];communicate, (join);Dar a conhecer, informar;;
+Unir;[sound:VerbSND_394.mp3];unite, (join);Juntar;Ligar, aproximar;Casar
+Implicar;[sound:VerbSND_395.mp3];imply, implicate, (carry);Fazer participar, envolver;Ter como consequência;
+Elaborar;[sound:VerbSND_396.mp3];(make);Preparar, realizar;;
+Selecionar;[sound:VerbSND_397.mp3];select, choose;Don't recognize word;;
+Traduzir;[sound:VerbSND_398.mp3];translate, (fail);Passar de uma língua para outra;Explicar;Exprimir
+Comprovar;[sound:VerbSND_399.mp3];prove, confirm, (tell);Provar, confirmar;;
+Adaptar;[sound:VerbSND_400.mp3];adapt, adjust, suit, (fit);Adequar, ajustar;;
+Combinar;[sound:VerbSND_401.mp3];combine, (agree);Ligar e misturar coisas;Marcar, planear;
+Convencer;[sound:VerbSND_402.mp3];convince, persuade;Levar alguém a acreditar ou a fazer algo;;
+Espalhar;[sound:VerbSND_403.mp3];spread, scatter, (blow);Dispersar;Divulgar;
+Inventar;[sound:VerbSND_404.mp3];invent, (create);Criar ou descobrir coisas novas;Imaginar;
+Mover;[sound:VerbSND_405.mp3];move, drive, (draw);Pôr em movimento;;
+Suportar;[sound:VerbSND_406.mp3];support, suffer, bear, endure, tolerate, (stand);Aguentar, resistir a;Tolerar;Aguentar o peso de
+Distribuir;[sound:VerbSND_407.mp3];distribute, deliver, (serve);Repartir;Fornecer;
+Tender;[sound:VerbSND_408.mp3];tend, lean, (go);Don't recognize word;;
+Decorrer;[sound:VerbSND_409.mp3];happen, elapse, (move);Estar a acontecer;;
+Registar;[sound:VerbSND_410.mp3];(record);Inscrever em registo;Tomar nota de;Enviar por correio com taxa adicional
+Valorizar;[sound:VerbSND_411.mp3];value, (enrich);Dar valor a;Aumentar o valor de;
+Consultar;[sound:VerbSND_412.mp3];consult, (see);Pedir um conselho;Examinar um doente;Procurar informações em livros
+Orientar;[sound:VerbSND_413.mp3];direct, guide, orient, (head);Colocar de acordo com uma direcção;Guiar, ajudar alguém numa escolha;
+Relatar;[sound:VerbSND_414.mp3];(tell);Narrar, contar;Descrever encontro desportivo;
+Submeter;[sound:VerbSND_415.mp3];submit, subordinate, (dominate);Dominar;;
+Consistir;[sound:VerbSND_416.mp3];(consist);No definition found;;
+Combater;[sound:VerbSND_417.mp3];combat, fight, oppose, (go);Lutar contra;;
+Mexer;[sound:VerbSND_418.mp3];stir, (move);Fazer movimento;Revolver, misturar;
+Insistir;[sound:VerbSND_419.mp3];(insist);Pedir algo muitas vezes;Teimar;
+Estimular;[sound:VerbSND_420.mp3];stimulate, encourage, irritate, incite, (promote);Aumentar a actividade;Encorajar;
+Gritar;[sound:VerbSND_421.mp3];scream, shout, yell;Fazer som muito forte com a voz;;
+Recusar;[sound:VerbSND_422.mp3];refuse, deny, (challenge);Dizer não a algo;Não querer fazer algo;Não dar
+Avisar;[sound:VerbSND_423.mp3];warn, tell, advise, admonish, let know, (threaten);Informar;Prevenir;
+Agradar;[sound:VerbSND_424.mp3];please, (like);Gostar de;;
+Emitir;[sound:VerbSND_425.mp3];give out, (express);Produzir;Pôr em circulação;Manifestar
+Requerer;[sound:VerbSND_426.mp3];require, request, (claim);Don't recognize word;;
+Recordar;[sound:VerbSND_427.mp3];remember, recall, recollect, (remind);Fazer lembrar;;
+Sujeitar;[sound:VerbSND_428.mp3];subject, subdue, (tie);Dominar, submeter;;
+Disponibilizar;[sound:VerbSND_429.mp3];make available;Don't recognize word;;
+Meter;[sound:VerbSND_430.mp3];put, (place);Pôr dentro;Causar, inspirar;
+Escutar;[sound:VerbSND_431.mp3];hear, listen, (attend);Ouvir com atenção;Seguir os conselhos de alguém;
+Soltar;[sound:VerbSND_432.mp3];release, set free, (tell);Libertar;Desprender, desatar;Emitir
+Apostar;[sound:VerbSND_433.mp3];bet, (gamble);Arriscar em algo;Afirmar com segurança;
+Libertar;[sound:VerbSND_434.mp3];free, (release);Tornar livre;;
+Montar;[sound:VerbSND_435.mp3];assemble, ride, mount, set up, (back);Andar a cavalo;;
+Exibir;[sound:VerbSND_436.mp3];show, display, exhibit, (create);Mostrar;;
+Inserir;[sound:VerbSND_437.mp3];insert, (enter);Introduzir, incluir;;
+Investigar;[sound:VerbSND_438.mp3];investigate, (examine);Procurar descobrir algo;Estudar e pesquisar;
+Alegar;[sound:VerbSND_439.mp3];allege, (plead);Apresentar em defesa;Explicar, justificar;
+Influenciar;[sound:VerbSND_440.mp3];influence, (talk);Exercer poder sobre;;
+Preencher;[sound:VerbSND_441.mp3];fill, (prefer);Encher completamente;Escrever o que falta nos espaços em branco;Ocupar o tempo
+Sobreviver;[sound:VerbSND_442.mp3];(survive);Escapar à morte;Continuar vivo depois da morte de alguém;
+Despertar;[sound:VerbSND_443.mp3];(wake);Acordar;;
+Atar;[sound:VerbSND_444.mp3];tie, (link);Prender, ligar;;
+Pesquisar;[sound:VerbSND_445.mp3];research, (investigate);Procurar informação, investigar;;
+Animar;[sound:VerbSND_446.mp3];liven up, (encourage);Dar movimento;Dar alegria, entusiasmar;
+Operar;[sound:VerbSND_447.mp3];operate, function, (work);Praticar um acto cirúrgico;Executar, realizar;
+Restar;[sound:VerbSND_448.mp3];remain, (rest);Ficar como resto, sobrar;;
+Reservar;[sound:VerbSND_449.mp3];reserve, (keep);Guardar, pôr de lado;Comprar antecipadamente;
+Testar;[sound:VerbSND_450.mp3];(test);Submeter a exame;Pôr à prova, experimentar;
+Evoluir;[sound:VerbSND_451.mp3];evolve, (develop);Transformar-se gradualmente;Mover-se;
+Ameaã‡ar;[sound:VerbSND_452.mp3];threaten, (menace);Don't recognize word;;
+Treinar;[sound:VerbSND_453.mp3];train, practice, (form);Orientar num desporto;;
+Encher;[sound:VerbSND_454.mp3];fill, (close);Ocupar todo o espaço;;
+Suceder;[sound:VerbSND_455.mp3];succeed, happen, (occur);Acontecer;;
+Resistir;[sound:VerbSND_456.mp3];hold out, (hold);Suportar;Opor-se a algo ou alguém;
+Adicionar;[sound:VerbSND_457.mp3];add, (put);Acrescentar;;
+Lavar;[sound:VerbSND_458.mp3];wash, (bath);Limpar com água e outro produto;;
+Medir;[sound:VerbSND_459.mp3];measure, (weigh);Tirar as dimensões;Avaliar, calcular;Pensar, ter cuidado
+Caracterizar;[sound:VerbSND_460.mp3];characterize, (typify);Determinar o que é específico de algo ou alguém;Descrever;
+Apreciar;[sound:VerbSND_461.mp3];appreciate, value, (enjoy);Dar valor a;;
+Apanhar;[sound:VerbSND_462.mp3];pick up, pick, catch, gather, (get);Colher;Levantar do chão;Prender
+Forã‡ar;[sound:VerbSND_463.mp3];force, (send);Don't recognize word;;
+Limpar;[sound:VerbSND_464.mp3];clean, (shine);Tornar limpo, tirar a sujidade;Secar;
+Clicar;[sound:VerbSND_465.mp3];click;Carregar no botão do rato;;
+Atravessar;[sound:VerbSND_466.mp3];cross, traverse, go through, (trespass);Transpor, passar;Passar através de;Sofrer, suportar
+Autorizar;[sound:VerbSND_467.mp3];authorize, (allow);Dar licença;;
+Retornar;[sound:VerbSND_468.mp3];return;Voltar, regressar;;
+Excluir;[sound:VerbSND_469.mp3];exclude, (reserve);Pôr de lado, afastar;Não considerar;
+Ressaltar;[sound:VerbSND_470.mp3];emphasize, (highlight);Sobressair, destacar-se;;
+Imprimir;[sound:VerbSND_471.mp3];print, stamp, imprint, (impress);Reproduzir sobre papel ou tecido;;
+Temer;[sound:VerbSND_472.mp3];fear, dread, (funk);Ter medo de;;
+Abenã‡oar;[sound:VerbSND_473.mp3];(bless);Don't recognize word;;
+Incomodar;[sound:VerbSND_474.mp3];bother, annoy, (upset);Perturbar;;
+Pesar;[sound:VerbSND_475.mp3];weigh, weigh up, (measure);Determinar o peso de;Analisar, avaliar;
+Encarar;[sound:VerbSND_476.mp3];face, (consider);Olhar alguém de frente;Considerar;
+Introduzir;[sound:VerbSND_477.mp3];introduce, (insert);Fazer entrar;Dar início, começar;
+Acertar;[sound:VerbSND_478.mp3];hit, set, (reach);Pôr certo;Descobrir, atingir;
+Constar;[sound:VerbSND_479.mp3];to consist of, appear in;No definition found;;
+Acumular;[sound:VerbSND_480.mp3];accumulate, collect, combine, pile up, (amass);Amontoar, juntar;;
+Rejeitar;[sound:VerbSND_481.mp3];reject, (compare);Não aceitar;Desaprovar;Expelir, vomitar
+Encerrar;[sound:VerbSND_482.mp3];close, (contain);Fechar;Concluir;
+Classificar;[sound:VerbSND_483.mp3];classify, (qualify);Colocar segundo uma ordem;Atribuir uma nota;
+Confundir;[sound:VerbSND_484.mp3];confuse, (confound);Tomar uma coisa por outra;;
+Aguentar;[sound:VerbSND_485.mp3];stand, put up with, (hold);Suportar;;
+Apagar;[sound:VerbSND_486.mp3];erase, delete, (clean);Extinguir;Desligar;Eliminar
+Governar;[sound:VerbSND_487.mp3];govern, rule, (control);Dirigir;;
+Celebrar;[sound:VerbSND_488.mp3];celebrate, (praise);Festejar;Fazer;Rezar
+Curtir;[sound:VerbSND_489.mp3];enjoy, tan, suffer, endure, (dip);Don't recognize word;;
+Deitar;[sound:VerbSND_490.mp3];lay down, (put);Estender;Meter na cama;Verter
+Regressar;[sound:VerbSND_491.mp3];return, regress;Retornar, voltar;;
+Curar;[sound:VerbSND_492.mp3];cure, treat, (preserve);Tratar alguém;Secar, apurar o sabor;
+Corrigir;[sound:VerbSND_493.mp3];correct, revise, rectify, (break);Emendar os erros;Tornar melhor;
+Liderar;[sound:VerbSND_494.mp3];lead, (head);Chefiar;;
+Admirar;[sound:VerbSND_495.mp3];admire, (allow);Ter grande apreço ou consideração por;;
+Perdoar;[sound:VerbSND_496.mp3];forgive, pardon, (lift);Desculpar;Libertar de;
+Comprometer;[sound:VerbSND_497.mp3];compromise, pledge, (involve);Pôr em risco;;
+Cansar;[sound:VerbSND_498.mp3];tire, bore, (spend);Causar fadiga;Fartar;
+Reparar;[sound:VerbSND_499.mp3];notice, repair, (fix);Notar, ver;;
+Liberar;[sound:VerbSND_500.mp3];liberate, (release);Don't recognize word;;
+Reagir;[sound:VerbSND_501.mp3];react, respond, (interact);Ter reacção, responder;Resistir, ir contra;
+Disputar;[sound:VerbSND_502.mp3];dispute, quarrel, (run);Lutar, competir;;
+Deter;[sound:VerbSND_503.mp3];detain, arrest, (keep);Fazer parar;Prender;Possuir
+Sorrir;[sound:VerbSND_504.mp3];smile, (settle);Manifestar alegria com movimento dos lábios;;
+Percorrer;[sound:VerbSND_505.mp3];go through, (make);Atravessar;Efectuar um trajecto;Examinar
+Escapar;[sound:VerbSND_506.mp3];(escape);Fugir;Sobreviver;Ser dito por distracção
+Concentrar;[sound:VerbSND_507.mp3];concentrate, (focus);Reunir num centro ou local;Intensificar;
+Pintar;[sound:VerbSND_508.mp3];paint, (appear);Cobrir de tinta;Fazer uma pintura;Representar por meio de cores
+Focar;[sound:VerbSND_509.mp3];(focus);Ajustar a lente;Abordar;
+Planejar;[sound:VerbSND_510.mp3];plan, (lay);Don't recognize word;;
+Queimar;[sound:VerbSND_511.mp3];burn, tan, scorch, (blow);Consumir pelo fogo;Fazer sentir um grande calor;Dar um tom bronzeado
+Pregar;[sound:VerbSND_512.mp3];nail, preach, pin, (advocate);Fixar ou segurar com prego;Coser;
+Situar;[sound:VerbSND_513.mp3];situate, place, locate, (put);Localizar no espaço;Localizar no tempo;
+Fundar;[sound:VerbSND_514.mp3];base, establish, found, (cast);Criar;;
+Falhar;[sound:VerbSND_515.mp3];fail, (miss);Não acertar em;Faltar;
+Incentivar;[sound:VerbSND_516.mp3];encourage, stimulate, (motivate);Estimular;;
+Designar;[sound:VerbSND_517.mp3];designate, appoint, (name);Indicar alguém para uma função;Significar;
+Armar;[sound:VerbSND_518.mp3];arm, set, pitch, assemble, (hatch);Munir de armas;Montar;
+Orar;[sound:VerbSND_519.mp3];pray, (preach);Rezar;;
+Converter;[sound:VerbSND_520.mp3];convert, (change);Fazer mudar de religião ou de opinião;Substituir por algo;
+Comemorar;[sound:VerbSND_521.mp3];celebrate, commemorate, (gloss);Celebrar a memória de algo ou de alguém;;
+Ampliar;[sound:VerbSND_522.mp3];enlarge, extend, widen, (expand);Aumentar, alargar;Reproduzir em formato maior;
+Remover;[sound:VerbSND_523.mp3];dismiss, (move);Mover de um lado para o outro;Eliminar;
+Copiar;[sound:VerbSND_524.mp3];copy, (duplicate);Fazer cópia, reproduzir;Imitar;Escrever o mesmo que o colega
+Motivar;[sound:VerbSND_525.mp3];motivate, cause, (make);Estimular, levar a agir;;
+Segurar;[sound:VerbSND_526.mp3];insure, hold, (take);Levar na(s) mão(s);Agarrar, não deixar cair;Pôr no seguro
+Isolar;[sound:VerbSND_527.mp3];isolate, insulate;Afastar dos outros, separar;Proteger contra o frio, o calor, o ruído;
+Aconselhar;[sound:VerbSND_528.mp3];advise, recommend, counsel, (direct);Dizer a alguém o que deve fazer;;
+Negociar;[sound:VerbSND_529.mp3];negotiate, (sell);Fazer negócios;;
+Editar;[sound:VerbSND_530.mp3];edit, publish, (create);Produzir e publicar livros, revistas;;
+Frequentar;[sound:VerbSND_531.mp3];frequent, (attend);Ir muitas vezes a um local;Assistir;
+Odiar;[sound:VerbSND_532.mp3];hate, detest, (hurt);Detestar, ter ódio;;
+Voar;[sound:VerbSND_533.mp3];fly, (explode);Deslocar-se no ar;Passar muito depressa;
+Doer;[sound:VerbSND_534.mp3];hurt, ache, (ail);Ter ou sentir dor;;
+Danã‡ar;[sound:VerbSND_535.mp3];dance, (fail);Don't recognize word;;
+Transferir;[sound:VerbSND_536.mp3];transfer, (communicate);Mudar de um lugar para outro;Movimentar dinheiro entre contas de banco;
+Distinguir;[sound:VerbSND_537.mp3];distinguish, differentiate, (discriminate);Perceber e estabelecer diferenças;Reconhecer;
+Puxar;[sound:VerbSND_538.mp3];pull, (pick);Atrair para si;Arrancar, tirar;
+Constatar;[sound:VerbSND_539.mp3];certify, (establish);Ver, verificar;;
+Mentir;[sound:VerbSND_540.mp3];lie, (sink);Faltar à verdade, enganar;;
+Arranjar;[sound:VerbSND_541.mp3];arrange, get, find, catch, settle, (do);Arrumar;Conseguir;Consertar
+Conviver;[sound:VerbSND_542.mp3];live together, (summon);Viver em comum com;Relacionar-se;
+Enxergar;[sound:VerbSND_543.mp3];(see);Don't recognize word;;
+Renovar;[sound:VerbSND_544.mp3];renew, renovate, (modernize);Modificar melhorando;Substituir;
+Nomear;[sound:VerbSND_545.mp3];name, (call);Designar pelo nome;Indicar para cargo ou função;
+Modificar;[sound:VerbSND_546.mp3];modify, (alter);Mudar;;
+Arrumar;[sound:VerbSND_547.mp3];arrange, pack, tidy up, (get);Organizar, arranjar;Estacionar;Terminar algo
+Recolher;[sound:VerbSND_548.mp3];collect, (recommend);Reunir;Acolher, abrigar;
+Gerir;[sound:VerbSND_549.mp3];manage, (run);Dirigir, administrar;;
+Reproduzir;[sound:VerbSND_550.mp3];reproduce, breed, (repeat);Copiar;;
+Obedecer;[sound:VerbSND_551.mp3];(listen);Fazer o que nos mandam;;
+Ferir;[sound:VerbSND_552.mp3];injure, hurt, wound, (cut);Magoar alguém fisicamente;Causar dor moral;
+Invadir;[sound:VerbSND_553.mp3];invade, overrun, (rush);Ocupar pela força;Entrar em grande número;
+Alertar;[sound:VerbSND_554.mp3];alert;Don't recognize word;;
+Transportar;[sound:VerbSND_555.mp3];transport, carry, transfer, convey, (drive);Conduzir de um lugar para outro;;
+Circular;[sound:VerbSND_556.mp3];surround, round, circulate, (rotate);Andar;Passar de mão em mão;
+Projetar;[sound:VerbSND_557.mp3];design, project, plan, (fall);Don't recognize word;;
+Desenhar;[sound:VerbSND_558.mp3];draw, design, (picture);Fazer desenhos;;
+Habitar;[sound:VerbSND_559.mp3];inhabit, (live);Morar em;;
+Arriscar;[sound:VerbSND_560.mp3];risk, (endanger);Pôr em perigo;;
+Preservar;[sound:VerbSND_561.mp3];preserve, (protect);Conservar, proteger;;
+Possibilitar;[sound:VerbSND_562.mp3];make possible, (enable);Tornar possível;;
+Abraã‡ar;[sound:VerbSND_563.mp3];hug, embrace, (cling);Don't recognize word;;
+Favorecer;[sound:VerbSND_564.mp3];(protect);Apoiar;Dar vantagem a;
+Atirar;[sound:VerbSND_565.mp3];throw, shoot, fling, (put);Lançar;;
+Debater;[sound:VerbSND_566.mp3];debate, discuss, (struggle);Discutir;;
+Resumir;[sound:VerbSND_567.mp3];summarize, abridge, sum up, (fall);Dizer ou escrever o essencial sobre algo;;
+Culpar;[sound:VerbSND_568.mp3];blame, accuse, (condemn);Acusar alguém de algo;;
+Contemplar;[sound:VerbSND_569.mp3];contemplate, (struggle);Observar demoradamente;;
+Estender;[sound:VerbSND_570.mp3];extend, stretch, (spread);Desdobrar;Esticar;Prolongar
+Encaminhar;[sound:VerbSND_571.mp3];(lead);Fazer seguir;Orientar;
+Rever;[sound:VerbSND_572.mp3];review, revise, see again, (check);Ver outra vez;Encontrar de novo;Reler de novo para corrigir
+Devolver;[sound:VerbSND_573.mp3];return, refund, give back, (render);Pagar o que se deve;Não aceitar;Retornar algo
+Iluminar;[sound:VerbSND_574.mp3];illuminate, enlighten, light up, (burn);Dar luz;Dar brilho a;
+Namorar;[sound:VerbSND_575.mp3];(date);Manter uma relação amorosa com;;
+Desempenhar;[sound:VerbSND_576.mp3];carry out, (play);Realizar um trabalho ou tarefa;Participar num filme ou peça de teatro;
+Ceder;[sound:VerbSND_577.mp3];give up, (destroy);Pôr algo à disposição de alguém;Desistir em favor de outro;
+Implementar;[sound:VerbSND_578.mp3];implement, (deploy);Pôr em prática;;
+Convocar;[sound:VerbSND_579.mp3];summon, (call);Pedir a presença de, mandar apresentar-se;Reunir;
+Ultimar;[sound:VerbSND_580.mp3];finish, (complete);Don't recognize word;;
+Rezar;[sound:VerbSND_581.mp3];pray, say, (laugh);Dizer oração;;
+Trair;[sound:VerbSND_582.mp3];betray, (sell);Denunciar alguém ou algo;Ser infiel;Divulgar algo escondido
+Suspender;[sound:VerbSND_583.mp3];hang, lift, suspend, (stop);Pendurar;;
+Residir;[sound:VerbSND_584.mp3];live, reside;Morar, viver;Estar, encontrar-se;
+Noticiar;[sound:VerbSND_585.mp3];report, (announce);Informar, anunciar;;
+Retomar;[sound:VerbSND_586.mp3];(paint);Continuar algo interrompido;Assumir de novo;
+Contrariar;[sound:VerbSND_587.mp3];contradict, (annoy);Opor-se a, dizer o contrário;Arreliar, aborrecer;
+Colaborar;[sound:VerbSND_588.mp3];collaborate, help, (contribute);Participar num trabalho;;
+Torcer;[sound:VerbSND_589.mp3];bend, sprain, twist, distort, (turn);Entortar;Deslocar;Espremer
+Acostumar;[sound:VerbSND_590.mp3];accustom, (familiarize);Habituar alguém a fazer algo;;
+Efetuar;[sound:VerbSND_591.mp3];perform, (do);Don't recognize word;;
+Apertar;[sound:VerbSND_592.mp3];squeeze, tighten, press, narrow, pinch, (run);Pressionar;Aparafusar;Ajustar
+Acelerar;[sound:VerbSND_593.mp3];accelerate, (urge);Aumentar a velocidade;Apressar alguém ou algo;
+Conceber;[sound:VerbSND_594.mp3];understand, conceive, (think);Criar, imaginar;Gerar;
+Rolar;[sound:VerbSND_595.mp3];roll, (run);Fazer girar;;
+Convir;[sound:VerbSND_596.mp3];suit, be convenient, (do);Ser apropriado, vantajoso;;
+Dispensar;[sound:VerbSND_597.mp3];excuse, dispense, do without, (grant);Deixar que alguém não faça algo;;
+Ordenar;[sound:VerbSND_598.mp3];order, ordain, (arrange);Dar ordem, mandar;Pôr por ordem;
+Calcular;[sound:VerbSND_599.mp3];calculate, (imagine);Fazer contas;Supor;
+Financiar;[sound:VerbSND_600.mp3];finance, (support);Dar dinheiro para algo ou alguém;;
+Engraã‡ar;[sound:VerbSND_601.mp3];(grace);Don't recognize word;;
+Acolher;[sound:VerbSND_602.mp3];welcome, shelter, accept, (receive);Receber em casa;Proteger;
+Cruzar;[sound:VerbSND_603.mp3];cross, cruise, (traverse);Atravessar;Pôr um em cima do outro;Acasalar
+Lamentar;[sound:VerbSND_604.mp3];lament, bemoan, (regret);Ter pena;;
+Render;[sound:VerbSND_605.mp3];yield, (give);Dar lucro;;
+Conectar;[sound:VerbSND_606.mp3];connect, (talk);Don't recognize word;;
+Fortalecer;[sound:VerbSND_607.mp3];strengthen, (confirm);Tornar forte;;
+Emprestar;[sound:VerbSND_608.mp3];lend, (push);Dar algo a alguém por um certo tempo;;
+Diferenciar;[sound:VerbSND_609.mp3];differentiate, (differ);Don't recognize word;;
+Somar;[sound:VerbSND_610.mp3];add, total, add up, (count);Adicionar;;
+Processar;[sound:VerbSND_611.mp3];prosecute, process, (check);Instaurar um processo a;Tratar dados;
+Politicar;[sound:VerbSND_612.mp3];politicize;Don't recognize word;;
+Incorporar;[sound:VerbSND_613.mp3];incorporate, merge, (add);Juntar a algo;;
+Poupar;[sound:VerbSND_614.mp3];save, (spare);Economizar;Reduzir;
+Derrubar;[sound:VerbSND_615.mp3];knock down, put down, (throw);Fazer cair;Destituir;
+Fingir;[sound:VerbSND_616.mp3];pretend, (assume);Fazer de conta;;
+Opor;[sound:VerbSND_617.mp3];oppose, (offer);Colocar diante de;Colocar contra, como adversários;Colocar objecção
+Sobrar;[sound:VerbSND_618.mp3];remain, (leave);Restar;;
+Rodear;[sound:VerbSND_619.mp3];encircle, surround, (ring);Pôr em volta;Envolver;
+Desligar;[sound:VerbSND_620.mp3];disconnect, hang up, switch off, turn off, (break);No definition found;;
+Desculpar;[sound:VerbSND_621.mp3];excuse, forgive, apologize, pardon, condone;Perdoar;;
+Ocultar;[sound:VerbSND_622.mp3];hide, conceal, (cover);Esconder;;
+Plantar;[sound:VerbSND_623.mp3];plant, (sow);Pôr na terra para crescer;Enfiar verticalmente na terra;
+Inscrever;[sound:VerbSND_624.mp3];inscribe, register, (enroll);Inscrever o nome de alguém numa lista;Gravar;
+Detectar;[sound:VerbSND_625.mp3];detect;Descobrir;;
+Fumar;[sound:VerbSND_626.mp3];smoke, (fume);Aspirar o fumo de algo;Secar um alimento ao fumo;
+Administrar;[sound:VerbSND_627.mp3];administer, manage, (govern);Gerir;Dar a tomar;
+Gozar;[sound:VerbSND_628.mp3];enjoy, tease, (come);Divertir-se;;
+Educar;[sound:VerbSND_629.mp3];educate, bring up, (form);Instruir alguém;;
+Comandar;[sound:VerbSND_630.mp3];command, (head);Dirigir;;
+Argumentar;[sound:VerbSND_631.mp3];argue, (plan);Defender ou atacar com razões;;
+Perseguir;[sound:VerbSND_632.mp3];(follow);Ir ou correr atrás de;Tratar mal, atormentar;
+Implantar;[sound:VerbSND_633.mp3];implant, (introduce);Estabelecer, fixar;;
+Concorrer;[sound:VerbSND_634.mp3];compete, (devote);Participar numa competição;Candidatar-se a;
+Prosseguir;[sound:VerbSND_635.mp3];continue, proceed, (resume);Continuar, seguir;;
+Desviar;[sound:VerbSND_636.mp3];divert, (avert);Mudar a direcção de;Obrigar o piloto a mudar de rota;Mudar o sentido de
+Programar;[sound:VerbSND_637.mp3];program, (move);Fazer o programa de;Planificar;
+Arrancar;[sound:VerbSND_638.mp3];(get);Tirar com força, desenraizar;Separar;Obter à força
+Respirar;[sound:VerbSND_639.mp3];breathe, (show);Fazer entrar ar;;
+Proceder;[sound:VerbSND_640.mp3];conduct, proceed, behave, (come);Agir, actuar;;
+Finalizar;[sound:VerbSND_641.mp3];end, finalize, (finish);Don't recognize word;;
+Colar;[sound:VerbSND_642.mp3];stick, glue, cheat, paste, (tape);Ligar com cola;;
+Salientar;[sound:VerbSND_643.mp3];point, stress, (show);Dar destaque;;
+Largar;[sound:VerbSND_644.mp3];release, drop, let go, (tell);Soltar;Abandonar, deixar;
+Atrasar;[sound:VerbSND_645.mp3];delay, retard, put back, hold back, (pass);Causar atraso;Retardar;
+Expulsar;[sound:VerbSND_646.mp3];expel, deport, (clear);Afastar alguém à força;;
+Absorver;[sound:VerbSND_647.mp3];absorb, (drink);Embeber-se de líquido;Assimilar comida ou bebida;Entusiasmar-se muito por qq coisa
+Discordar;[sound:VerbSND_648.mp3];(disagree);Não estar de acordo;;
+Retratar;[sound:VerbSND_649.mp3];depict, portray, (show);Desenhar ou pintar um retrato;Fotografar;Descrever com precisão
+Apurar;[sound:VerbSND_650.mp3];perfect, find out, (get);Descobrir;Tornar mais apetitoso;Seleccionar
+Compensar;[sound:VerbSND_651.mp3];compensate, (pay);Indemnizar;;
+Punir;[sound:VerbSND_652.mp3];punish, (discipline);Castigar;;
+Contatar;[sound:VerbSND_653.mp3];contact, (look);Don't recognize word;;
+Pecar;[sound:VerbSND_654.mp3];sin, (haggle);Cometer pecados;;
+Competir;[sound:VerbSND_655.mp3];compete, (run);Fazer concorrência;Ser das atribuições de, caber a;
+Prevenir;[sound:VerbSND_656.mp3];prevent, (prepare);Informar com antecedência, avisar;Tomar medidas para evitar um mal;
+Bloquear;[sound:VerbSND_657.mp3];block, (barricade);Impedir a passagem;;
+Assinalar;[sound:VerbSND_658.mp3];mark, distinguish, point out, (brand);Pôr um sinal;Indicar;
+Denominar;[sound:VerbSND_659.mp3];name, (call);Don't recognize word;;
+Apropriar;[sound:VerbSND_660.mp3];appropriate, (find);Adaptar;;
+Beijar;[sound:VerbSND_661.mp3];kiss, (buss);Expressar amor tocando com os lábios;;
+Travar;[sound:VerbSND_662.mp3];lock, brake, (bring);Iniciar, ter;;
+Romper;[sound:VerbSND_663.mp3];break, (tear);Cortar relações com alguém;;
+Pressionar;[sound:VerbSND_664.mp3];press, (pressure);Don't recognize word;;
+Interromper;[sound:VerbSND_665.mp3];interrupt, (stop);Fazer parar algo;Cortar a palavra a alguém;
+Livrar;[sound:VerbSND_666.mp3];release, liberate, (save);Tornar livre, libertar;Salvar de dificuldade ou perigo;
+Adoptar;[sound:VerbSND_667.mp3];to adopt;Perfilhar uma criança;Aprovar;
+Piorar;[sound:VerbSND_668.mp3];worsen, (might);Tornar-se pior, agravar-se;;
+Cozinhar;[sound:VerbSND_669.mp3];cook, (do);Preparar a comida;;
+Assassinar;[sound:VerbSND_670.mp3];kill, assassinate, murder, (trim);Matar;Destruir;
+Descansar;[sound:VerbSND_671.mp3];rest, (lean);Repousar;;
+Sublinhar;[sound:VerbSND_672.mp3];underline, emphasize, stress, underscore, (score);Don't recognize word;;
+Rodar;[sound:VerbSND_673.mp3];turn, (do);Mover-se em torno de um eixo;;
+Fabricar;[sound:VerbSND_674.mp3];fabricate, manufacture, (make);Produzir;;
+Arrepender;[sound:VerbSND_675.mp3];repent;Don't recognize word;;
+Colher;[sound:VerbSND_676.mp3];pick, spoon, (gather);Apanhar;Conseguir, ganhar;
+Deslocar;[sound:VerbSND_677.mp3];dislocate, move, (remove);Mudar de um lugar para outro;Desarticular;
+Violar;[sound:VerbSND_678.mp3];violate, (break);Agredir sexualmente alguém;Tratar um lugar ou coisa com desrespeito;Transgredir
+Encaixar;[sound:VerbSND_679.mp3];fit, (hook);Fazer entrar um objecto noutro;Inserir entre pessoas ou coisas;
+Restringir;[sound:VerbSND_680.mp3];restrict, (restrain);Limitar;;
+Assustar;[sound:VerbSND_681.mp3];scare, frighten, startle, (alarm);Causar medo a;;
+Passear;[sound:VerbSND_682.mp3];(walk);Andar ao ar livre;;
+Musicar;[sound:VerbSND_683.mp3];to make music;Don't recognize word;;
+Ofender;[sound:VerbSND_684.mp3];offend, (insult);Magoar, insultar alguém;;
+Elogiar;[sound:VerbSND_685.mp3];praise, (commend);Dizer bem de;;
+Guiar;[sound:VerbSND_686.mp3];drive, guide, (lead);Conduzir, levar;Conduzir um veículo;Aconselhar
+Detalhar;[sound:VerbSND_687.mp3];(detail);Don't recognize word;;
+Atrapalhar;[sound:VerbSND_688.mp3];confuse, disturb, mix up, (rattle);Causar estorvo;Causar embaraço;
+Configurar;[sound:VerbSND_689.mp3];configure, (represent);Don't recognize word;;
+Brigar;[sound:VerbSND_690.mp3];quarrel, fight, (wrestle);Lutar, guerrear;;
+Deparar;[sound:VerbSND_691.mp3];(present);Encontrar subitamente;;
+Derivar;[sound:VerbSND_692.mp3];derive, (drift);Don't recognize word;;
+Aderir;[sound:VerbSND_693.mp3];adhere, stick, (accept);Colar;Ligar-se a, abraçar uma causa;
+Concretizar;[sound:VerbSND_694.mp3];(achieve);Realizar;;
+Abranger;[sound:VerbSND_695.mp3];include, reach, comprise, comprehend, (cover);Abarcar, incluir;;
+Historiar;[sound:VerbSND_696.mp3];(recount);Don't recognize word;;
+Manipular;[sound:VerbSND_697.mp3];manipulate, handle, (prepare);Usar, preparar com as mãos;Influenciar;
+Arrastar;[sound:VerbSND_698.mp3];drag, pull, (open);Roçar pelo chão;Puxar com dificuldade;Levar alguém à força
+Saltar;[sound:VerbSND_699.mp3];jump, leap, skip, (spring);Elevar-se do solo;Atirar-se para baixo;
+Aprofundar;[sound:VerbSND_700.mp3];deepen, (probe);Estudar a fundo;Tornar mais fundo;
+Direcionar;[sound:VerbSND_701.mp3];(address);Don't recognize word;;
+Derrotar;[sound:VerbSND_702.mp3];defeat, beat, (kill);Vencer;Bater;
+Doar;[sound:VerbSND_703.mp3];donate, (give);Dar algo oficialmente;;
+Descartar;[sound:VerbSND_704.mp3];discard, (reject);Don't recognize word;;
+Consagrar;[sound:VerbSND_705.mp3];consecrate, establish, devote, dedicate, (bless);Dedicar;Tornar sagrado;
+Inaugurar;[sound:VerbSND_706.mp3];inaugurate, open, (begin);Apresentar ou abrir algo pela primeira vez;;
+Equilibrar;[sound:VerbSND_707.mp3];balance, (even);Tornar estável;Repartir bem;
+Comportar;[sound:VerbSND_708.mp3];bear, admit, (have);Conter em si;;
+Pronunciar;[sound:VerbSND_709.mp3];pronounce, (make);Articular, dizer;;
+Conservar;[sound:VerbSND_710.mp3];preserve, keep, maintain, retain, conserve, (reserve);Guardar;Manter em bom estado;Manter presente
+Ditar;[sound:VerbSND_711.mp3];dictate, (impose);Ler em voz alta o que outros escrevem;Dizer o que os outros devem fazer;
+Depositar;[sound:VerbSND_712.mp3];deposit, place, (cast);Dar para guardar;;
+Responsabilizar;[sound:VerbSND_713.mp3];(resent);Don't recognize word;;
+Impressionar;[sound:VerbSND_714.mp3];impress, (affect);Provocar admiração, respeito;Perturbar, comover;
+Exagerar;[sound:VerbSND_715.mp3];exaggerate, (enhance);Fazer algo com excesso;;
+Ilustrar;[sound:VerbSND_716.mp3];illustrate, (think);Decorar com desenhos, imagens;Explicar com exemplos;
+Botar;[sound:VerbSND_717.mp3];put, throw, (find);Don't recognize word;;
+Aliar;[sound:VerbSND_718.mp3];ally, (coax);Unir, ligar, associar;;
+Generalizar;[sound:VerbSND_719.mp3];generalize, (spread);Vulgarizar;Aplicar uma conclusão a muitas coisas;
+Intitular;[sound:VerbSND_720.mp3];(address);Dar título, nome;;
+Brilhar;[sound:VerbSND_721.mp3];shine, (burn);Cintilar, reluzir;Distinguir-se;
+Ativar;[sound:VerbSND_722.mp3];activate, hasten, (stimulate);Don't recognize word;;
+Sagrar;[sound:VerbSND_723.mp3];(bless);Don't recognize word;;
+Encantar;[sound:VerbSND_724.mp3];(conjure);Dar grande prazer;Submeter a um poder mágico;
+Qualificar;[sound:VerbSND_725.mp3];qualify, (estimate);Caracterizar algo ou alguém;Avaliar, apreciar;
+Captar;[sound:VerbSND_726.mp3];win, catch, collect, pick up, (capture);Receber;Entender;
+Enquadrar;[sound:VerbSND_727.mp3];frame, (fit);Meter numa moldura;Integrar num meio ou contexto;
+Acender;[sound:VerbSND_728.mp3];light, ignite, (fire);Pôr fogo;Pôr em funcionamento, ligar;Excitar, estimular
+Cultivar;[sound:VerbSND_729.mp3];cultivate, (grow);Plantar;Desenvolver;
+Examinar;[sound:VerbSND_730.mp3];examine, (look);Estudar;Observar;
+Instituir;[sound:VerbSND_731.mp3];institute, found, (set);Criar, estabelecer;;
+Apelar;[sound:VerbSND_732.mp3];appeal, (call);Don't recognize word;;
+Movimentar;[sound:VerbSND_733.mp3];move, (stir);Mover, deslocar;;
+Agredir;[sound:VerbSND_734.mp3];attack, (assemble);Atacar, bater;Atacar com palavras;
+Fotografar;[sound:VerbSND_735.mp3];photograph, (emote);Reproduzir por fotografia;;
+Cercar;[sound:VerbSND_736.mp3];surround, (enclose);Rodear com muro;Rodear com tropas;Perseguir por todos os lados
+Potenciar;[sound:VerbSND_737.mp3];(power);Don't recognize word;;
+Sumir;[sound:VerbSND_738.mp3];disappear, (fade);Don't recognize word;;
+Interferir;[sound:VerbSND_739.mp3];(clog);Intervir;;
+Aceder;[sound:VerbSND_740.mp3];(conform);Dar o consentimento;Ter acesso a;
+Vincular;[sound:VerbSND_741.mp3];link, tie, entail, (attach);Don't recognize word;;
+Resgatar;[sound:VerbSND_742.mp3];rescue, redeem, (recover);Don't recognize word;;
+Remeter;[sound:VerbSND_743.mp3];send, remit, (remove);Enviar, mandar;;
+Regular;[sound:VerbSND_744.mp3];regulate, (work);Estabelecer regras;Dirigir;Acertar, ajustar
+Consolidar;[sound:VerbSND_745.mp3];consolidate, (brace);Tornar mais sólido, fortalecer;Tornar duradouro;
+Disparar;[sound:VerbSND_746.mp3];fire, shoot, discharge, bolt, go off, (pop);Dar tiro(s);;
+Empregar;[sound:VerbSND_747.mp3];employ, use, (put);Dar trabalho a;Utilizar;
+Habituar;[sound:VerbSND_748.mp3];habituate, (arrange);Fazer tomar o hábito;;
+Dificultar;[sound:VerbSND_749.mp3];complicate, (embarrass);Complicar;;
+Extinguir;[sound:VerbSND_750.mp3];extinguish, put out, (die);Apagar;Fazer desaparecer;
+Antecipar;[sound:VerbSND_751.mp3];anticipate, (forestall);Adiantar um acontecimento;Anunciar antes;
+Empurrar;[sound:VerbSND_752.mp3];push, (jerk);Fazer um impulso para mover algo ou alguém;;
+Originar;[sound:VerbSND_753.mp3];begin, start, originate, (make);Dar origem a;;
+Calar;[sound:VerbSND_754.mp3];silence, (hush);Não deixar falar;Reprimir;
+Falecer;[sound:VerbSND_755.mp3];die, (pass);Morrer;;
+Armazenar;[sound:VerbSND_756.mp3];store, stock, (project);Recolher;Conservar;Guardar na memória do computador
+Filmar;[sound:VerbSND_757.mp3];film, shoot, (maintain);Fazer um filme;;
+Cancelar;[sound:VerbSND_758.mp3];cancel, annul, (molest);Anular;Fechar;
+Aquecer;[sound:VerbSND_759.mp3];heat, warm, (bask);Tornar quente;Exaltar;
+Estragar;[sound:VerbSND_760.mp3];ruin, spoil, (damage);Danificar;Prejudicar;Mimar demasiado
+Aliviar;[sound:VerbSND_761.mp3];relieve, alleviate, lighten, (diminish);Tornar mais leve;Atenuar o sofrimento;
+Repassar;[sound:VerbSND_762.mp3];(refuse);Don't recognize word;;
+Estrear;[sound:VerbSND_763.mp3];(begin);Ser exibido pela primeira vez;;
+Extrair;[sound:VerbSND_764.mp3];extract, (withdraw);Tirar, arrancar;Retirar;
+Formular;[sound:VerbSND_765.mp3];formulate, (state);Expressar, enunciar;;
+Soar;[sound:VerbSND_766.mp3];(play);Emitir som;;
+Condicionar;[sound:VerbSND_767.mp3];(condition);Pôr condições;Determinar, influenciar;
+Agarrar;[sound:VerbSND_768.mp3];seize, grasp;Apanhar e segurar na mão;Aproveitar;
+Desfrutar;[sound:VerbSND_769.mp3];enjoy;No definition found;;
+Girar;[sound:VerbSND_770.mp3];turn, spin, (wander);Andar à roda;;
+Auxiliar;[sound:VerbSND_771.mp3];help, assist, (support);Ajudar, dar apoio;;
+Traã‡ar;[sound:VerbSND_772.mp3];draw, trace, (describe);Don't recognize word;;
+Mergulhar;[sound:VerbSND_773.mp3];dive, plunge, (dip);Afundar-se;Saltar para dentro de água;
+Desconfiar;[sound:VerbSND_774.mp3];distrust, (write);No definition found;;
+Privilegiar;[sound:VerbSND_775.mp3];privilege, (process);Favorecer, beneficiar;;
+Proferir;[sound:VerbSND_776.mp3];utter, pronounce, (say);Dizer em voz alta;;
+Chocar;[sound:VerbSND_777.mp3];hatch, shock, incubate, (crash);Escandalizar;Comover;
+Irritar;[sound:VerbSND_778.mp3];(anger);Enervar, fazer zangar;Provocar ligeira inflamação;
+Entrevistar;[sound:VerbSND_779.mp3];interview;Fazer perguntas a;;
+Esforã‡ar;[sound:VerbSND_780.mp3];(strengthen);Don't recognize word;;
+Expandir;[sound:VerbSND_781.mp3];expand, (spread);Alargar;Manifestar;
+Interagir;[sound:VerbSND_782.mp3];(interact);Don't recognize word;;
+Batizar;[sound:VerbSND_783.mp3];baptize, (dilute);Don't recognize word;;
+Abusar;[sound:VerbSND_784.mp3];abuse, (cease);Usar mal ou em excesso;Aproveitar-se de alguém;Enganar, trair a confiança
+Desfazer;[sound:VerbSND_785.mp3];undo, (break);Destruir o que estava feito, desmanchar;;
+Capturar;[sound:VerbSND_786.mp3];capture, seize, (catch);Prender;;
+Ajustar;[sound:VerbSND_787.mp3];adjust, settle, fit, regulate, contract, agree on, (close);Acertar;Combinar;Afinar
+Visualizar;[sound:VerbSND_788.mp3];visualize;Don't recognize word;;
+Pular;[sound:VerbSND_789.mp3];jump, (celebrate);Dar saltos;;
+Protestar;[sound:VerbSND_790.mp3];protest, (challenge);Manifestar-se contra, opor-se;;
+Intervir;[sound:VerbSND_791.mp3];intervene, (part);Participar;Tomar a palavra;
+Navegar;[sound:VerbSND_792.mp3];navigate, sail, (demand);Viajar na água, ar ou espaço;Percorrer a internet;
+Adiar;[sound:VerbSND_793.mp3];postpone, adjourn, waive, put off, (direct);Mudar um compromisso para mais tarde;;
+Prolongar;[sound:VerbSND_794.mp3];prolong, lengthen, extend, (continue);Aumentar a duração de algo;;
+Desprezar;[sound:VerbSND_795.mp3];despise, disdain, (forget);Considerar alguém indigno;Não fazer caso de;
+Enriquecer;[sound:VerbSND_796.mp3];enrich, (roll);Ficar rico;;
+Assentar;[sound:VerbSND_797.mp3];place, seat, settle, (lay);Pousar em;;
+Coordenar;[sound:VerbSND_798.mp3];coordinate, (transcribe);Organizar;;
+Jantar;[sound:VerbSND_799.mp3];(play);Comer ao anoitecer;;
+Engolir;[sound:VerbSND_800.mp3];swallow, (buy);Fazer passar da boca para o estômago;Aceitar e calar;
+Demitir;[sound:VerbSND_801.mp3];dismiss, (fire);Despedir alguém das suas funções;;
+Confrontar;[sound:VerbSND_802.mp3];compare, confront, (muse);Pôr frente a frente;Comparar;
+Jurar;[sound:VerbSND_803.mp3];swear, (promise);Prometer solenemente;Afirmar com certeza;
+Desafiar;[sound:VerbSND_804.mp3];challenge, defy, (dare);Aliciar alguém a fazer algo;Levar alguém a fazer algo difícil;Não ter medo
+Secar;[sound:VerbSND_805.mp3];dry, wither, (wipe);Perder a água;Murchar;Deixar de correr
+Narrar;[sound:VerbSND_806.mp3];narrate, (tell);Contar;;
+Fundamentar;[sound:VerbSND_807.mp3];(found);Documentar, provar;;
+Estruturar;[sound:VerbSND_808.mp3];structure, (do);Organizar;;
+Relaxar;[sound:VerbSND_809.mp3];relax, (ease);Diminuir a tensão;;
+Complementar;[sound:VerbSND_810.mp3];supplement, (complement);Completar;;
+Perfazer;[sound:VerbSND_811.mp3];(complete);Don't recognize word;;
+Alargar;[sound:VerbSND_812.mp3];widen, extend, broaden, (expand);Tornar mais largo;Desenvolver, tornar maior;Prolongar
+Enfatizar;[sound:VerbSND_813.mp3];emphasize, stress, (trim);Don't recognize word;;
+Alugar;[sound:VerbSND_814.mp3];rent, hire, (let);Adquirir algo temporariamente;Ceder temporariamente em troca de pagamento;
+Mobilizar;[sound:VerbSND_815.mp3];mobilize, (move);Pôr em acção;Convocar;
+Ousar;[sound:VerbSND_816.mp3];dare, (attempt);Ter a coragem de;;
+Invocar;[sound:VerbSND_817.mp3];invoke, (provoke);Don't recognize word;;
+Relembrar;[sound:VerbSND_818.mp3];(remember);Don't recognize word;;
+Erguer;[sound:VerbSND_819.mp3];raise, (build);Levantar;Elevar;Construir
+Posicionar;[sound:VerbSND_820.mp3];position;Don't recognize word;;
+Agravar;[sound:VerbSND_821.mp3];aggravate, (exacerbate);Tornar mais grave, mais difícil;Piorar;
+Explodir;[sound:VerbSND_822.mp3];explode, (go);Rebentar;Manifestar-se de forma súbita e ruidosa;
+Firmar;[sound:VerbSND_823.mp3];secure, base, sign, fix, (set);Don't recognize word;;
+Anular;[sound:VerbSND_824.mp3];cancel, annul, (defeat);Cancelar;Destruir;
+Honrar;[sound:VerbSND_825.mp3];(favor);Respeitar;;
+Especificar;[sound:VerbSND_826.mp3];specify, (assign);Determinar com precisão;;
+Ingerir;[sound:VerbSND_827.mp3];ingest, swallow, (begin);Engolir;;
+Presidir;[sound:VerbSND_828.mp3];preside, (hold);Dirigir;;
+Disfarã‡ar;[sound:VerbSND_829.mp3];disguise, (pretend);Don't recognize word;;
+Agregar;[sound:VerbSND_830.mp3];(add);Don't recognize word;;
+Reger;[sound:VerbSND_831.mp3];rule, conduct, govern, (run);Governar;Dirigir uma orquestra;
+Diagnosticar;[sound:VerbSND_832.mp3];diagnose;Don't recognize word;;
+Policiar;[sound:VerbSND_833.mp3];police, (control);Don't recognize word;;
+Contaminar;[sound:VerbSND_834.mp3];contaminate, infect, (relate);Transmitir doença;Poluir;
+Enterrar;[sound:VerbSND_835.mp3];bury, (close);Pôr debaixo da terra;Esquecer;
+Proclamar;[sound:VerbSND_836.mp3];proclaim, (announce);Anunciar em público;Afirmar com vigor;
+Comparecer;[sound:VerbSND_837.mp3];appear, attend, (make);Apresentar-se pessoalmente;;
+Acentuar;[sound:VerbSND_838.mp3];emphasize, stress, accentuate, accent, (move);Colocar acentos nas palavras escritas;Pronunciar com mais intensidade ou força;Dar ênfase
+Estimar;[sound:VerbSND_839.mp3];appreciate, (count);Ter estima por;Calcular;
+Machucar;[sound:VerbSND_840.mp3];hurt, bruise, (injure);Don't recognize word;;
+Figurar;[sound:VerbSND_841.mp3];(appear);Fazer parte de, constar;;
+Tarar;[sound:VerbSND_842.mp3];be smitten with;Don't recognize word;;
+Pisar;[sound:VerbSND_843.mp3];step on, tread on, (step);Andar em cima de, pôr o pé em cima de;Esmagar com o pé;
+Minimizar;[sound:VerbSND_844.mp3];minimize, play down, (understate);Don't recognize word;;
+Ressuscitar;[sound:VerbSND_845.mp3];resuscitate, (revive);Fazer voltar à vida;;
+Fluir;[sound:VerbSND_846.mp3];flow, pour, (run);Correr, deslizar;Sair com facilidade;
+Chover;[sound:VerbSND_847.mp3];rain, (pour);Cair água em gotas do céu;Vir em abundância;
+Alinhar;[sound:VerbSND_848.mp3];align, (line);Colocar em linha recta;;
+Engravidar;[sound:VerbSND_849.mp3];get pregnant;Tornar grávida;;
+Centrar;[sound:VerbSND_850.mp3];center, (close);Don't recognize word;;
+Despedir;[sound:VerbSND_851.mp3];dismiss, sack, (remove);Mandar embora;;
+Usufruir;[sound:VerbSND_852.mp3];(enjoy);Gozar de, ter;Tirar proveito de;
+Dobrar;[sound:VerbSND_853.mp3];fold, bend, double, (turn);Soar;;
+Dotar;[sound:VerbSND_854.mp3];endow, (gift);Don't recognize word;;
+Parir;[sound:VerbSND_855.mp3];give birth to;Dar à luz;;
+Desencadear;[sound:VerbSND_856.mp3];unleash, (break);Dar origem a;;
+Multiplicar;[sound:VerbSND_857.mp3];multiply, (increase);Fazer uma multiplicação;Aumentar e diversificar;
+Emagrecer;[sound:VerbSND_858.mp3];(pour);Perder peso e gordura;;
+Humilhar;[sound:VerbSND_859.mp3];humiliate, humble, (lower);Envergonhar, rebaixar;;
+Colorir;[sound:VerbSND_860.mp3];color, (illuminate);Dar cor;;
+Prevalecer;[sound:VerbSND_861.mp3];prevail, (overwhelm);Don't recognize word;;
+Chatear;[sound:VerbSND_862.mp3];annoy, bother, upset, bore, pester, (examine);Aborrecer;;
+Persistir;[sound:VerbSND_863.mp3];persist, (persevere);Insistir, teimar;Continuar, durar;
+Contestar;[sound:VerbSND_864.mp3];contest, challenge, dispute, (question);Pôr em questão, refutar;;
+Induzir;[sound:VerbSND_865.mp3];induce, (spur);No definition found;;
+Reter;[sound:VerbSND_866.mp3];retain, detain, hold back, keep, hold, keep back, (stop);Impedir alguém de sair;Segurar alguém ou algo com firmeza;Lembrar-se de
+Estranhar;[sound:VerbSND_867.mp3];(wonder);Achar pouco natural;Não se adaptar;
+Reverter;[sound:VerbSND_868.mp3];return, revert, (face);Don't recognize word;;
+Digitar;[sound:VerbSND_869.mp3];key in, type in;Don't recognize word;;
+Difundir;[sound:VerbSND_870.mp3];disseminate, spread, broadcast, propagate, diffuse, (send);Dar a conhecer;;
+Ingressar;[sound:VerbSND_871.mp3];(enter);Entrar;;
+Evidenciar;[sound:VerbSND_872.mp3];evidence, (show);Tornar claro;;
+Decorar;[sound:VerbSND_873.mp3];learn by heart, (decorate);Enfeitar, tornar mais bonito;Aprender de cor;
+Herdar;[sound:VerbSND_874.mp3];inherit, (doubt);Receber após a morte de alguém;;
+Seriar;[sound:VerbSND_875.mp3];to arrange in a series;Don't recognize word;;
+Seriar;[sound:VerbSND_876.mp3];to serialize;Don't recognize word;;
+Imitar;[sound:VerbSND_877.mp3];copy, imitate, (duplicate);Copiar o mais fielmente possível;Falsificar;
+Embarcar;[sound:VerbSND_878.mp3];ship, embark, (absorb);Transportar dentro de um barco, avião, comboio;;
+Realã‡ar;[sound:VerbSND_879.mp3];(highlight);Don't recognize word;;
+Renunciar;[sound:VerbSND_880.mp3];resign, renounce, (depart);Desistir de, abdicar;;
+Exprimir;[sound:VerbSND_881.mp3];express, (speak);Manifestar por palavras ou gestos;;
+Empenhar;[sound:VerbSND_882.mp3];pawn, (engage);Dar como penhor;;
+Equipar;[sound:VerbSND_883.mp3];equip, (prepare);Fornecer os meios necessários a uma actividade;;
+Apreender;[sound:VerbSND_884.mp3];apprehend, arrest, seize, (put);Capturar algo ou alguém;Captar, compreender;
+Reivindicar;[sound:VerbSND_885.mp3];claim, reclaim, (demand);Exigir, reclamar;Assumir a responsabilidade por;
+Acalmar;[sound:VerbSND_886.mp3];calm, (abate);Tornar mais calmo;;
+Apetecer;[sound:VerbSND_887.mp3];desire, (lay);Ter vontade de;;
+Comercializar;[sound:VerbSND_888.mp3];commercialize, (negotiate);Don't recognize word;;
+Testemunhar;[sound:VerbSND_889.mp3];testify, witness, (demonstrate);Presenciar, ver;Revelar, expressar;
+Aperceber;[sound:VerbSND_890.mp3];(prepare);Dar-se conta de;;
+Encarregar;[sound:VerbSND_891.mp3];(charge);Atribuir uma tarefa a alguém;;
+Penetrar;[sound:VerbSND_892.mp3];penetrate, (understand);Entrar num local;;
+Aguar;[sound:VerbSND_893.mp3];water, (irrigate);Don't recognize word;;
+Amarrar;[sound:VerbSND_894.mp3];tie, moor, (knot);Prender;;
+Restaurar;[sound:VerbSND_895.mp3];restore, (recover);Fazer existir de novo;Recuperar, reparar;
+Abrigar;[sound:VerbSND_896.mp3];protect, shelter;Dar guarida;Proteger;
+Cheirar;[sound:VerbSND_897.mp3];smell, (breathe);Aspirar o cheiro de;;
+Emocionar;[sound:VerbSND_898.mp3];move, thrill, (pack);Comover;;
+Mamar;[sound:VerbSND_899.mp3];suck, (get);Sugar;;
+Sacrificar;[sound:VerbSND_900.mp3];sacrifice, jolt, (offer);Renunciar a algo em benefício de;;
+Aposentar;[sound:VerbSND_901.mp3];retire;Don't recognize word;;
+Vivenciar;[sound:VerbSND_902.mp3];(live);Don't recognize word;;
+Falir;[sound:VerbSND_903.mp3];fail, go bankrupt, (break);Não conseguir pagar as dívidas;;
+Decepcionar;[sound:VerbSND_904.mp3];disillusion, (resolve);Não ser aquilo que se esperava;;
+Abalar;[sound:VerbSND_905.mp3];shake, affect, jolt, (toss);Fazer tremer;Enfraquecer;Impressionar fortemente
+Homenagear;[sound:VerbSND_906.mp3];to pay homage to, honor;Don't recognize word;;
+Infectar;[sound:VerbSND_907.mp3];infect, (inoculate);Contaminar;;
+Envelhecer;[sound:VerbSND_908.mp3];age;Tornar velho;Amadurecer;Dar o aspecto de velho
+Enrolar;[sound:VerbSND_909.mp3];roll up, (con);Rolar uma coisa à volta de si;Rolar uma coisa à volta de outra;
+Apenar;[sound:VerbSND_910.mp3];to punish;Don't recognize word;;
+Magoar;[sound:VerbSND_911.mp3];hurt, (weigh);Fazer doer fisicamente, ferir;Ofender;
+Solucionar;[sound:VerbSND_912.mp3];decide, resolve, (solve);Arranjar solução, resolver;;
+Ponderar;[sound:VerbSND_913.mp3];(consider);Estudar, considerar;;
+Impulsionar;[sound:VerbSND_914.mp3];impel, (drive);Don't recognize word;;
+Cessar;[sound:VerbSND_915.mp3];cease, (leave);Acabar;;
+Frisar;[sound:VerbSND_916.mp3];(emphasize);Salientar;;
+Tolerar;[sound:VerbSND_917.mp3];tolerate, (have);Suportar;;
+Recuar;[sound:VerbSND_918.mp3];retreat, recede, (kick);Fazer ir para trás;;
+Transitar;[sound:VerbSND_919.mp3];(change);Circular;Passar;
+Medicar;[sound:VerbSND_920.mp3];medicate, (treat);Receitar medicamentos;;
+Veicular;[sound:VerbSND_921.mp3];(distribute);Don't recognize word;;
+Consolar;[sound:VerbSND_922.mp3];console, comfort, (marry);Aliviar a dor de alguém;;
+Planear;[sound:VerbSND_923.mp3];(plan);Organizar, programar;;
+Morder;[sound:VerbSND_924.mp3];bite, (torment);Cortar com os dentes;;
+Enfiar;[sound:VerbSND_925.mp3];thread, (put);Fazer passar um fio por;Pôr;
+Regulamentar;[sound:VerbSND_926.mp3];(settle);Don't recognize word;;
+Queixar;[sound:VerbSND_927.mp3];(complain);Don't recognize word;;
+Telefonar;[sound:VerbSND_928.mp3];phone, (call);Comunicar por telefone;;
+Suscitar;[sound:VerbSND_929.mp3];(make);Provocar, causar;;
+Frustrar;[sound:VerbSND_930.mp3];frustrate, (disappoint);Não responder às expectativas;;
+Diversificar;[sound:VerbSND_931.mp3];diversify, vary, (entertain);Don't recognize word;;
+Premiar;[sound:VerbSND_932.mp3];reward, (award);Dar prémio a alguém ou algo;;
+Derramar;[sound:VerbSND_933.mp3];shed, pour out, (drop);Entornar;Lançar, verter;Espalhar
+Anotar;[sound:VerbSND_934.mp3];record, annotate, (note);Tomar nota por escrito;Inserir uma nota ou comentário;
+Esgotar;[sound:VerbSND_935.mp3];drain, use up, (exhaust);Gastar até ao fim;Tratar a fundo;
+Viciar;[sound:VerbSND_936.mp3];falsify, vitiate, (watch);Tornar alguém dependente de algo;;
+Distanciar;[sound:VerbSND_937.mp3];distance, (mark);Criar intervalo;;
+Desesperar;[sound:VerbSND_938.mp3];despair, (infuriate);Perder a esperança;;
+Datar;[sound:VerbSND_939.mp3];date, (predate);No definition found;;
+Ministrar;[sound:VerbSND_940.mp3];administer, give, minister, (provide);Don't recognize word;;
+Louvar;[sound:VerbSND_941.mp3];(praise);Fazer elogios;;
+Articular;[sound:VerbSND_942.mp3];(join);Exprimir o pensamento;Pronunciar;
+Caã‡ar;[sound:VerbSND_943.mp3];hunt, seek, shoot, (pursue);Don't recognize word;;
+Estacionar;[sound:VerbSND_944.mp3];park;Parar, não se desenvolver;Arrumar (veículo);
+Emergir;[sound:VerbSND_945.mp3];emerge, (appear);Vir ao de cima;;
+Decretar;[sound:VerbSND_946.mp3];decree, (determine);Ordenar por lei;;
+Adivinhar;[sound:VerbSND_947.mp3];guess, foretell, (direct);Prever;Descobrir;
+Conformar;[sound:VerbSND_948.mp3];(form);Aceitar algo, resignar-se;;
+Engordar;[sound:VerbSND_949.mp3];fatten, (furnish);Fazer ficar mais gordo;;
+Rechear;[sound:VerbSND_950.mp3];fill, stuff, (gather);Encher com;;
+Detestar;[sound:VerbSND_951.mp3];detest, hate, (loathe);Odiar;;
+Moldar;[sound:VerbSND_952.mp3];cast, shape, (block);Fundir e verter no molde;Adaptar;
+Certificar;[sound:VerbSND_953.mp3];certify, (confirm);Garantir, dar como certo;;
+Presenciar;[sound:VerbSND_954.mp3];(witness);Assistir a;;
+Coletar;[sound:VerbSND_955.mp3];collect, gather, (roar);Don't recognize word;;
+Cozer;[sound:VerbSND_956.mp3];cook, (do);Cozinhar ao lume;;
+Almoã‡ar;[sound:VerbSND_957.mp3];(lunch);Don't recognize word;;
+Tecer;[sound:VerbSND_958.mp3];weave, twist, (cause);Fabricar um tecido;Tramar;
+Danificar;[sound:VerbSND_959.mp3];damage, (shatter);Estragar;;
+Hospedar;[sound:VerbSND_960.mp3];lodge, (stay);Alojar em sua casa;;
+Atentar;[sound:VerbSND_961.mp3];(try);Don't recognize word;;
+Vedar;[sound:VerbSND_962.mp3];prohibit, (block);Tapar;Fechar;Não deixar passar
+Pressupor;[sound:VerbSND_963.mp3];presuppose, (assume);Supor, imaginar;Dar a entender;
+Simplificar;[sound:VerbSND_964.mp3];simplify, (reduce);Tornar menos complicado;;
+Principiar;[sound:VerbSND_965.mp3];begin, initiate, (curtail);Começar;;
+Revoltar;[sound:VerbSND_966.mp3];revolt, rebel, (run);Causar indignação;;
+Rasgar;[sound:VerbSND_967.mp3];tear, rip, (split);Romper-se;;
+Contrair;[sound:VerbSND_968.mp3];contract, (catch);Apertar, endurecer;Assinar um contrato;Adquirir
+Encostar;[sound:VerbSND_969.mp3];lean, (close);Apoiar a;Colocar ao lado;Fechar
+Nadar;[sound:VerbSND_970.mp3];swim, (tell);Deslocar-se na água;Estar mergulhado em líquido;
+Dialogar;[sound:VerbSND_971.mp3];hold talks with;Conversar;;
+Provir;[sound:VerbSND_972.mp3];(proceed);Ter origem em;Resultar de;
+Monitorar;[sound:VerbSND_973.mp3];monitor;Don't recognize word;;
+Arrecadar;[sound:VerbSND_974.mp3];collect, (secure);Don't recognize word;;
+Edificar;[sound:VerbSND_975.mp3];build, construct, edify, (make);Construir;;
+Reinar;[sound:VerbSND_976.mp3];reign, (rule);Governar como rei;Dominar, imperar;
+Coincidir;[sound:VerbSND_977.mp3];coincide, (agree);Acontecer ao mesmo tempo;;
+Acomodar;[sound:VerbSND_978.mp3];accommodate, arrange, (adapt);Arrumar;;
+Acrescer;[sound:VerbSND_979.mp3];add, increase, (assist);Don't recognize word;;
+Encomendar;[sound:VerbSND_980.mp3];(order);Pedir ou mandar fazer algo;;
+Suspeitar;[sound:VerbSND_981.mp3];suspect, distrust;Desconfiar de alguém;;
+Portar;[sound:VerbSND_982.mp3];carry, (behave);Don't recognize word;;
+Distorcer;[sound:VerbSND_983.mp3];distort, (draw);Don't recognize word;;
+Reafirmar;[sound:VerbSND_984.mp3];reaffirm, (reassure);Don't recognize word;;
+Fomentar;[sound:VerbSND_985.mp3];foment, (cause);Desenvolver, incentivar;;
+Iludir;[sound:VerbSND_986.mp3];deceive, evade, delude, (catch);Enganar;;
+Agendar;[sound:VerbSND_987.mp3];(schedule);Registar um compromisso;Incluir um assunto na ordem de trabalhos;
+Protagonizar;[sound:VerbSND_988.mp3];play the lead role in;Don't recognize word;;
+Acionar;[sound:VerbSND_989.mp3];operate, (set);Don't recognize word;;
+Exceder;[sound:VerbSND_990.mp3];exceed, surpass, (transcend);Ultrapassar, superar;;
+Suprir;[sound:VerbSND_991.mp3];furnish, (rise);Don't recognize word;;
+Vitimar;[sound:VerbSND_992.mp3];(kill);Don't recognize word;;
+Equivaler;[sound:VerbSND_993.mp3];to be equivalent;Don't recognize word;;
+Hesitar;[sound:VerbSND_994.mp3];hesitate, (balance);Ter dificuldade em decidir;;
+Molhar;[sound:VerbSND_995.mp3];wet, dampen, dip, moisten, (wash);Encher de água;;
+Simbolizar;[sound:VerbSND_996.mp3];(represent);Representar;;
+Vigiar;[sound:VerbSND_997.mp3];watch, (guard);Observar com atenção;Cuidar, velar;Fiscalizar, controlar
+Remunerar;[sound:VerbSND_998.mp3];pay, reward, (restore);Pagar por um trabalho;;
+Aplaudir;[sound:VerbSND_999.mp3];applaud, (cheer);Aprovar batendo palmas;Louvar, elogiar;
