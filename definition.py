@@ -2,7 +2,7 @@ import requests
 import json
 
 
-def get_word(input_word, word_tense):
+def get_word_old(input_word, word_tense):
     payload = {
         "language": "pt",
         "text": str(input_word),
@@ -65,7 +65,7 @@ def convert_file_into_anki_import(word_file, meaning_file, sound_base_name, outp
         for word in word_list:
             word_to_add = word.lower()
 
-            data = get_word(word_to_add, word_type)
+            data = get_word_old(word_to_add, word_type)
 
             all_definitions = ""
             for cur_dat in data:
