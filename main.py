@@ -1,12 +1,12 @@
-import tts
-import definition
+# Internal
+from wordManager import verbType
+from wordManager import definition
+from wordManager import tts
 
+# External
 import requests
 from bs4 import BeautifulSoup
 import yaml
-import re
-
-from wordManager import verbType
 
 
 def create_audio_files(word_type):
@@ -35,10 +35,8 @@ def create_anki_file(word_type):
 # create_anki_file("Noun")
 
 
-search_word = "falar"
-url = "https://conjuga-me.net/verbo-" + str(search_word)
-page = requests.get(url)
-site_soup = BeautifulSoup(page.content, "html.parser")
+site_soup = verbType.get_site_soup("correr")
+# print(verbType.get_translation(site_soup))
 
 # INDICATIVO
 print("INDICATIVO:\n" + yaml.dump(verbType.get_modo_indicativo(site_soup),
@@ -49,9 +47,9 @@ print("CONJUNTIVO:\n" + yaml.dump(verbType.get_modo_conjuntivo(site_soup),
                                   default_flow_style=False, allow_unicode=True, sort_keys=False))
 
 # IMPERATIVO
-print("IMPERATIVO:\n" + yaml.dump(verbType.get_modo_imperativo(site_soup),
-                                  default_flow_style=False, allow_unicode=True, sort_keys=False))
+# print("IMPERATIVO:\n" + yaml.dump(verbType.get_modo_imperativo(site_soup),
+#                                   default_flow_style=False, allow_unicode=True, sort_keys=False))
 
 # INFINITIVO PESSOAL
-print("INFINITIVO PESSOAL:\n" + yaml.dump(verbType.get_modo_infinitivo_pessoal(site_soup),
-                                  default_flow_style=False, allow_unicode=True, sort_keys=False))
+# print("INFINITIVO PESSOAL:\n" + yaml.dump(verbType.get_modo_infinitivo_pessoal(site_soup),
+#                                   default_flow_style=False, allow_unicode=True, sort_keys=False))

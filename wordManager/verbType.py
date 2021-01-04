@@ -3,6 +3,15 @@ from bs4 import BeautifulSoup
 import re
 
 
+# Gets the site soup for the given word
+def get_site_soup(search_word):
+    url = "https://conjuga-me.net/verbo-" + str(search_word)
+    page = requests.get(url)
+    site_soup = BeautifulSoup(page.content, "html.parser")
+
+    return site_soup
+
+
 # Returns the translation of the given verb
 def get_translation(site_soup):
     translation = site_soup.find(id="translation").contents
@@ -64,7 +73,7 @@ def get_modo_conjuntivo(site_soup):
     }
 
 
-# Returns the specific "modo" for a given word
+# Returns the specific "modo" for a given word --- BROKEN
 def get_modo_imperativo(site_soup):
     tmp_afirmativo = convert_as_formatted_list(get_conjugation_from_table(site_soup, "table4", "left"))
     tmp_negativo = convert_as_formatted_list(get_conjugation_from_table(site_soup, "table4", "middle"))
@@ -75,7 +84,7 @@ def get_modo_imperativo(site_soup):
     }
 
 
-# Returns the specific "modo" for a given word
+# Returns the specific "modo" for a given word --- BROKEN
 def get_modo_infinitivo_pessoal(site_soup):
     tmp_base = convert_as_formatted_list(get_conjugation_from_table(site_soup, "table4", "right"))
 
