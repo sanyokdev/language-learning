@@ -13,6 +13,7 @@ def download_file(site_filename):
     return
 
 
+# Gets the kana sounds from the tofugu.com site because they sound pretty good
 def get_kana_sound_files(kana_type):
     data_path = "Japanese/Hiragana/" + str(kana_type) + "/" + str(kana_type) + ".csv"
     column_data = pd.read_csv(data_path)["Kana"].T.values.tolist()
