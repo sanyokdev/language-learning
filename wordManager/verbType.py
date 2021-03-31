@@ -1,3 +1,4 @@
+"""
 import requests
 from bs4 import BeautifulSoup
 import re
@@ -91,4 +92,4 @@ def get_modo_infinitivo_pessoal(site_soup):
     return {
         "base": tmp_base
     }
-
+"""

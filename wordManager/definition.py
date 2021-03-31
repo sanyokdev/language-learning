@@ -1,6 +1,6 @@
+"""
 import requests
 import json
-
 
 def get_word_old(input_word, word_tense):
     payload = {
@@ -79,3 +79,4 @@ def convert_file_into_anki_import(word_file, meaning_file, sound_base_name, outp
             progress_count += 1
             percentage = round(100.0 * progress_count / len(word_list), 1)
             print("Progress: " + str(percentage) + "%" + " | Current word: " + word)
+"""
