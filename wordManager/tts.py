@@ -18,8 +18,8 @@ def convert_word(word_id, sound_base_name, input_text, output_path):
     # Build the voice request
     voice = texttospeech.VoiceSelectionParams(
         {
-            "language_code": "pt-PT",
-            "name": "pt-PT-Wavenet-C"
+            "language_code": "ja-JP",
+            "name": "ja-JP-Wavenet-B"
         }
     )
 
