@@ -125,9 +125,18 @@ def get_kanji_for_jlpt_level(level: JLPTLvl):
 
     return symbols
 
+def get_all_joyo_kanji():
+    listN5 = get_kanji_for_jlpt_level(JLPTLvl.N5)
+    listN4 = get_kanji_for_jlpt_level(JLPTLvl.N4)
+    listN3 = get_kanji_for_jlpt_level(JLPTLvl.N3)
+    listN2 = get_kanji_for_jlpt_level(JLPTLvl.N2)
+    listN1 = get_kanji_for_jlpt_level(JLPTLvl.N1)
 
+    return listN5 + listN4 + listN3 + listN2 + listN1
 # endregion
 
 
 # endregion
 
+
+print(len(get_all_joyo_kanji()))
