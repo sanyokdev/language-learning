@@ -139,4 +139,4 @@ def get_all_joyo_kanji():
 # endregion
 
 
-print(len(get_all_joyo_kanji()))
+# print(len(get_all_joyo_kanji()))
