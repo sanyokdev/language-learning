@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import requests
 import re
 from enum import Enum
+from urllib.parse import unquote
 
 # region --- Enums
 
@@ -140,3 +141,54 @@ def get_all_joyo_kanji():
 
 
 # print(len(get_all_joyo_kanji()))
+
+def get_wanikani_link_type(link: str):
+    return unquote(link).split("/")[3]
+
+
+def get_wanikani_link_symbol(link: str):
+    return unquote(link).split("/")[4]
+
+
+def get_site_wanikani_soup(url: str):
+    page = requests.get(url, headers={"check the stickie notes ;) - uses private login data"
+    })
+
+    return BeautifulSoup(page.content, "html.parser")
+
+
+soup = get_site_wanikani_soup("https://www.wanikani.com/lattice/radicals/meaning")
+characterGrid = soup.find("section", {"class", "lattice-single-character"})
+characterElements = characterGrid.find_all("a", href=True)
+output = []
+
+total = len(characterElements)
+count = 0
+for element in characterElements:
+    charHref = element["href"]
+    characterUrl = "https://www.wanikani.com" + str(charHref)
+    charSoup = get_site_wanikani_soup(characterUrl)
+    iconElement = charSoup.find("span", {"class", "radical-icon"})
+
+    dataCheck = re.search(r"</?[a-z][\s\S]*>", str(iconElement.contents)) is not None
+    display = ""
+
+    if dataCheck:
+        output.append(iconElement.contents)
+        display = " | " + str(charHref.split("/")[2]).capitalize()
+
+    count += 1
+    percent = " | " + str(round((count / total) * 100, 2)) + "% Complete"
+    print(str(count) + "/" + str(total) + percent + display)
+
+print(output)
+
+# meaning = get_site_soup("https://www.wanikani.com/vocabulary/留守番").find("section", {"class": "mnemonic-content"}).find("p").contents
+# radicalList = get_site_wanikani_soup("https://www.wanikani.com/lattice/radicals/meaning").find("section", {"class", "lattice-single-character"}).find_all("li")
+# print(len(radicalList))
+
+# vocabularyList = get_site_wanikani_soup("https://www.wanikani.com/lattice/vocabulary/combined").find("section", {"class", "lattice-multi-character"}).find_all("li")
+# print(len(vocabularyList))
+
+# kanjiList = get_site_wanikani_soup("https://www.wanikani.com/lattice/kanji/combined").find("section", {"class", "lattice-single-character"}).find_all("li")
+# print(len(kanjiList))
