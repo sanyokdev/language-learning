@@ -6,8 +6,12 @@ import numpy
 """
     Some Comment
 """
-def get_element_text(element):
-    return str(re.search(r">(.*?)<", str(element)).group(1))
+def get_element_text(element: str):
+    return str(re.search(r">(.*?)<", element).group(1))
+
+
+def get_original_title(element: str):
+    return str(re.search(r".+?(?=<br>)", element).group(0))
 
 
 """
