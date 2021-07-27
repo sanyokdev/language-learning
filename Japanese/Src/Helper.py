@@ -1,6 +1,42 @@
+from enum import Enum
 import re
 
 import numpy
+
+
+class DataPresets(Enum):
+    RADICAL = {
+        "Level": [],
+        "Symbol": [],
+        "Meaning": [],
+        "Meaning Mnemonic": []
+    }
+
+    KANJI = {
+        "Level": [],
+        "Symbol": [],
+        "Radical Combination": [],
+        "Meaning": [],
+        "Meaning Mnemonic": [],
+        "Reading": [],
+        "Reading Mnemonic": []
+    }
+
+    VOCABULARY = {
+        "Level": [],
+        "Symbol": [],
+        "Meaning": [],
+        "Meaning Mnemonic": [],
+        "Word Type": [],
+        "Reading": [],
+        "Reading Mnemonic": [],
+        "Context 1-EN": [],
+        "Context 1-JP": [],
+        "Context 2-EN": [],
+        "Context 2-JP": [],
+        "Context 3-EN": [],
+        "Context 3-JP": []
+    }
 
 
 """

@@ -6,26 +6,13 @@ import requests
 from Japanese.Src import WaniKani
 
 
-"""
-    TODO: TURN THIS INTO A FUNCTION
-"""
-
-
+# """ - Radical Data
 session = WaniKani.get_session()
-gridData = WaniKani.get_grid_data(WaniKani.GridType.Radical, session)
-with pd.option_context("display.max_rows", None, "display.max_columns", None):
-    print(gridData)
+grid_type = WaniKani.GridType.Kanji
+output_data = WaniKani.get_grid_item_data(grid_type, session)
+print(output_data)
+output_data.to_csv(f"Japanese/Output/WaniKani_{str(grid_type)}_Data.csv", index=False)
 
-count = 0
-for item in gridData.Symbol:
-    test = re.search(r"[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)", item)
-    if test is not None:
-        url = test.group(0)
-        page = requests.get(url)
 
-        with open("Japanese/Output/" + str(count) + ".png", 'wb') as f:
-            f.write(page.content)
-
-        # print(test.group(0))
-
-    count += 1
+# session = WaniKani.get_session()
+# output_data = WaniKani.get_all_kanji_data(session)
