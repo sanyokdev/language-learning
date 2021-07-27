@@ -8,8 +8,8 @@ from Japanese.Src import WaniKani
 
 # """ - Radical Data
 session = WaniKani.get_session()
-grid_type = WaniKani.GridType.Kanji
-output_data = WaniKani.get_grid_item_data(grid_type, session)
+grid_type = WaniKani.GridType.Radical
+output_data = WaniKani.get_grid_item_data(0.7, grid_type, session)
 print(output_data)
 output_data.to_csv(f"Japanese/Output/WaniKani_{str(grid_type)}_Data.csv", index=False)
 

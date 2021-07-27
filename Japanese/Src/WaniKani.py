@@ -70,10 +70,10 @@ class _Common:
             meaning_list.append(content_text)
         return meaning_list
 
-    def get_reading(self):
+    def get_reading(self, site_soup: BeautifulSoup):
         pass
 
-    def get_reading_meaning(self):
+    def get_reading_meaning(self, site_soup: BeautifulSoup):
         pass
 
 """
@@ -108,7 +108,11 @@ class TimeTracker:
         time_min = int(time_whole)
         time_sec = int(round(time_frac * 60, 2))
 
-        time_left_txt = f"Time Left: ({ time_min }m:{ time_sec }s)"
+        if time_min >= 60:
+            time_hour = int(time_min/60)
+            time_left_txt = f"Time Left: ({ time_hour }h:{ time_min - (60 * time_hour) }m:{ time_sec }s)"
+        else:
+            time_left_txt = f"Time Left: ({ time_min }m:{ time_sec }s)"
         prog_txt = f"Progress: ({ self.progress }/{ self.total_items })"
 
         print(f"{time_left_txt} | {prog_txt}")
@@ -121,26 +125,26 @@ class TimeTracker:
 
 
 class Radical(_Common):
-    def get_reading(self):
+    def get_reading(self, site_soup: BeautifulSoup):
         raise NotImplementedError("'Radical' object has no attribute 'get_reading'")
 
-    def get_reading_meaning(self):
+    def get_reading_meaning(self, site_soup: BeautifulSoup):
         raise NotImplementedError("'Radical' object has no attribute 'get_reading_meaning'")
 
 
 class Kanji(_Common):
-    def get_radical_combination(self):
+    def get_radical_combination(self, site_soup: BeautifulSoup):
         pass
 
 
 class Vocabulary(_Common):
-    def get_word_type(self):
+    def get_word_type(self, site_soup: BeautifulSoup):
         pass
 
-    def get_en_context_list(self):
+    def get_en_context_list(self, site_soup: BeautifulSoup):
         pass
 
-    def get_jp_context_list(self):
+    def get_jp_context_list(self, site_soup: BeautifulSoup):
         pass
 
 
@@ -160,13 +164,13 @@ def convert_item_type(item: _Common, item_type: GridType):
         return Vocabulary(item.name, item.symbol, item.url)
 
 
-def get_grid_item_data(grid_type: GridType, site_session: requests.sessions.Session):
+def get_grid_item_data(delay: float, grid_type: GridType, site_session: requests.sessions.Session):
     # Get item data from the grid page
     grid_items = to_item_list(get_grid_data(grid_type, site_session))
     item_list = [convert_item_type(item, grid_type) for item in grid_items]
 
     # Set up the progress tracking
-    tracker = TimeTracker(delay=0, total_items=len(item_list))
+    tracker = TimeTracker(delay, total_items=len(item_list))
 
     # Find and save the respecive data for each symbol in the grid
     output_data = {}
@@ -175,50 +179,63 @@ def get_grid_item_data(grid_type: GridType, site_session: requests.sessions.Sess
         tracker.start()
 
         # Get the respecitve radical page soup
-        # page_soup = item.get_page_soup(site_session)
+        page_soup = item.get_page_soup(site_session)
 
         # Find the respective radical data inside the page
         if grid_type == GridType.Radical:
-            """
             output_data = DataPresets.RADICAL.value
+
             output_data["Level"].append(item.get_level(page_soup))
             output_data["Symbol"].append(item.symbol)
-            output_data["Meaning"].append(item.name)
 
+            output_data["Meaning"].append(item.name)
             meaning_mnemonic = "\n".join(item.get_meaning_mnemonic(page_soup))
             output_data["Meaning Mnemonic"].append(meaning_mnemonic)
-            """
+
 
         elif grid_type == GridType.Kanji:
             output_data = DataPresets.KANJI.value
-            output_data["Level"].append(item.name)
-            output_data["Symbol"].append(item.name)
+
+            output_data["Level"].append(item.get_level(page_soup))
+            output_data["Symbol"].append(item.symbol)
+
             output_data["Radical Combination"].append(item.name)
+
             output_data["Meaning"].append(item.name)
-            output_data["Meaning Mnemonic"].append(item.name)
+            meaning_mnemonic = "\n".join(item.get_meaning_mnemonic(page_soup))
+            output_data["Meaning Mnemonic"].append(meaning_mnemonic)
+
             output_data["Reading"].append(item.name)
             output_data["Reading Mnemonic"].append(item.name)
 
         elif grid_type == GridType.Vocabulary:
             output_data = DataPresets.VOCABULARY.value
-            output_data["Level"].append(item.name)
-            output_data["Symbol"].append(item.name)
+
+            output_data["Level"].append(item.get_level(page_soup))
+            output_data["Symbol"].append(item.symbol)
+
             output_data["Meaning"].append(item.name)
-            output_data["Meaning Mnemonic"].append(item.name)
+            meaning_mnemonic = "\n".join(item.get_meaning_mnemonic(page_soup))
+            output_data["Meaning Mnemonic"].append(meaning_mnemonic)
+
             output_data["Word Type"].append(item.name)
+
             output_data["Reading"].append(item.name)
             output_data["Reading Mnemonic"].append(item.name)
+
             output_data["Context 1-EN"].append(item.name)
             output_data["Context 1-JP"].append(item.name)
+
             output_data["Context 2-EN"].append(item.name)
             output_data["Context 2-JP"].append(item.name)
+
             output_data["Context 3-EN"].append(item.name)
             output_data["Context 3-JP"].append(item.name)
 
         # End the time tracking and print result
         tracker.end()
         tracker.print_progress()
-        # tracker.print_stats()
+        tracker.print_stats()
 
     return pd.DataFrame(data=output_data)
 
