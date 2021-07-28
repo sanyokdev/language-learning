@@ -119,7 +119,24 @@ class Radical(_Common):
 
 class Kanji(_Common):
     def get_radical_combination(self, site_soup: BeautifulSoup):
-        pass
+        combination_element = site_soup.find("ul", {"class": "alt-character-list"})
+        radical_elements = combination_element.find_all("li")
+        radical_list = []
+        
+        for element in radical_elements:
+            radical_tag = element.find("a")
+
+            radical_name = str(radical_tag.contents[2])
+            radical_symbol = str(radical_tag.find("span", {"class": "radical-icon"}).contents[0])
+
+            removal_list = [' ', '\n']
+            for s in removal_list:
+                radical_name = radical_name.replace(s, '')
+                radical_symbol = radical_symbol.replace(s, '')
+
+            radical_list.append([radical_name, radical_symbol])
+
+        return radical_list
 
 
 class Vocabulary(_Common):
@@ -210,7 +227,12 @@ def get_grid_items(delay: float, grid_type: GridType, site_session: requests.ses
 
     # Find and save the respecive data for each symbol in the grid
     output_data = {}
+
+    count = 0
     for item in item_list:
+        if count == 10:
+            break
+
         # Start the time tracking
         tracker.start()
 
@@ -228,6 +250,7 @@ def get_grid_items(delay: float, grid_type: GridType, site_session: requests.ses
         tracker.end()
         tracker.print_progress()
         tracker.print_stats()
+        count += 1
 
     return pd.DataFrame(data=output_data)
 # endregion
@@ -248,7 +271,7 @@ def get_radical_data(item: Radical, site_session: requests.sessions.Session):
     meaning_mnemonic = "\n".join(item.get_meaning_mnemonic(page_soup))
     output["Meaning Mnemonic"].append(meaning_mnemonic)
 
-    print(output)
+    # print(output)
     return output
 
 
@@ -259,7 +282,7 @@ def get_kanji_data(item: Kanji, site_session: requests.sessions.Session):
     output["Level"].append(item.get_level(page_soup))
     output["Symbol"].append(item.symbol)
 
-    output["Radical Combination"].append(item.name)
+    output["Radical Combination"].append(item.get_radical_combination(page_soup))
 
     output["Meaning"].append(item.name)
     meaning_mnemonic = "\n".join(item.get_meaning_mnemonic(page_soup))
@@ -267,7 +290,7 @@ def get_kanji_data(item: Kanji, site_session: requests.sessions.Session):
 
     output["Reading"].append(item.name)
     output["Reading Mnemonic"].append(item.name)
-
+    print(item.name)
     print(output)
     return output
 
@@ -297,6 +320,6 @@ def get_vocabulary_data(item: Vocabulary, site_session: requests.sessions.Sessio
     output["Context 3-EN"].append(item.name)
     output["Context 3-JP"].append(item.name)
 
-    print(output)
+    # print(output)
     return output
 # endregion
