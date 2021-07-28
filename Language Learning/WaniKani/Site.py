@@ -4,9 +4,6 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
-# import Common.
-# import WaniKani.Data as Data
-
 
 """
     Some Comment
@@ -28,12 +25,12 @@ def get_session():
         return None
 
     with open("Credentials/WaniKaniLogin.json", encoding="utf-8") as f:
-        data = json.load(f)
+        json_data = json.load(f)
 
         # Create payload
         payload = {
-            "user[login]": data["username"],
-            "user[password]": data["password"],
+            "user[login]": json_data["username"],
+            "user[password]": json_data["password"],
             "authenticity_token": authenticity_token
         }
 
@@ -61,39 +58,3 @@ def get_page(page_url: str, site_session: requests.sessions.Session):
         return None
 
     return BeautifulSoup(result.content, "html.parser")
-
-
-"""
-    Some Comment
-"""
-def get_grid_data(gridType: Data.GridType, site_session: requests.sessions.Session):
-    url = gridType.value
-    soup = get_page(url, site_session)
-
-    if gridType == Data.GridType.Vocabulary:
-        latticeType = "lattice-multi-character"
-    else:
-        latticeType = "lattice-single-character"
-
-    itemGrid = soup.find("section", {"class", latticeType})
-    itemElements = itemGrid.find_all("a", attrs={"href": True})
-
-    gridData = {"Name": [], "Symbol": [], "Url": []}
-
-    for element in itemElements:
-        symbolText = element.text
-
-        if gridType == Data.GridType.Radical:
-            nameItem = element["title"]
-
-            imageElement = element.find("img")
-            if imageElement is not None:
-                symbolText = f'<i class="radical-{nameItem.lower().replace(" ", "-")}"></i>'
-        else:
-            nameItem = Helper.get_original_title(element["title"])
-
-        gridData["Name"].append(nameItem)
-        gridData["Symbol"].append(symbolText)
-        gridData["Url"].append("https://www.wanikani.com" + element["href"])
-
-    return pd.DataFrame(data=gridData)

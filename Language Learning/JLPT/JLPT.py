@@ -3,7 +3,7 @@ from enum import Enum
 import requests
 from bs4 import BeautifulSoup
 
-from LanguageLearning.Common import Helper
+import Common.helper as helper
 
 """
     Some Comment
@@ -29,7 +29,7 @@ def get_kanji_for_level(level: GetLvl):
 
     symbols = []
     for element in symbolElements:
-        symbols.append(Helper.get_element_text(element))
+        symbols.append(helper.get_element_text(element))
 
     return symbols
 

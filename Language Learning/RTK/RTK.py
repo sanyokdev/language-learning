@@ -4,7 +4,9 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
-from LanguageLearning.Common import FilePaths, Helper
+import Common.filepaths as filepaths
+import Common.helper as helper
+
 
 """
     Some Comment
@@ -26,7 +28,7 @@ def get_kanji_preset(version: RTKVersion):
 
     symbolList = []
     for element in symbolElements:
-        symbolList.append(Helper.get_element_text(element))
+        symbolList.append(helper.get_element_text(element))
 
     return symbolList
 
@@ -40,7 +42,7 @@ def save_preset_as_csv(version: RTKVersion):
     d = {'Kanji': presetList}
     df = pd.DataFrame(data=d)
 
-    filepath = FilePaths.GetPath.RTK.value
+    filepath = filepaths.GetPath.RTK.value
     df.to_csv(f"{filepath + str(version.name)}.csv", index=False, encoding="utf-8-sig")
 
 
@@ -48,7 +50,7 @@ def save_preset_as_csv(version: RTKVersion):
     Some Comment
 """
 def load_as_list(version: RTKVersion):
-    filepath = FilePaths.GetPath.RTK.value
+    filepath = filepaths.GetPath.RTK.value
     output = pd.read_csv(f"{filepath + str(version.name)}.csv").Kanji.to_list()
 
     return output
