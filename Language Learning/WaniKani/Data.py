@@ -27,7 +27,8 @@ class DataPresets(Enum):
     KANJI = {
         "Level": [],
         "Symbol": [],
-        "Radical Combination": [],
+        "Radical Component Name": [],
+        "Radical Component": [],
         "Meaning": [],
         "Meaning Mnemonic": [],
         "Reading": [],
@@ -42,6 +43,8 @@ class DataPresets(Enum):
         "Word Type": [],
         "Reading": [],
         "Reading Mnemonic": [],
+        "Reading Audio Female": [],
+        "Reading Audio Male": [],
         "Context 1-EN": [],
         "Context 1-JP": [],
         "Context 2-EN": [],
@@ -66,6 +69,9 @@ class _Common:
 
     def get_level(self, site_soup: BeautifulSoup):
         return site_soup.find("a", {"class": "level-icon"}).contents[0]
+
+    def get_meaning(self):
+        pass # TODO: Complete the method
 
     def get_meaning_mnemonic(self, site_soup: BeautifulSoup):
         meaning_elements = site_soup.find("section", {"class": "mnemonic-content"}).find_all("p")
@@ -103,10 +109,10 @@ class _Common:
         return meaning_list
 
     def get_reading(self, site_soup: BeautifulSoup):
-        pass
+        pass # TODO: Complete the method
 
     def get_reading_meaning(self, site_soup: BeautifulSoup):
-        pass
+        pass # TODO: Complete the method
 
 
 class Radical(_Common):
@@ -118,36 +124,44 @@ class Radical(_Common):
 
 
 class Kanji(_Common):
-    def get_radical_combination(self, site_soup: BeautifulSoup):
+    # TODO: Fix the issue where the symbol might be an img tag
+    #       For radicalss that't don't have symbol characters
+    def get_radical_components(self, site_soup: BeautifulSoup):
         combination_element = site_soup.find("ul", {"class": "alt-character-list"})
         radical_elements = combination_element.find_all("li")
-        radical_list = []
-        
+
+        radical_names = []
+        radical_symbols = []
+
         for element in radical_elements:
             radical_tag = element.find("a")
 
-            radical_name = str(radical_tag.contents[2])
-            radical_symbol = str(radical_tag.find("span", {"class": "radical-icon"}).contents[0])
+            name = str(radical_tag.contents[2])
+            symbol = str(radical_tag.find("span", {"class": "radical-icon"}).contents[0])
 
             removal_list = [' ', '\n']
             for s in removal_list:
-                radical_name = radical_name.replace(s, '')
-                radical_symbol = radical_symbol.replace(s, '')
+                name = name.strip(s)
+                symbol = symbol.replace(s, '')
 
-            radical_list.append([radical_name, radical_symbol])
+            radical_names.append(name)
+            radical_symbols.append(symbol)
 
-        return radical_list
+        return [radical_names, radical_symbols]
 
 
 class Vocabulary(_Common):
     def get_word_type(self, site_soup: BeautifulSoup):
-        pass
+        pass # TODO: Complete the method
+
+    def get_audio_files(self):
+        pass # TODO: Complete the method
 
     def get_en_context_list(self, site_soup: BeautifulSoup):
-        pass
+        pass # TODO: Complete the method
 
     def get_jp_context_list(self, site_soup: BeautifulSoup):
-        pass
+        pass # TODO: Complete the method
 
 
 """
@@ -262,8 +276,8 @@ def get_grid_items(delay: float, grid_type: GridType, site_session: requests.ses
 """
 def get_radical_data(item: Radical, site_session: requests.sessions.Session):
     page_soup = item.get_page_soup(site_session)
-
     output = DataPresets.RADICAL.value
+
     output["Level"].append(item.get_level(page_soup))
     output["Symbol"].append(item.symbol)
 
@@ -277,12 +291,14 @@ def get_radical_data(item: Radical, site_session: requests.sessions.Session):
 
 def get_kanji_data(item: Kanji, site_session: requests.sessions.Session):
     page_soup = item.get_page_soup(site_session)
-
     output = DataPresets.KANJI.value
+
     output["Level"].append(item.get_level(page_soup))
     output["Symbol"].append(item.symbol)
 
-    output["Radical Combination"].append(item.get_radical_combination(page_soup))
+    radical_combination = item.get_radical_components(page_soup)
+    output["Radical Component Name"].append(",".join(radical_combination[0]))
+    output["Radical Component"].append(",".join(radical_combination[1]))
 
     output["Meaning"].append(item.name)
     meaning_mnemonic = "\n".join(item.get_meaning_mnemonic(page_soup))
@@ -290,15 +306,15 @@ def get_kanji_data(item: Kanji, site_session: requests.sessions.Session):
 
     output["Reading"].append(item.name)
     output["Reading Mnemonic"].append(item.name)
-    print(item.name)
-    print(output)
+
+    # print(output)
     return output
 
 
 def get_vocabulary_data(item: Vocabulary, site_session: requests.sessions.Session):
     page_soup = item.get_page_soup(site_session)
-
     output = DataPresets.VOCABULARY.value
+
     output["Level"].append(item.get_level(page_soup))
     output["Symbol"].append(item.symbol)
 
@@ -310,6 +326,9 @@ def get_vocabulary_data(item: Vocabulary, site_session: requests.sessions.Sessio
 
     output["Reading"].append(item.name)
     output["Reading Mnemonic"].append(item.name)
+
+    output["Reading Audio Female"].append(item.name)
+    output["Reading Audio Male"].append(item.name)
 
     output["Context 1-EN"].append(item.name)
     output["Context 1-JP"].append(item.name)

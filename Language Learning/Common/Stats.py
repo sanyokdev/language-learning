@@ -48,3 +48,6 @@ class TimeTracker:
         print(f"- RPM: { int(60 / self.avg_time_per_item) } | TPR: { round(self.avg_time_per_item, 2) }s\n")
         # - RPM "Requests per minute"
         # - TPR "Time per request"
+
+    def recalculate_delay(self):
+        pass # TODO: Complete the method
