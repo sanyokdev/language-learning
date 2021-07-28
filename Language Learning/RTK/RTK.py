@@ -4,9 +4,7 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
-from Japanese.Src import FilePaths
-from Japanese.Src import Helper
-
+from LanguageLearning.Common import FilePaths, Helper
 
 """
     Some Comment

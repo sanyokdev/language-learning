@@ -1,9 +1,5 @@
 # Credentials
-Credentials/
+Language Learning/Credentials/
 
 # PyCharm
-.idea
-
-# virtualenv
-venv/
-ENV/
+Language Learning/.idea

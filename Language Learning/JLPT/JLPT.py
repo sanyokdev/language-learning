@@ -3,8 +3,7 @@ from enum import Enum
 import requests
 from bs4 import BeautifulSoup
 
-from Japanese.Src import Helper
-
+from LanguageLearning.Common import Helper
 
 """
     Some Comment
