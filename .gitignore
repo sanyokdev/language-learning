@@ -4,5 +4,8 @@ Language Learning/Credentials
 # PyCharm
 Language Learning/.idea
 
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
 # Other
 Language Learning/-Output
