@@ -1,3 +1,4 @@
+import time
 from enum import Enum
 
 import pandas as pd
@@ -27,11 +28,13 @@ class DataPresets(Enum):
     KANJI = {
         "Level": [],
         "Symbol": [],
-        "Radical Component Name": [],
-        "Radical Component": [],
         "Meaning": [],
+        "Radical Component Name": [],
+        "Radical Component Symbol": [],
         "Meaning Mnemonic": [],
-        "Reading": [],
+        "Reading Onyomi": [],
+        "Reading Kunyomi": [],
+        "Reading Nanori": [],
         "Reading Mnemonic": []
     }
 
@@ -70,49 +73,73 @@ class _Common:
     def get_level(self, site_soup: BeautifulSoup):
         return site_soup.find("a", {"class": "level-icon"}).contents[0]
 
-    def get_meaning(self):
-        pass # TODO: Complete the method
+    def get_meanings(self, site_soup: BeautifulSoup):
+        meaning_section = site_soup.find("section", {"id": "meaning"})
+        meanings = meaning_section.find_all("div", {"class": "alternative-meaning"})
 
-    def get_meaning_mnemonic(self, site_soup: BeautifulSoup):
-        meaning_elements = site_soup.find("section", {"class": "mnemonic-content"}).find_all("p")
-        meaning_list = []
+        return [e.find("p").contents[0].replace(', ', ',') for e in meanings[:-1]]
 
-        for element in meaning_elements:
-            content = element.contents
-            content_text = ""
+    def get_readings(self, site_soup: BeautifulSoup):
+        reading_element = site_soup.find("section", {"id": "reading"})
+        reading_list = reading_element.find_all("div", {"class": "span4"})
 
-            for item in content:
-                if type(item) == Tag:
-                    item_class_list = item.get("class")
-                    if item_class_list is not None:
-                        item_class = item_class_list[0]
-                    else:
-                        item_class = None
+        readings = []
+        for element in reading_list:
+            reading_text = element.find("p").contents[0].replace('\n', '').strip(' ')
 
-                    item_content = item.contents[0]
+            if "muted-content" not in element["class"]:
+                readings.append(f"<primary><jp>{reading_text}</jp></primary>")
+            elif reading_text == "None":
+                readings.append("None")
+            else:
+                readings.append(f"<jp>{reading_text}</jp>")
 
-                    if item_class == "radical-highlight":
+        return readings
+
+    def get_mnemonic(self, mnemonic_type: str, site_soup: BeautifulSoup):
+        meaning_element = site_soup.find("section", {"id": mnemonic_type})
+        mnemonic_element = meaning_element.find("section", {"class": "mnemonic-content"})
+        mnemonic_data = mnemonic_element.find_all("p")
+
+        return format_mnemonic(mnemonic_data)
+
+
+def format_mnemonic(mnemonic_data: []):
+    mnemonic_list = []
+
+    for element in mnemonic_data:
+        mnemonic = ""
+        element_data = element.contents
+
+        for item in element_data:
+            if type(item) == Tag:
+                item_class = item.get("class")
+                item_content = item.contents[0]
+                item_tag = ""
+
+                if item_class is not None:
+                    if item_class[0] == "radical-highlight":
                         item_tag = f"<radical>{item_content}</radical>"
-                    elif item_class == "kanji-highlight":
+
+                    elif item_class[0] == "kanji-highlight":
                         item_tag = f"<kanji>{item_content}</kanji>"
-                    elif item_class == "vocabulary-highlight":
+
+                    elif item_class[0] == "vocabulary-highlight":
                         item_tag = f"<vocabulary>{item_content}</vocabulary>"
-                    else:
-                        item_tag = f"<jp>{item_content}</jp>"
 
-                    content_text += item_tag
+                    elif item_class[0] == "reading-highlight":
+                        item_tag = f"<reading>{item_content}</reading>"
+
                 else:
-                    content_text += str(item)
+                    item_tag = f"<jp>{item_content}</jp>"
 
-            meaning_list.append(content_text)
+                mnemonic += item_tag
+            else:
+                mnemonic += item
 
-        return meaning_list
+        mnemonic_list.append(mnemonic)
 
-    def get_reading(self, site_soup: BeautifulSoup):
-        pass # TODO: Complete the method
-
-    def get_reading_meaning(self, site_soup: BeautifulSoup):
-        pass # TODO: Complete the method
+    return "\n\n".join(mnemonic_list)
 
 
 class Radical(_Common):
@@ -124,8 +151,6 @@ class Radical(_Common):
 
 
 class Kanji(_Common):
-    # TODO: Fix the issue where the symbol might be an img tag
-    #       For radicalss that't don't have symbol characters
     def get_radical_components(self, site_soup: BeautifulSoup):
         combination_element = site_soup.find("ul", {"class": "alt-character-list"})
         radical_elements = combination_element.find_all("li")
@@ -137,12 +162,16 @@ class Kanji(_Common):
             radical_tag = element.find("a")
 
             name = str(radical_tag.contents[2])
-            symbol = str(radical_tag.find("span", {"class": "radical-icon"}).contents[0])
+            name = name.strip(' ').strip('\n')
 
-            removal_list = [' ', '\n']
-            for s in removal_list:
-                name = name.strip(s)
-                symbol = symbol.replace(s, '')
+            symbol = str(radical_tag.find("span", {"class": "radical-icon"}).contents[0])
+            symbol = symbol.replace(' ', '').replace('\n', '')
+
+            span_tag = radical_tag.find("span", {"class": "radical-icon"})
+            img_tag = span_tag.find("img")
+
+            if img_tag is not None:
+                symbol = f'<i class="radical-{name.lower().replace(" ", "-")}"></i>'
 
             radical_names.append(name)
             radical_symbols.append(symbol)
@@ -233,8 +262,50 @@ def get_grid_data(gridType: GridType, site_session: requests.sessions.Session):
 """
 def get_grid_items(delay: float, grid_type: GridType, site_session: requests.sessions.Session):
     # Get item data from the grid page
+    grid_data = {
+        "Name":
+            [
+                "Strict",
+                "Daring",
+                "Win",
+                "Wisteria",
+                "Follow",
+                "Public Building",
+                "Noh Chanting",
+                "Urge",
+                "Below"
+            ],
+        "Symbol":
+            [
+                "厳",
+                "敢",
+                "勝",
+                "藤",
+                "追",
+                "館",
+                "謡",
+                "迫",
+                "下"
+            ],
+        "Url":
+            [
+                "https://www.wanikani.com/kanji/%E5%8E%B3",
+                "https://www.wanikani.com/kanji/%E6%95%A2",
+                "https://www.wanikani.com/kanji/%E5%8B%9D",
+                "https://www.wanikani.com/kanji/%E8%97%A4",
+                "https://www.wanikani.com/kanji/%E8%BF%BD",
+                "https://www.wanikani.com/kanji/%E9%A4%A8",
+                "https://www.wanikani.com/kanji/%E8%AC%A1",
+                "https://www.wanikani.com/kanji/%E8%BF%AB",
+                "https://www.wanikani.com/kanji/%E4%B8%8B"
+            ]
+    }
+    grid_items = to_item_list(pd.DataFrame(data=grid_data))
+    item_list = [convert_type(item, grid_type) for item in grid_items]
+    """
     grid_items = to_item_list(get_grid_data(grid_type, site_session))
     item_list = [convert_type(item, grid_type) for item in grid_items]
+    """
 
     # Set up the progress tracking
     tracker = stats.TimeTracker(delay, total_items=len(item_list))
@@ -242,10 +313,10 @@ def get_grid_items(delay: float, grid_type: GridType, site_session: requests.ses
     # Find and save the respecive data for each symbol in the grid
     output_data = {}
 
-    count = 0
+    # count = 0 -- DEBUG
     for item in item_list:
-        if count == 10:
-            break
+        # if count == 10: -- DEBUG
+        #     break
 
         # Start the time tracking
         tracker.start()
@@ -264,7 +335,7 @@ def get_grid_items(delay: float, grid_type: GridType, site_session: requests.ses
         tracker.end()
         tracker.print_progress()
         tracker.print_stats()
-        count += 1
+        # count += 1 -- DEBUG
 
     return pd.DataFrame(data=output_data)
 # endregion
@@ -292,20 +363,28 @@ def get_radical_data(item: Radical, site_session: requests.sessions.Session):
 def get_kanji_data(item: Kanji, site_session: requests.sessions.Session):
     page_soup = item.get_page_soup(site_session)
     output = DataPresets.KANJI.value
+    print(item.name)
 
     output["Level"].append(item.get_level(page_soup))
     output["Symbol"].append(item.symbol)
 
+    meanings = item.get_meanings(page_soup)
+    output["Meaning"].append(",".join(meanings))
+
     radical_combination = item.get_radical_components(page_soup)
     output["Radical Component Name"].append(",".join(radical_combination[0]))
-    output["Radical Component"].append(",".join(radical_combination[1]))
+    output["Radical Component Symbol"].append(",".join(radical_combination[1]))
 
-    output["Meaning"].append(item.name)
-    meaning_mnemonic = "\n".join(item.get_meaning_mnemonic(page_soup))
+    meaning_mnemonic = item.get_mnemonic("meaning", page_soup)
     output["Meaning Mnemonic"].append(meaning_mnemonic)
 
-    output["Reading"].append(item.name)
-    output["Reading Mnemonic"].append(item.name)
+    readings = item.get_readings(page_soup)
+    output["Reading Onyomi"].append(readings[0])
+    output["Reading Kunyomi"].append(readings[1])
+    output["Reading Nanori"].append(readings[2])
+
+    reading_mnemonic = item.get_mnemonic("reading", page_soup)
+    output["Reading Mnemonic"].append(reading_mnemonic)
 
     # print(output)
     return output
