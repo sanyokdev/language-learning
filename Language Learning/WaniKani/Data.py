@@ -1,3 +1,4 @@
+import json
 from enum import Enum
 
 import pandas as pd
@@ -65,6 +66,7 @@ class DataPresets(Enum):
         "Reading Onyomi": [],
         "Reading Kunyomi": [],
         "Reading Nanori": [],
+        "Reading Whitelist": [],
         "Reading Mnemonic": []
     }
 
@@ -75,6 +77,7 @@ class DataPresets(Enum):
         "Meaning Mnemonic": [],
         "Word Type": [],
         "Reading": [],
+        "Reading Whitelist": [],
         "Reading Mnemonic": [],
         "Reading Audio Female": [],
         "Reading Audio Male": [],
@@ -185,26 +188,28 @@ def format_mnemonic(mnemonic_data: []) -> str:
         for item in element_data:
             if type(item) == Tag:
                 item_class = item.get("class")
-                item_content = item.contents[0]
-                item_tag = ""
 
-                if item_class is not None:
-                    if item_class[0] == "radical-highlight":
-                        item_tag = f"<radical>{item_content}</radical>"
+                if item.name == "span":
+                    item_content = item.contents[0]
+                    item_tag = ""
 
-                    elif item_class[0] == "kanji-highlight":
-                        item_tag = f"<kanji>{item_content}</kanji>"
+                    if item_class is not None:
+                        if item_class[0] == "radical-highlight":
+                            item_tag = f"<radical>{item_content}</radical>"
 
-                    elif item_class[0] == "vocabulary-highlight":
-                        item_tag = f"<vocabulary>{item_content}</vocabulary>"
+                        elif item_class[0] == "kanji-highlight":
+                            item_tag = f"<kanji>{item_content}</kanji>"
 
-                    elif item_class[0] == "reading-highlight":
-                        item_tag = f"<reading>{item_content}</reading>"
+                        elif item_class[0] == "vocabulary-highlight":
+                            item_tag = f"<vocabulary>{item_content}</vocabulary>"
 
-                else:
-                    item_tag = f"<jp>{item_content}</jp>"
+                        elif item_class[0] == "reading-highlight":
+                            item_tag = f"<reading>{item_content}</reading>"
 
-                mnemonic += item_tag
+                    else:
+                        item_tag = f"<jp>{item_content}</jp>"
+
+                    mnemonic += item_tag
             else:
                 mnemonic += item
 
@@ -261,7 +266,7 @@ class Kanji(_Common):
 
         return [radical_names, radical_symbols]
 
-    def get_readings(self) -> [str]:
+    def get_reading_data(self) -> [[str], [str]]:
         """
         Gets the respective readings for this Kanji alonside showing which is the "primary" one.
 
@@ -271,33 +276,49 @@ class Kanji(_Common):
         reading_element = self.page_soup.find("section", {"id": "reading"})
         reading_list = reading_element.find_all("div", {"class": "span4"})
 
-        # Check though all of the reading elements, format and label everything accordingly
+        # Check though all of the reading elements, format and label everything accordingly.
         readings = []
+        readings_whitelist = []
+
         for element in reading_list:
             reading_text = element.find("p").contents[0].replace('\n', '').strip(' ')
 
             if "muted-content" not in element["class"]:
-                readings.append(f"<primary><jp>{reading_text}</jp></primary>")
+                readings.append(f"<reading><jp>{reading_text}</jp></reading>")
+                readings_whitelist.append(reading_text)
             elif reading_text == "None":
                 readings.append("None")
             else:
                 readings.append(f"<jp>{reading_text}</jp>")
 
-        return readings
+        return [readings, readings_whitelist]
 
 
 class Vocabulary(_Common):
     """
     A class with a set of functions used for the "Vocabulary" objects.
     """
-    # TODO: Complete the method
-    def get_readings(self) -> [str]:
+    def get_reading_data(self) -> [[str], [str]]:
         """
+        Gets the respective readings for this Vocabulary.
 
-        :return:
+        :return: A list of lists containing the respective readings and the readings whitelist.
         """
+        # Find the reading section and get all the available reading elements.
+        reading_element = self.page_soup.find("section", {"id": "reading"})
+        readings_list = reading_element.find_all("div", {"class": "pronunciation-group"})
 
-        pass
+        # Check though all of the reading elements, format and label everything accordingly.
+        readings = []
+        readings_whitelist = []
+
+        for element in readings_list:
+            reading_text = element.find("p").contents[0]
+
+            readings.append(f"<reading><jp>{reading_text}</jp></reading>")
+            readings_whitelist.append(reading_text)
+
+        return [readings, readings_whitelist]
 
     # TODO: Complete the method
     def get_audio_files(self):
@@ -306,7 +327,18 @@ class Vocabulary(_Common):
         :return:
         """
 
-        pass
+        # Find the reading section and get all the available reading elements.
+        reading_element = self.page_soup.find("section", {"id": "reading"})
+        div_element = reading_element.find("div", {"data-react-class": "Readings/Readings"})
+
+        prop_data = div_element.get("data-react-props")
+        json_data = json.loads(prop_data)
+        print(json_data)
+        for item in json_data["pronunciationAudios"]:
+            audio_url = item["url"]
+
+            if '.mp3' in audio_url:
+                print(audio_url)
 
     # TODO: Complete the method
     def get_context_list(self):
@@ -352,6 +384,35 @@ def convert_type(item: _Common, item_type: GridType):
 
 
 # region - Grid
+class CustomGridItem:
+    """
+    A custom grid item.
+    Used to test grid functionality
+    """
+    def __init__(self, name: str, symbol: str, url: str):
+        self.name = name
+        self.symbol = symbol
+        self.url = url
+
+def get_custom_grid_data(item_list: [CustomGridItem], grid_type: GridType) -> (pd.DataFrame, GridType):
+    """
+    Gets the set of data for each manually placed symbol in the item_list
+
+    :param item_list: A list of custom grid items.
+    :param grid_type: The respecive symbol grids/types you can access on the WaniKani site.
+    :return: A base set of data use to create all the items in a respective symbol type's grid.
+    """
+    # Prepare the ouput data preset.
+    grid_data = {"Name": [], "Symbol": [], "Url": []}
+
+    for item in item_list:
+        # Save all the collected data
+        grid_data["Name"].append(item.name)
+        grid_data["Symbol"].append(item.symbol)
+        grid_data["Url"].append(item.url)
+
+    return pd.DataFrame(data=grid_data), grid_type
+
 def get_grid_data(grid_type: GridType, site_session: requests.sessions.Session) -> (pd.DataFrame, GridType):
     """
     Gets the base set of data for each symbol in a respective grid_type.
@@ -423,7 +484,7 @@ def get_grid_item_data(grid_data: (pd.DataFrame, GridType), site_session: reques
 
     count = 0 # -- DEBUG
     for item in item_list:
-        if count == 10: # -- DEBUG
+        if count == 20: # -- DEBUG
             break
 
         # Start the time tracking
@@ -511,14 +572,19 @@ def get_kanji_data(item: Kanji, site_session: requests.sessions.Session) -> {}:
     output["Radical Component Symbol"].append(",".join(radical_combination[1]))
 
     # Find the Mnemonic to easily remember the Meaning
+    print(item.symbol)
     meaning_mnemonic = item.get_mnemonic(MnemonicType.Meaning)
     output["Meaning Mnemonic"].append(meaning_mnemonic)
 
     # Find the respective readings for this Kanji alonside showing which is the "primary" one
-    readings = item.get_readings()
+    reading_data = item.get_reading_data()
+    readings = reading_data[0]
     output["Reading Onyomi"].append(readings[0]) # Gets the On'yomi reading in Hiragana
     output["Reading Kunyomi"].append(readings[1]) # Gets the Kun'yomi reading ""
     output["Reading Nanori"].append(readings[2]) # Gets the Nanori reading ""
+
+    reading_whitelist = ",".join(reading_data[1])
+    output["Reading Whitelist"].append(reading_whitelist)
 
     # Find the Mnemonic to easily remember the Reading
     reading_mnemonic = item.get_mnemonic(MnemonicType.Reading)
@@ -559,13 +625,19 @@ def get_vocabulary_data(item: Vocabulary, site_session: requests.sessions.Sessio
     output["Word Type"].append(meaning_data[-1])
 
     # Find the respective readings for this Vocabulary
-    output["Reading"].append("-") # TODO: Add functionality
+    reading_data = item.get_reading_data()
+    readings = ",".join(reading_data[0])
+    output["Reading"].append(readings)
+
+    reading_whitelist = ",".join(reading_data[1])
+    output["Reading Whitelist"].append(reading_whitelist)
 
     # Find the Mnemonic to easily remember the Reading
     reading_mnemonic = item.get_mnemonic(MnemonicType.Reading)
     output["Reading Mnemonic"].append(reading_mnemonic)
 
     # Find the respective audio for each of this Vocabulary's readings
+    # audio_file_names = item.get_audio_files() # TODO: COMPLETE THE FUNCTION
     output["Reading Audio Female"].append("-") # TODO: Add functionality
     output["Reading Audio Male"].append("-") # TODO: Add functionality
 
