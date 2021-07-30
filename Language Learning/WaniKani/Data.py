@@ -3,7 +3,7 @@ from enum import Enum
 import pandas as pd
 import requests
 
-from bs4 import BeautifulSoup, Tag
+from bs4 import Tag
 
 import Common.stats as stats
 import Common.helper as helper
@@ -12,7 +12,7 @@ import WaniKani.site as site
 
 class GridType(Enum):
     """
-    The respecive symbol grids you can access on the WaniKani site.
+    The respecive symbol grids/types you can access on the WaniKani site.
     """
     Radical = "https://www.wanikani.com/lattice/radicals/meaning"
     Kanji = "https://www.wanikani.com/lattice/kanji/combined"
@@ -44,7 +44,7 @@ class MnemonicType(Enum):
 class DataPresets(Enum):
     """
     Data output templates.
-    \n used in the following data exports:
+    \n Used in the following data exports:
     \n - Radical, Kanji and Vocabulary.
     """
 
@@ -104,41 +104,39 @@ class _Common:
         self.url = url
         self.page_soup = None
 
-    def check_soup(self):
-        """
-        Checks if the respective symbol has set the site_soup variable.
-        """
-        if self.page_soup is None:
-            raise ValueError(self.name + " symbol's respective page soup is None")
-
     def set_page_soup(self, site_session: requests.sessions.Session):
         """
-        Sets the page soup variable for the respctive symbol object
+        Sets the page soup variable for the respctive symbol object.
+        \n Note: This should "always" be run before the other functions in this class and derived from.
 
-        :param site_session: The "logged in" state of the WaniKani site
+        :param site_session: The "logged in" state of the WaniKani site.
         """
         self.page_soup = site.get_page(self.url, site_session)
 
     def get_level(self) -> str:
         """
-        :return: A string of the respective symbol's level (i.e. The level at which you learn this radical, symbol or vocab)
+        Gets the level at which you learn this radical, kanji or vocab.
+
+        :return: A string of the respective symbol's level
         """
         return self.page_soup.find("a", {"class": "level-icon"}).contents[0]
 
     def get_meaning_data(self, meaning_type: MeaningType) -> [str]:
         """
-        Gets the meaning data from the Meaning/Information sections from the respective symbol pages.
+        Gets the meaning data from the Meaning/Information sections from the respective symbol pages (depends on meaning_type input).
 
         - (in) MeaningType.Radical -> (out) ["primary"]
         - (in) MeaningType.Kanji -> (out) ["primary", "alternatives - optional"]
         - (in) MeaningType.Vocabulary -> (out) ["primary", "alternatives - optional", "word type"]
 
         :param meaning_type: The type of meaning needed.
-        :return: Array of strings, output depends on meaning_type value.
+        :return: List of strings, output depends on meaning_type value.
         """
+        # Find the meaning section and get all the available meaning data.
         meaning_section = self.page_soup.find("section", {"id": meaning_type.value})
         meanings = meaning_section.find_all("div", {"class": "alternative-meaning"})
 
+        # Sort though the data and remove user specified meanings.
         meaning_list = []
         for element in meanings:
             text_tag = element.find("p")
@@ -148,41 +146,36 @@ class _Common:
 
         return meaning_list
 
-    def get_readings(self):
+    def get_mnemonic(self, mnemonic_type: MnemonicType) -> str:
         """
+        Gets the Mnemonic used to easily remember the Meaning or Reading (depends on mnemonic_type input).
+
+        - (in) MnemonicType.Meaning -> (out) "M-eaning mnemonic"
+        - (in) MnemonicType.Reading -> (out) "Reading mnemonic"
+        - (in) MnemonicType.Info -> (out) "Radical mnemonic" (WaniKani handles radicals separately)
+
+        :param mnemonic_type: The type of mnemonic needed.
         :return:
         """
-        reading_element = self.page_soup.find("section", {"id": "reading"})
-        reading_list = reading_element.find_all("div", {"class": "span4"})
-
-        readings = []
-        for element in reading_list:
-            reading_text = element.find("p").contents[0].replace('\n', '').strip(' ')
-
-            if "muted-content" not in element["class"]:
-                readings.append(f"<primary><jp>{reading_text}</jp></primary>")
-            elif reading_text == "None":
-                readings.append("None")
-            else:
-                readings.append(f"<jp>{reading_text}</jp>")
-
-        return readings
-
-    def get_mnemonic(self, mnemonic_type: MnemonicType):
-        """
-        :param mnemonic_type:
-        :return:
-        """
+        # Find the meaning section and get all the available mnemonic content.
         meaning_element = self.page_soup.find("section", {"id": mnemonic_type.value})
         mnemonic_element = meaning_element.find("section", {"class": "mnemonic-content"})
         mnemonic_data = mnemonic_element.find_all("p")
 
+        # Format the mnemonic into text Anki can display properly.
         return format_mnemonic(mnemonic_data)
 
 
 # TODO: You can have tags inside tags (e.g. <jp><reading>しら</reading></jp> - Source: https://www.wanikani.com/vocabulary/%E7%99%BD%E8%8F%8A)
 #       Why... :/
+#       - Also, document this entire function
 def format_mnemonic(mnemonic_data: []) -> str:
+    """
+    Formats a list of mnemonic "elements" into a string used Anki can use for either the Meaning or Reading mnemonics.
+
+    :param mnemonic_data: The unformated mnemonic data.
+    :return: A formatted string Anki can display properly.
+    """
     mnemonic_list = []
 
     for element in mnemonic_data:
@@ -221,27 +214,31 @@ def format_mnemonic(mnemonic_data: []) -> str:
 
 
 class Radical(_Common):
-    def get_reading(self):
-        """
-        :return:
-        """
-        raise NotImplementedError("'Radical' object has no attribute 'get_reading'")
-
-    def get_reading_meaning(self):
-        """
-        :return:
-        """
-        raise NotImplementedError("'Radical' object has no attribute 'get_reading_meaning'")
+    """
+    A class with a set of functions used for the "Radical" objects.
+    """
+    pass
 
 
 class Kanji(_Common):
-    def get_radical_components(self):
+    """
+    A class with a set of functions used for the "Kanji" objects.
+    """
+    def get_radical_components(self) -> [[str], [str]]:
+        """
+        Gets the Radicals (name and symbol) that make up this respective Kanji.
+
+        :return: A list containing a list of all the Radical component names and symbols. [["All Radical Names"], ["All Radical Symbols"]]
+        """
+        # Find the combination section and get all the available radical elements.
         combination_element = self.page_soup.find("ul", {"class": "alt-character-list"})
         radical_elements = combination_element.find_all("li")
 
+        # Prep ouput lists
         radical_names = []
         radical_symbols = []
 
+        # Go though all of the Radical elements and pull out its respective Name and Symbol into the according lists.
         for element in radical_elements:
             radical_tag = element.find("a")
 
@@ -251,10 +248,12 @@ class Kanji(_Common):
             symbol = str(radical_tag.find("span", {"class": "radical-icon"}).contents[0])
             symbol = symbol.replace(' ', '').replace('\n', '')
 
+            # Check if the symbol element is an image tag meaning the Radical has no character.
             span_tag = radical_tag.find("span", {"class": "radical-icon"})
             img_tag = span_tag.find("img")
 
             if img_tag is not None:
+                # Replace the image with a parsable font icon that Anki can use.
                 symbol = f'<i class="radical-{name.lower().replace(" ", "-")}"></i>'
 
             radical_names.append(name)
@@ -262,37 +261,70 @@ class Kanji(_Common):
 
         return [radical_names, radical_symbols]
 
+    def get_readings(self) -> [str]:
+        """
+        Gets the respective readings for this Kanji alonside showing which is the "primary" one.
+
+        :return: A list of strings containing the "On'yomi", "Kun'yomi" and "Nanori" readings.
+        """
+        # Find the reading section and get all the available reading elements.
+        reading_element = self.page_soup.find("section", {"id": "reading"})
+        reading_list = reading_element.find_all("div", {"class": "span4"})
+
+        # Check though all of the reading elements, format and label everything accordingly
+        readings = []
+        for element in reading_list:
+            reading_text = element.find("p").contents[0].replace('\n', '').strip(' ')
+
+            if "muted-content" not in element["class"]:
+                readings.append(f"<primary><jp>{reading_text}</jp></primary>")
+            elif reading_text == "None":
+                readings.append("None")
+            else:
+                readings.append(f"<jp>{reading_text}</jp>")
+
+        return readings
+
 
 class Vocabulary(_Common):
-    def get_readings(self):
-        raise AttributeError("'Vocabulary' class has no attribute 'get_readings'. Use the 'get_reading' attribute for related functionality.")
+    """
+    A class with a set of functions used for the "Vocabulary" objects.
+    """
+    # TODO: Complete the method
+    def get_readings(self) -> [str]:
+        """
 
-    def get_reading(self):
+        :return:
+        """
+
         pass
 
-    def get_word_type(self):
-        """
-        :return:
-        """
-        pass # TODO: Complete the method
-
+    # TODO: Complete the method
     def get_audio_files(self):
         """
+
         :return:
         """
-        pass # TODO: Complete the method
 
+        pass
+
+    # TODO: Complete the method
     def get_context_list(self):
         """
+
         :return:
         """
-        pass # TODO: Complete the method
+
+        pass
 
 
-"""
-    Some Comment
-"""
-def to_item_list(data: pd.DataFrame):
+def to_item_list(data: pd.DataFrame) -> [_Common]:
+    """
+    Turns a respective symbol's data into a nice package containing that info (Symbol Object).
+
+    :param data: The data that needs to be converted into a Symbol (_Common) item.
+    :return: A list of "_Common" objects using the data provided.
+    """
     output = []
     for i in range(len(data.Name)):
         output.append(_Common(data.Name[i], data.Symbol[i], data.Url[i]))
@@ -300,11 +332,14 @@ def to_item_list(data: pd.DataFrame):
     return output
 
 
-
-"""
-    Some Comment
-"""
 def convert_type(item: _Common, item_type: GridType):
+    """
+    Converts one item type (derived from _Common) to another.
+
+    :param item: The original item type that will convert (derived from _Common).
+    :param item_type: The type of the converted ouput item.
+    :return: An item type that has converted (e.g. Radical, Kanji or Vocabulary).
+    """
     if item_type == GridType.Radical:
         return Radical(item.name, item.symbol, item.url)
 
@@ -319,33 +354,45 @@ def convert_type(item: _Common, item_type: GridType):
 # region - Grid
 def get_grid_data(grid_type: GridType, site_session: requests.sessions.Session) -> (pd.DataFrame, GridType):
     """
-    Some Comment
+    Gets the base set of data for each symbol in a respective grid_type.
+
+    :param grid_type: The respecive symbol grids/types you can access on the WaniKani site.
+    :param site_session: The "logged in" state of the WaniKani site.
+    :return: A base set of data use to create all the items in a respective symbol type's grid.
     """
+    # Load the respective grid's page and get its soup.
     url = grid_type.value
     soup = site.get_page(url, site_session)
 
+    # Change the selected lattice class depending on the grid_type.
     if grid_type == GridType.Vocabulary:
         lattice_type = "lattice-multi-character"
     else:
         lattice_type = "lattice-single-character"
 
+    # Find the respective lattice and pull all the a (link) tags from each symbol.
     item_grid = soup.find("section", {"class", lattice_type})
     item_elements = item_grid.find_all("a", attrs={"href": True})
 
+    # Prepare the ouput data preset.
     grid_data = {"Name": [], "Symbol": [], "Url": []}
 
+    # Go through each tag and pull out the respective symbol's Name, Symbol and Url.
     for element in item_elements:
+        # If the symbol has a character representing it use it (Blank if it has an image instead).
         item_symbol = element.text
 
         if grid_type == GridType.Radical:
             item_name = element["title"]
 
-            image_element = element.find("img")
-            if image_element is not None:
+            # Check if the symbol element is an image tag meaning the Radical has no character.
+            if element.find("img") is not None:
+                # Replace the image with a parsable font icon that Anki can use.
                 item_symbol = f'<i class="radical-{item_name.lower().replace(" ", "-")}"></i>'
         else:
             item_name = helper.get_original_title(element["title"])
 
+        # Save all the collected data
         grid_data["Name"].append(item_name)
         grid_data["Symbol"].append(item_symbol)
         grid_data["Url"].append("https://www.wanikani.com" + element["href"])
@@ -355,11 +402,12 @@ def get_grid_data(grid_type: GridType, site_session: requests.sessions.Session) 
 
 def get_grid_item_data(grid_data: (pd.DataFrame, GridType), site_session: requests.sessions.Session) -> pd.DataFrame:
     """
-    :param grid_data:
-    :param site_session:
-    :return:
-    """
+    Gets the respective data for each symbol item (Radical, Kanji or Vocabulary) in grid_data from their respective pages.
 
+    :param grid_data: A base set of data use to create all the items in a respective symbol type's grid.
+    :param site_session: The "logged in" state of the WaniKani site.
+    :return: The contents of each symbol item's data as a Dataframe.
+    """
     # Get item data from the grid page
     grid_df = grid_data[0]
     grid_type = grid_data[1]
@@ -406,7 +454,14 @@ def get_grid_item_data(grid_data: (pd.DataFrame, GridType), site_session: reques
 """
     Some Comment
 """
-def get_radical_data(item: Radical, site_session: requests.sessions.Session):
+def get_radical_data(item: Radical, site_session: requests.sessions.Session) -> {}:
+    """
+    Pulls the data needed from the respective Radical's page.
+
+    :param item: The Radical symbol object.
+    :param site_session: The "logged in" state of the WaniKani site.
+    :return: A dict containing all the data pulled from the respective Radical's page.
+    """
     # Sets the Radical object's page soup
     item.set_page_soup(site_session)
 
@@ -428,7 +483,14 @@ def get_radical_data(item: Radical, site_session: requests.sessions.Session):
     return output
 
 
-def get_kanji_data(item: Kanji, site_session: requests.sessions.Session):
+def get_kanji_data(item: Kanji, site_session: requests.sessions.Session) -> {}:
+    """
+    Pulls the data needed from the respective Kanji's page.
+
+    :param item: The Kanji symbol object.
+    :param site_session: The "logged in" state of the WaniKani site.
+    :return: A dict containing all the data pulled from the respective Kanji's page.
+    """
     # Sets the Kanji object's page soup
     item.set_page_soup(site_session)
 
@@ -465,7 +527,14 @@ def get_kanji_data(item: Kanji, site_session: requests.sessions.Session):
     return output
 
 
-def get_vocabulary_data(item: Vocabulary, site_session: requests.sessions.Session):
+def get_vocabulary_data(item: Vocabulary, site_session: requests.sessions.Session) -> {}:
+    """
+    Pulls the data needed from the respective Vocabulary's page.
+
+    :param item: The Vocabulary symbol object.
+    :param site_session: The "logged in" state of the WaniKani site.
+    :return: A dict containing all the data pulled from the respective Vocabulary's page.
+    """
     # Sets the Vocabulary object's page soup
     item.set_page_soup(site_session)
 
@@ -486,29 +555,29 @@ def get_vocabulary_data(item: Vocabulary, site_session: requests.sessions.Sessio
     meaning_mnemonic = item.get_mnemonic(MnemonicType.Meaning)
     output["Meaning Mnemonic"].append(meaning_mnemonic)
 
-    # TODO:
+    # Find the part of speech the Vocabulary belongs to
     output["Word Type"].append(meaning_data[-1])
 
-    # TODO:
-    output["Reading"].append("-")
+    # Find the respective readings for this Vocabulary
+    output["Reading"].append("-") # TODO: Add functionality
 
     # Find the Mnemonic to easily remember the Reading
     reading_mnemonic = item.get_mnemonic(MnemonicType.Reading)
     output["Reading Mnemonic"].append(reading_mnemonic)
 
-    # TODO:
-    output["Reading Audio Female"].append("-")
-    output["Reading Audio Male"].append("-")
+    # Find the respective audio for each of this Vocabulary's readings
+    output["Reading Audio Female"].append("-") # TODO: Add functionality
+    output["Reading Audio Male"].append("-") # TODO: Add functionality
 
-    # TODO:
-    output["Context 1-EN"].append("-")
-    output["Context 1-JP"].append("-")
+    # Find the context (examples) in which this Vocabulary is used in
+    output["Context 1-EN"].append("-") # TODO: Add functionality
+    output["Context 1-JP"].append("-") # TODO: Add functionality
 
-    output["Context 2-EN"].append("-")
-    output["Context 2-JP"].append("-")
+    output["Context 2-EN"].append("-") # TODO: Add functionality
+    output["Context 2-JP"].append("-") # TODO: Add functionality
 
-    output["Context 3-EN"].append("-")
-    output["Context 3-JP"].append("-")
+    output["Context 3-EN"].append("-") # TODO: Add functionality
+    output["Context 3-JP"].append("-") # TODO: Add functionality
 
     # print(output)
     return output
