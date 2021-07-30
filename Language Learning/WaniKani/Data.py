@@ -321,14 +321,13 @@ def get_grid_data(grid_type: GridType, site_session: requests.sessions.Session) 
     for element in item_elements:
         item_symbol = element.text
 
-        if grid_data == GridType.Radical:
+        if grid_type == GridType.Radical:
             item_name = element["title"]
 
             image_element = element.find("img")
             if image_element is not None:
                 item_symbol = f'<i class="radical-{item_name.lower().replace(" ", "-")}"></i>'
         else:
-            print(element["title"])
             item_name = helper.get_original_title(element["title"])
 
         grid_data["Name"].append(item_name)
@@ -338,9 +337,6 @@ def get_grid_data(grid_type: GridType, site_session: requests.sessions.Session) 
     return pd.DataFrame(data=grid_data), grid_type
 
 
-"""
-    Some Comment
-"""
 def get_grid_item_data(grid_data: (pd.DataFrame, GridType), site_session: requests.sessions.Session) -> pd.DataFrame:
     """
     :param grid_data:
@@ -460,7 +456,6 @@ def get_vocabulary_data(item: Vocabulary, site_session: requests.sessions.Sessio
     # Prepare the output format
     output = DataPresets.VOCABULARY.value
 
-    """
     output["Level"].append(item.name)
     output["Symbol"].append(item.name)
 
@@ -483,7 +478,7 @@ def get_vocabulary_data(item: Vocabulary, site_session: requests.sessions.Sessio
 
     output["Context 3-EN"].append(item.name)
     output["Context 3-JP"].append(item.name)
-    """
+
     # print(output)
     return output
 # endregion
