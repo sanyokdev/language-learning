@@ -1,4 +1,3 @@
-import time
 from enum import Enum
 
 import pandas as pd
@@ -22,11 +21,13 @@ class GridType(Enum):
 
 class MeaningType(Enum):
     """
-    - Default - "Kanji & Vocab meaning"
-    - Info - "Radical meaning" (WaniKani handles radicals separately)
+    - Radical - "Radical meaning"
+    - Kanji - "Kanji meaning"
+    - Vocabulary - "Vocab meaning"
     """
-    Default = "meaning"
-    Info = "information"
+    Radical = "information"
+    Kanji = "meaning"
+    Vocabulary = "meaning"
 
 
 class MnemonicType(Enum):
@@ -124,15 +125,28 @@ class _Common:
         """
         return self.page_soup.find("a", {"class": "level-icon"}).contents[0]
 
-    def get_meanings(self, meaning_type: MeaningType) -> [str]:
+    def get_meaning_data(self, meaning_type: MeaningType) -> [str]:
         """
+        Gets the meaning data from the Meaning/Information sections from the respective symbol pages.
+
+        - (in) MeaningType.Radical -> (out) ["primary"]
+        - (in) MeaningType.Kanji -> (out) ["primary", "alternatives - optional"]
+        - (in) MeaningType.Vocabulary -> (out) ["primary", "alternatives - optional", "word type"]
+
         :param meaning_type: The type of meaning needed.
-        :return:
+        :return: Array of strings, output depends on meaning_type value.
         """
         meaning_section = self.page_soup.find("section", {"id": meaning_type.value})
         meanings = meaning_section.find_all("div", {"class": "alternative-meaning"})
 
-        return [e.find("p").contents[0].replace(', ', ',') for e in meanings[:-1]]
+        meaning_list = []
+        for element in meanings:
+            text_tag = element.find("p")
+
+            if text_tag is not None:
+                meaning_list.append(text_tag.contents[0].replace(', ', ','))
+
+        return meaning_list
 
     def get_readings(self):
         """
@@ -166,6 +180,8 @@ class _Common:
         return format_mnemonic(mnemonic_data)
 
 
+# TODO: You can have tags inside tags (e.g. <jp><reading>しら</reading></jp> - Source: https://www.wanikani.com/vocabulary/%E7%99%BD%E8%8F%8A)
+#       Why... :/
 def format_mnemonic(mnemonic_data: []) -> str:
     mnemonic_list = []
 
@@ -248,6 +264,12 @@ class Kanji(_Common):
 
 
 class Vocabulary(_Common):
+    def get_readings(self):
+        raise AttributeError("'Vocabulary' class has no attribute 'get_readings'. Use the 'get_reading' attribute for related functionality.")
+
+    def get_reading(self):
+        pass
+
     def get_word_type(self):
         """
         :return:
@@ -260,13 +282,7 @@ class Vocabulary(_Common):
         """
         pass # TODO: Complete the method
 
-    def get_en_context_list(self):
-        """
-        :return:
-        """
-        pass # TODO: Complete the method
-
-    def get_jp_context_list(self):
+    def get_context_list(self):
         """
         :return:
         """
@@ -398,11 +414,11 @@ def get_radical_data(item: Radical, site_session: requests.sessions.Session):
     output = DataPresets.RADICAL.value
 
     # Find the Level and Symbol
-    output["Level"].append(item.get_level()) # (The level at which you learn this radical)
+    output["Level"].append(item.get_level()) # (The level at which you learn this Radical)
     output["Symbol"].append(item.symbol) # (either a regular character or icon "used in WaniRadicals")
 
     # Find the Meaning (i.e. Name)
-    meaning = item.get_meanings(MeaningType.Info)[0]
+    meaning = item.get_meaning_data(MeaningType.Radical)[0]
     output["Meaning"].append(meaning)
 
     # Find the Mnemonic to easily remember the Meaning
@@ -420,11 +436,11 @@ def get_kanji_data(item: Kanji, site_session: requests.sessions.Session):
     output = DataPresets.KANJI.value
 
     # Find the Level and Symbol
-    output["Level"].append(item.get_level()) # (The level at which you learn this kanji)
-    output["Symbol"].append(item.symbol) # (a regular character)
+    output["Level"].append(item.get_level()) # (The level at which you learn this Kanji)
+    output["Symbol"].append(item.symbol) # (a regular kanji character)
 
     # Find the Meanings (i.e. the most common words associated to this Kanji)
-    meanings = ",".join(item.get_meanings(MeaningType.Default))
+    meanings = ",".join(item.get_meaning_data(MeaningType.Kanji))
     output["Meaning"].append(meanings)
 
     # Find the Radicals that make up this respective Kanji
@@ -456,28 +472,43 @@ def get_vocabulary_data(item: Vocabulary, site_session: requests.sessions.Sessio
     # Prepare the output format
     output = DataPresets.VOCABULARY.value
 
-    output["Level"].append(item.name)
-    output["Symbol"].append(item.name)
+    # Find the Level and Symbol
+    output["Level"].append(item.get_level()) # (The level at which you learn this Vocabulary)
+    output["Symbol"].append(item.symbol) # (a set of Kanji and Hiragana characters)
 
-    output["Meaning"].append(item.name)
-    output["Meaning Mnemonic"].append(item.name)
+    # Find the Meanings (i.e. the most common words associated to this Vocabulary)
+    # meanings = ",".join(item.get_meanings(MeaningType.Default))
+    meaning_data = item.get_meaning_data(MeaningType.Vocabulary)
+    meanings = ",".join(meaning_data[:-1])
+    output["Meaning"].append(meanings)
 
-    output["Word Type"].append(item.name)
+    # Find the Mnemonic to easily remember the Meaning
+    meaning_mnemonic = item.get_mnemonic(MnemonicType.Meaning)
+    output["Meaning Mnemonic"].append(meaning_mnemonic)
 
-    output["Reading"].append(item.name)
-    output["Reading Mnemonic"].append(item.name)
+    # TODO:
+    output["Word Type"].append(meaning_data[-1])
 
-    output["Reading Audio Female"].append(item.name)
-    output["Reading Audio Male"].append(item.name)
+    # TODO:
+    output["Reading"].append("-")
 
-    output["Context 1-EN"].append(item.name)
-    output["Context 1-JP"].append(item.name)
+    # Find the Mnemonic to easily remember the Reading
+    reading_mnemonic = item.get_mnemonic(MnemonicType.Reading)
+    output["Reading Mnemonic"].append(reading_mnemonic)
 
-    output["Context 2-EN"].append(item.name)
-    output["Context 2-JP"].append(item.name)
+    # TODO:
+    output["Reading Audio Female"].append("-")
+    output["Reading Audio Male"].append("-")
 
-    output["Context 3-EN"].append(item.name)
-    output["Context 3-JP"].append(item.name)
+    # TODO:
+    output["Context 1-EN"].append("-")
+    output["Context 1-JP"].append("-")
+
+    output["Context 2-EN"].append("-")
+    output["Context 2-JP"].append("-")
+
+    output["Context 3-EN"].append("-")
+    output["Context 3-JP"].append("-")
 
     # print(output)
     return output

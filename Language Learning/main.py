@@ -1,7 +1,7 @@
 import WaniKani
 
 session = WaniKani.site.get_session()
-grid_type = WaniKani.data.GridType.Radical
+grid_type = WaniKani.data.GridType.Kanji
 
 grid_data = WaniKani.data.get_grid_data(grid_type, session)
 grid_item_data = WaniKani.data.get_grid_item_data(grid_data, session)
