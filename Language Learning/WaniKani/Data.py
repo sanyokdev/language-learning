@@ -79,8 +79,8 @@ class DataPresets(Enum):
         "Reading": [],
         "Reading Whitelist": [],
         "Reading Mnemonic": [],
-        "Reading Audio Female": [],
         "Reading Audio Male": [],
+        "Reading Audio Female": [],
         "Context 1-EN": [],
         "Context 1-JP": [],
         "Context 2-EN": [],
@@ -266,7 +266,7 @@ class Kanji(_Common):
 
         return [radical_names, radical_symbols]
 
-    def get_reading_data(self) -> [[str], [str]]:
+    def get_readings_data(self) -> [[str], [str]]:
         """
         Gets the respective readings for this Kanji alonside showing which is the "primary" one.
 
@@ -298,7 +298,7 @@ class Vocabulary(_Common):
     """
     A class with a set of functions used for the "Vocabulary" objects.
     """
-    def get_reading_data(self) -> [[str], [str]]:
+    def get_readings_data(self) -> [[str], [str]]:
         """
         Gets the respective readings for this Vocabulary.
 
@@ -320,25 +320,69 @@ class Vocabulary(_Common):
 
         return [readings, readings_whitelist]
 
-    # TODO: Complete the method
-    def get_audio_files(self):
-        """
-
-        :return:
-        """
-
+    # TODO: Document the audio methods
+    def get_audio_reading_data(self) -> ([], []):
         # Find the reading section and get all the available reading elements.
         reading_element = self.page_soup.find("section", {"id": "reading"})
         div_element = reading_element.find("div", {"data-react-class": "Readings/Readings"})
 
         prop_data = div_element.get("data-react-props")
         json_data = json.loads(prop_data)
-        print(json_data)
-        for item in json_data["pronunciationAudios"]:
-            audio_url = item["url"]
 
-            if '.mp3' in audio_url:
-                print(audio_url)
+        readings_list = []
+        audio_pseudo_dict = []  # I HATE DICTIONARIES, WHY ARE YOU SO FINICKY :/
+
+        # Get audio data
+        for reading_obj in json_data["readings"]:
+            readings_list.append(reading_obj["reading"])
+            audio_pseudo_dict.append({"male": "None", "female": "None"})
+
+        for audio_obj in json_data["pronunciationAudios"]:
+            url = audio_obj["url"]
+
+            if ".mp3" in url:
+                metadata = audio_obj["metadata"]
+
+                reading = metadata["pronunciation"]
+                gender = metadata["gender"]
+
+                audio_pseudo_dict[readings_list.index(reading)][gender] = url
+
+        return readings_list, audio_pseudo_dict
+
+    def get_audio_data(self, readings_list: [], audio_pseudo_dict: []) -> {}:
+        output_data = {"Male": [], "Female": []}
+
+        for reading in readings_list:
+            reading_id = readings_list.index(reading)
+
+            genders = ["Male", "Female"]
+            for gender in genders:
+                if audio_pseudo_dict[reading_id][gender.lower()] != "None":
+                    audio_filename = f"[sound:{reading}-{ str(reading_id) }-{ gender }.mp3]"
+                    output_data[gender].append(audio_filename)
+                else:
+                    output_data[gender].append("None")
+
+        print(output_data)
+        return output_data
+
+    def download_audio(self, audio_pseudo_dict: []):
+        """
+
+        :param audio_pseudo_dict:
+        :return:
+        """
+        print("Downloaded: " + audio_pseudo_dict[0]["male"])
+        """
+        local_filename = 'test.mp3'
+        r = requests.get(url)
+        with open(local_filename, 'wb') as f:
+            for chunk in r.iter_content(chunk_size=1024):
+                if chunk:  # filter out keep-alive new chunks
+                    f.write(chunk)
+        """
+        pass
 
     # TODO: Complete the method
     def get_context_list(self):
@@ -490,7 +534,7 @@ def get_grid_item_data(grid_data: (pd.DataFrame, GridType), site_session: reques
         # Start the time tracking
         tracker.start()
 
-        # Find the respective radical data inside the page
+        # Find the respective symbol data inside the page
         if grid_type == GridType.Radical:
             output_data = get_radical_data(item, site_session)
 
@@ -508,7 +552,6 @@ def get_grid_item_data(grid_data: (pd.DataFrame, GridType), site_session: reques
         count += 1 # -- DEBUG
 
     return pd.DataFrame(data=output_data)
-# endregion
 
 
 # region - Item Data
@@ -577,7 +620,7 @@ def get_kanji_data(item: Kanji, site_session: requests.sessions.Session) -> {}:
     output["Meaning Mnemonic"].append(meaning_mnemonic)
 
     # Find the respective readings for this Kanji alonside showing which is the "primary" one
-    reading_data = item.get_reading_data()
+    reading_data = item.get_readings_data()
     readings = reading_data[0]
     output["Reading Onyomi"].append(readings[0]) # Gets the On'yomi reading in Hiragana
     output["Reading Kunyomi"].append(readings[1]) # Gets the Kun'yomi reading ""
@@ -625,7 +668,7 @@ def get_vocabulary_data(item: Vocabulary, site_session: requests.sessions.Sessio
     output["Word Type"].append(meaning_data[-1])
 
     # Find the respective readings for this Vocabulary
-    reading_data = item.get_reading_data()
+    reading_data = item.get_readings_data()
     readings = ",".join(reading_data[0])
     output["Reading"].append(readings)
 
@@ -637,9 +680,15 @@ def get_vocabulary_data(item: Vocabulary, site_session: requests.sessions.Sessio
     output["Reading Mnemonic"].append(reading_mnemonic)
 
     # Find the respective audio for each of this Vocabulary's readings
-    # audio_file_names = item.get_audio_files() # TODO: COMPLETE THE FUNCTION
-    output["Reading Audio Female"].append("-") # TODO: Add functionality
-    output["Reading Audio Male"].append("-") # TODO: Add functionality
+    audio_reading_data = item.get_audio_reading_data()
+    audio_readings_list = audio_reading_data[0]
+    audio_pseudo_dict = audio_reading_data[1]
+
+    audio_data = item.get_audio_data(audio_readings_list, audio_pseudo_dict)
+    item.download_audio(audio_pseudo_dict)
+
+    output["Reading Audio Male"].append(",".join(audio_data["Male"]))
+    output["Reading Audio Female"].append(",".join(audio_data["Female"]))
 
     # Find the context (examples) in which this Vocabulary is used in
     output["Context 1-EN"].append("-") # TODO: Add functionality
