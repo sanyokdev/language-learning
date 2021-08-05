@@ -13,6 +13,6 @@ grid_data = WaniKani.data.get_custom_grid_data(item_list, grid_type)
 """
 grid_data = WaniKani.data.get_grid_data(grid_type, session)
 
-grid_item_data = WaniKani.data.get_grid_item_data(grid_data, session, DEBUG=True, MAX_COUNT=50)
+grid_item_data = WaniKani.data.get_grid_item_data(grid_data, session)
 grid_item_data.to_csv(f"-Output/WaniKani_{ str(grid_type.name) }_Data.csv", index=False)
 print(grid_item_data)
