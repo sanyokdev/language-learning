@@ -88,7 +88,9 @@ class DataPresets(Enum):
         "Context 2-EN": [],
         "Context 2-JP": [],
         "Context 3-EN": [],
-        "Context 3-JP": []
+        "Context 3-JP": [],
+        "Context 4-EN": [],
+        "Context 4-JP": []
     }
 
 
@@ -442,7 +444,8 @@ class Vocabulary(_Common):
         output_data = {
             "Context 1": {"EN": "None", "JP": "None"},
             "Context 2": {"EN": "None", "JP": "None"},
-            "Context 3": {"EN": "None", "JP": "None"}
+            "Context 3": {"EN": "None", "JP": "None"},
+            "Context 4": {"EN": "None", "JP": "None"}
         }
 
         # Sort through all the context items and pull out the text
@@ -719,6 +722,7 @@ def get_vocabulary_data(item: Vocabulary, site_session: requests.sessions.Sessio
     """
     # Sets the Vocabulary object's page soup
     item.set_page_soup(site_session)
+    print(item.symbol)
 
     # Prepare the output format
     output = DataPresets.VOCABULARY.value
@@ -779,6 +783,10 @@ def get_vocabulary_data(item: Vocabulary, site_session: requests.sessions.Sessio
     context_3_data = context_data["Context 3"]
     output["Context 3-EN"].append(context_3_data["EN"])
     output["Context 3-JP"].append(context_3_data["JP"])
+
+    context_4_data = context_data["Context 4"]
+    output["Context 4-EN"].append(context_4_data["EN"])
+    output["Context 4-JP"].append(context_4_data["JP"])
 
     return output
 # endregion

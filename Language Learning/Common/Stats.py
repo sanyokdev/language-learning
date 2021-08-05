@@ -33,6 +33,9 @@ class TimeTracker:
         self.delay_offset = 1.025 - self.avg_time_per_item
         self.delay += self.delay_offset
 
+        if self.delay < 0:
+            self.delay = 0
+
     def print_progress(self):
         time_frac, time_whole = math.modf(round((self.avg_time_per_item * (self.total_items - self.progress)) / 60, 1))
         time_min = int(time_whole)
