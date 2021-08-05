@@ -74,6 +74,8 @@ class DataPresets(Enum):
         "Level": [],
         "Symbol": [],
         "Meaning": [],
+        "Kanji Component Name": [],
+        "Kanji Component Symbol": [],
         "Meaning Mnemonic": [],
         "Word Type": [],
         "Reading": [],
@@ -298,6 +300,32 @@ class Vocabulary(_Common):
     """
     A class with a set of functions used for the "Vocabulary" objects.
     """
+    def get_kanji_components(self) -> [[str], [str]]:
+        """
+        Gets the Kanji (name and symbol) that make up this respective Vocabulary.
+
+        :return: A list containing a list of all the Kanji component names and symbols. [["All Kanji Names"], ["All Kanji Symbols"]]
+        """
+        # Find the combination section and get all the available kanji elements.
+        component_element = self.page_soup.find("section", {"id": "components"})
+        kanji_elements = component_element.find_all("li", {"class": "character-item"})
+
+        # Prep ouput lists
+        kanji_names = []
+        kanji_symbols = []
+
+        # Go though all of the Kanji elements and pull out its respective Name and Symbol into the according lists.
+        for element in kanji_elements:
+            link_element = element.find("a")
+
+            name_element = link_element.find("span")
+            kanji_names.append(name_element.contents[0])
+
+            symbol_element = link_element.find_all("li")[1]
+            kanji_symbols.append(symbol_element.contents[0])
+
+        return [kanji_names, kanji_symbols]
+
     def get_readings_data(self) -> [[str], [str]]:
         """
         Gets the respective readings for this Vocabulary.
@@ -389,23 +417,50 @@ class Vocabulary(_Common):
                 filename = f"Vocab-{ reading }-Male"
 
                 helper.download_site_file(filename, ".mp3", audio_data["male"])
-                print("Dowloaded: " + filename)
+                # print("Dowloaded: " + filename)
                 pass
 
             if audio_data["female"] != "None":
                 filename = f"Vocab-{ reading }-Female"
 
                 helper.download_site_file(filename, ".mp3", audio_data["female"])
-                print("Dowloaded: " + filename)
+                # print("Dowloaded: " + filename)
                 pass
 
-    def get_context_list(self):
+    # TODO: Document this method
+    def get_context_data(self) -> {}:
         """
 
         :return:
         """
+        # Find the context section and get all the available reading elements.
+        context_element = self.page_soup.find("section", {"id": "context"})
+        text_block_elements = context_element.find_all("div", {"class": "context-sentence-group"})
 
-        pass
+        # Prepare the output data
+        output_data = {
+            "Context 1": {"EN": "None", "JP": "None"},
+            "Context 2": {"EN": "None", "JP": "None"},
+            "Context 3": {"EN": "None", "JP": "None"}
+        }
+
+        # Sort through all the context items and pull out the text
+        for i in range(len(text_block_elements)):
+            block = text_block_elements[i]
+            text_elements = block.find_all("p")
+
+            index = i + 1
+            for element in text_elements:
+                if element.contents:
+                    sentence = element.contents[0]
+
+                    if element.get("lang") == "ja":
+                        text = f"<jp>{ sentence }</jp>"
+                        output_data[f"Context { index }"]["JP"] = text
+                    else:
+                        output_data[f"Context {index}"]["EN"] = sentence
+
+        return output_data
 
 def to_item_list(data: pd.DataFrame) -> [_Common]:
     """
@@ -673,6 +728,11 @@ def get_vocabulary_data(item: Vocabulary, site_session: requests.sessions.Sessio
     meanings = ",".join(meaning_data[:-1])
     output["Meaning"].append(meanings)
 
+    # Find the Kanji that make up this respective Kanji
+    kanji_combination = item.get_kanji_components()
+    output["Kanji Component Name"].append(",".join(kanji_combination[0]))
+    output["Kanji Component Symbol"].append(",".join(kanji_combination[1]))
+
     # Find the Mnemonic to easily remember the Meaning
     meaning_mnemonic = item.get_mnemonic(MnemonicType.Meaning)
     output["Meaning Mnemonic"].append(meaning_mnemonic)
@@ -702,14 +762,18 @@ def get_vocabulary_data(item: Vocabulary, site_session: requests.sessions.Sessio
     output["Reading Audio Female"].append(",".join(audio_data["Female"]))
 
     # Find the context (examples) in which this Vocabulary is used in
-    output["Context 1-EN"].append("-") # TODO: Add functionality
-    output["Context 1-JP"].append("-") # TODO: Add functionality
+    context_data = item.get_context_data()
+    context_1_data = context_data["Context 1"]
+    output["Context 1-EN"].append(context_1_data["EN"])
+    output["Context 1-JP"].append(context_1_data["JP"])
 
-    output["Context 2-EN"].append("-") # TODO: Add functionality
-    output["Context 2-JP"].append("-") # TODO: Add functionality
+    context_2_data = context_data["Context 2"]
+    output["Context 2-EN"].append(context_2_data["EN"])
+    output["Context 2-JP"].append(context_2_data["JP"])
 
-    output["Context 3-EN"].append("-") # TODO: Add functionality
-    output["Context 3-JP"].append("-") # TODO: Add functionality
+    context_3_data = context_data["Context 3"]
+    output["Context 3-EN"].append(context_3_data["EN"])
+    output["Context 3-JP"].append(context_3_data["JP"])
 
     # print(output)
     return output
