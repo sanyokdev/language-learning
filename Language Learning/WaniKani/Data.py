@@ -686,7 +686,6 @@ def get_kanji_data(item: Kanji, site_session: requests.sessions.Session) -> {}:
     output["Radical Component Symbol"].append(",".join(radical_combination[1]))
 
     # Find the Mnemonic to easily remember the Meaning
-    print(item.symbol)
     meaning_mnemonic = item.get_mnemonic(MnemonicType.Meaning)
     output["Meaning Mnemonic"].append(meaning_mnemonic)
 
