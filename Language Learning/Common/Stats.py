@@ -6,8 +6,9 @@ import time
     Some Comment
 """
 class TimeTracker:
-    def __init__(self, delay: float, total_items: int):
-        self.delay = delay
+    def __init__(self, total_items: int):
+        self.delay = 0.7
+        self.delay_offset = 0
 
         self.total_items = total_items
         self.progress = 0
@@ -29,6 +30,9 @@ class TimeTracker:
         self.prev_times.append(self.end_time - self.start_time)
         self.avg_time_per_item = sum(self.prev_times) / len(self.prev_times)
 
+        self.delay_offset = 1.025 - self.avg_time_per_item
+        self.delay += self.delay_offset
+
     def print_progress(self):
         time_frac, time_whole = math.modf(round((self.avg_time_per_item * (self.total_items - self.progress)) / 60, 1))
         time_min = int(time_whole)
@@ -45,9 +49,9 @@ class TimeTracker:
 
 
     def print_stats(self):
-        print(f"- RPM: { int(60 / self.avg_time_per_item) } | TPR: { round(self.avg_time_per_item, 2) }s\n")
+        print(f"- RPM: { int(60 / self.avg_time_per_item) } | TPR: { round(self.avg_time_per_item, 2) }s")
         # - RPM "Requests per minute"
         # - TPR "Time per request"
 
-    def recalculate_delay(self):
-        pass # TODO: Complete the method
+    def print_delay(self):
+        print(f"- New Delay: { round(self.delay, 5) } | New Offset: { round(self.delay_offset, 5) }")

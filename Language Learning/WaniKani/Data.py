@@ -171,6 +171,7 @@ class _Common:
         return format_mnemonic(mnemonic_data)
 
 
+# TODO: Document this function
 def format_mnemonic(mnemonic_data: []) -> str:
     """
     Formats a list of mnemonic "elements" into a string used Anki can use for either the Meaning or Reading mnemonics.
@@ -348,7 +349,7 @@ class Vocabulary(_Common):
 
         return [readings, readings_whitelist]
 
-    # TODO: Clean/recode this method
+    # TODO: Clean/recode this method or Document it
     def get_audio_reading_data(self) -> ([], []):
         # Find the reading section and get all the available reading elements.
         reading_element = self.page_soup.find("section", {"id": "reading"})
@@ -378,7 +379,7 @@ class Vocabulary(_Common):
 
         return readings_list, audio_pseudo_dict
 
-    # TODO: Clean/recode this method
+    # TODO: Clean/recode this method or Document it
     def get_audio_data(self, audio_reading_data: ([], [])) -> {}:
         readings_list = audio_reading_data[0]
         pseudo_dict = audio_reading_data[1]
@@ -399,7 +400,7 @@ class Vocabulary(_Common):
 
         return output_data
 
-    # TODO: Clean/recode this method
+    # TODO: Clean/recode this method or Document it
     def download_audio(self, audio_reading_data: ([], [])):
         """
 
@@ -592,7 +593,7 @@ def get_grid_item_data(grid_data: (pd.DataFrame, GridType), site_session: reques
     item_list = [convert_type(item, grid_type) for item in grid_items]
 
     # Set up the progress tracking
-    tracker = stats.TimeTracker(0.7, total_items=len(item_list))
+    tracker = stats.TimeTracker(total_items=len(item_list))
 
     # Find and save the respecive data for each symbol in the grid
     output_data = {}
@@ -619,6 +620,8 @@ def get_grid_item_data(grid_data: (pd.DataFrame, GridType), site_session: reques
         tracker.end()
         tracker.print_progress()
         tracker.print_stats()
+        tracker.print_delay()
+        print("\n")
 
         count += 1 # -- DEBUG
 
@@ -755,7 +758,7 @@ def get_vocabulary_data(item: Vocabulary, site_session: requests.sessions.Sessio
     output["Reading Mnemonic"].append(reading_mnemonic)
 
     # Find the respective audio for each of this Vocabulary's readings
-    # TODO: Clean/recode this section
+    # TODO: Clean/recode this method or Document it
     audio_reading_data = item.get_audio_reading_data()
     audio_data = item.get_audio_data(audio_reading_data)
     item.download_audio(audio_reading_data)
