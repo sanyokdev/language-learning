@@ -320,7 +320,7 @@ class Vocabulary(_Common):
 
         return [readings, readings_whitelist]
 
-    # TODO: Document the audio methods
+    # TODO: Clean/recode this method
     def get_audio_reading_data(self) -> ([], []):
         # Find the reading section and get all the available reading elements.
         reading_element = self.page_soup.find("section", {"id": "reading"})
@@ -350,7 +350,11 @@ class Vocabulary(_Common):
 
         return readings_list, audio_pseudo_dict
 
-    def get_audio_data(self, readings_list: [], audio_pseudo_dict: []) -> {}:
+    # TODO: Clean/recode this method
+    def get_audio_data(self, audio_reading_data: ([], [])) -> {}:
+        readings_list = audio_reading_data[0]
+        pseudo_dict = audio_reading_data[1]
+
         output_data = {"Male": [], "Female": []}
 
         for reading in readings_list:
@@ -358,33 +362,43 @@ class Vocabulary(_Common):
 
             genders = ["Male", "Female"]
             for gender in genders:
-                if audio_pseudo_dict[reading_id][gender.lower()] != "None":
-                    audio_filename = f"[sound:{reading}-{ str(reading_id) }-{ gender }.mp3]"
+                if pseudo_dict[reading_id][gender.lower()] != "None":
+                    audio_filename = f"[sound:Vocab-{ reading }-{ gender }.mp3]"
                     output_data[gender].append(audio_filename)
+
                 else:
                     output_data[gender].append("None")
 
-        print(output_data)
         return output_data
 
-    def download_audio(self, audio_pseudo_dict: []):
+    # TODO: Clean/recode this method
+    def download_audio(self, audio_reading_data: ([], [])):
         """
 
-        :param audio_pseudo_dict:
+        :param audio_reading_data:
         :return:
         """
-        print("Downloaded: " + audio_pseudo_dict[0]["male"])
-        """
-        local_filename = 'test.mp3'
-        r = requests.get(url)
-        with open(local_filename, 'wb') as f:
-            for chunk in r.iter_content(chunk_size=1024):
-                if chunk:  # filter out keep-alive new chunks
-                    f.write(chunk)
-        """
-        pass
+        readings_list = audio_reading_data[0]
+        pseudo_dict = audio_reading_data[1]
 
-    # TODO: Complete the method
+        for i in range(len(pseudo_dict)):
+            audio_data = pseudo_dict[i]
+            reading = readings_list[i]
+
+            if audio_data["male"] != "None":
+                filename = f"Vocab-{ reading }-Male"
+
+                helper.download_site_file(filename, ".mp3", audio_data["male"])
+                print("Dowloaded: " + filename)
+                pass
+
+            if audio_data["female"] != "None":
+                filename = f"Vocab-{ reading }-Female"
+
+                helper.download_site_file(filename, ".mp3", audio_data["female"])
+                print("Dowloaded: " + filename)
+                pass
+
     def get_context_list(self):
         """
 
@@ -392,7 +406,6 @@ class Vocabulary(_Common):
         """
 
         pass
-
 
 def to_item_list(data: pd.DataFrame) -> [_Common]:
     """
@@ -680,12 +693,10 @@ def get_vocabulary_data(item: Vocabulary, site_session: requests.sessions.Sessio
     output["Reading Mnemonic"].append(reading_mnemonic)
 
     # Find the respective audio for each of this Vocabulary's readings
+    # TODO: Clean/recode this section
     audio_reading_data = item.get_audio_reading_data()
-    audio_readings_list = audio_reading_data[0]
-    audio_pseudo_dict = audio_reading_data[1]
-
-    audio_data = item.get_audio_data(audio_readings_list, audio_pseudo_dict)
-    item.download_audio(audio_pseudo_dict)
+    audio_data = item.get_audio_data(audio_reading_data)
+    item.download_audio(audio_reading_data)
 
     output["Reading Audio Male"].append(",".join(audio_data["Male"]))
     output["Reading Audio Female"].append(",".join(audio_data["Female"]))

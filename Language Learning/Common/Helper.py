@@ -1,7 +1,7 @@
 import re
 
 import numpy
-
+import requests
 
 """
     Some Comment
@@ -31,3 +31,17 @@ def sort_kanji_to_specific_order(presetData, unsortedData):
     dataID = numpy.array(dataID)
     inds = dataID.argsort()
     return unsorted[inds].tolist()
+
+
+"""
+    Some Comment
+"""
+def download_site_file(filename: str, filetype: str, url: str):
+    local_filename = filename + filetype
+
+    r = requests.get(url)
+
+    with open(f"-Output/Audio/{ local_filename }", 'wb') as f:
+        for chunk in r.iter_content(chunk_size=1024):
+            if chunk:  # filter out keep-alive new chunks
+                f.write(chunk)
