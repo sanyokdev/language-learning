@@ -171,9 +171,6 @@ class _Common:
         return format_mnemonic(mnemonic_data)
 
 
-# TODO: You can have tags inside tags (e.g. <jp><reading>しら</reading></jp> - Source: https://www.wanikani.com/vocabulary/%E7%99%BD%E8%8F%8A)
-#       Why... :/
-#       - Also, document this entire function
 def format_mnemonic(mnemonic_data: []) -> str:
     """
     Formats a list of mnemonic "elements" into a string used Anki can use for either the Meaning or Reading mnemonics.
@@ -209,7 +206,10 @@ def format_mnemonic(mnemonic_data: []) -> str:
                             item_tag = f"<reading>{item_content}</reading>"
 
                     else:
-                        item_tag = f"<jp>{item_content}</jp>"
+                        if type(item_content) == Tag:
+                            item_tag = f"<reading><jp>{item_content.contents[0]}</jp></reading>"
+                        else:
+                            item_tag = f"<jp>{item_content}</jp>"
 
                     mnemonic += item_tag
             else:
@@ -462,6 +462,7 @@ class Vocabulary(_Common):
 
         return output_data
 
+
 def to_item_list(data: pd.DataFrame) -> [_Common]:
     """
     Turns a respective symbol's data into a nice package containing that info (Symbol Object).
@@ -573,12 +574,14 @@ def get_grid_data(grid_type: GridType, site_session: requests.sessions.Session) 
     return pd.DataFrame(data=grid_data), grid_type
 
 
-def get_grid_item_data(grid_data: (pd.DataFrame, GridType), site_session: requests.sessions.Session) -> pd.DataFrame:
+def get_grid_item_data(grid_data: (pd.DataFrame, GridType), site_session: requests.sessions.Session, DEBUG=False, MAX_COUNT=20) -> pd.DataFrame:
     """
     Gets the respective data for each symbol item (Radical, Kanji or Vocabulary) in grid_data from their respective pages.
 
     :param grid_data: A base set of data use to create all the items in a respective symbol type's grid.
     :param site_session: The "logged in" state of the WaniKani site.
+    :param DEBUG: Changes the DEBUG state of the function (False -> Works like normal, True -> Stops at a specific point).
+    :param MAX_COUNT: If DEBUG is True, stop the method after MAX_COUNT items.
     :return: The contents of each symbol item's data as a Dataframe.
     """
     # Get item data from the grid page
@@ -596,7 +599,7 @@ def get_grid_item_data(grid_data: (pd.DataFrame, GridType), site_session: reques
 
     count = 0 # -- DEBUG
     for item in item_list:
-        if count == 20: # -- DEBUG
+        if DEBUG and count == MAX_COUNT: # -- DEBUG
             break
 
         # Start the time tracking
@@ -775,6 +778,5 @@ def get_vocabulary_data(item: Vocabulary, site_session: requests.sessions.Sessio
     output["Context 3-EN"].append(context_3_data["EN"])
     output["Context 3-JP"].append(context_3_data["JP"])
 
-    # print(output)
     return output
 # endregion
