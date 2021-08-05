@@ -427,11 +427,11 @@ class Vocabulary(_Common):
                 # print("Dowloaded: " + filename)
                 pass
 
-    # TODO: Document this method
     def get_context_data(self) -> {}:
         """
+        Gets the context (example) sentences for this respective Vocabulary.
 
-        :return:
+        :return: A dict containing 3 context dicts each having a EN and JP sentence (if it exists).
         """
         # Find the context section and get all the available reading elements.
         context_element = self.page_soup.find("section", {"id": "context"})
