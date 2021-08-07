@@ -1,6 +1,8 @@
 import json
+import math
 from enum import Enum
 
+import numpy as np
 import pandas as pd
 import requests
 
@@ -40,58 +42,6 @@ class MnemonicType(Enum):
     Meaning = "meaning"
     Reading = "reading"
     Info = "information"
-
-
-class DataPresets(Enum):
-    """
-    Data output templates.
-    \n Used in the following data exports:
-    \n - Radical, Kanji and Vocabulary.
-    """
-
-    RADICAL = {
-        "Level": [],
-        "Symbol": [],
-        "Meaning": [],
-        "Meaning Mnemonic": []
-    }
-
-    KANJI = {
-        "Level": [],
-        "Symbol": [],
-        "Meaning": [],
-        "Radical Component Name": [],
-        "Radical Component Symbol": [],
-        "Meaning Mnemonic": [],
-        "Reading Onyomi": [],
-        "Reading Kunyomi": [],
-        "Reading Nanori": [],
-        "Reading Whitelist": [],
-        "Reading Mnemonic": []
-    }
-
-    VOCABULARY = {
-        "Level": [],
-        "Symbol": [],
-        "Meaning": [],
-        "Kanji Component Name": [],
-        "Kanji Component Symbol": [],
-        "Meaning Mnemonic": [],
-        "Word Type": [],
-        "Reading": [],
-        "Reading Whitelist": [],
-        "Reading Mnemonic": [],
-        "Reading Audio Male": [],
-        "Reading Audio Female": [],
-        "Context 1-EN": [],
-        "Context 1-JP": [],
-        "Context 2-EN": [],
-        "Context 2-JP": [],
-        "Context 3-EN": [],
-        "Context 3-JP": [],
-        "Context 4-EN": [],
-        "Context 4-JP": []
-    }
 
 
 # region - Item Types
@@ -530,14 +480,16 @@ def get_custom_grid_data(item_list: [CustomGridItem], grid_type: GridType) -> (p
 
     return pd.DataFrame(data=grid_data), grid_type
 
-def get_grid_data(grid_type: GridType, site_session: requests.sessions.Session) -> (pd.DataFrame, GridType):
+def get_grid_data(grid_type: GridType) -> (pd.DataFrame, GridType):
     """
     Gets the base set of data for each symbol in a respective grid_type.
 
     :param grid_type: The respecive symbol grids/types you can access on the WaniKani site.
-    :param site_session: The "logged in" state of the WaniKani site.
     :return: A base set of data use to create all the items in a respective symbol type's grid.
     """
+    # Gets the site's session
+    site_session = site.get_session()
+
     # Load the respective grid's page and get its soup.
     url = grid_type.value
     soup = site.get_page(url, site_session)
@@ -578,76 +530,136 @@ def get_grid_data(grid_type: GridType, site_session: requests.sessions.Session) 
     return pd.DataFrame(data=grid_data), grid_type
 
 
-def get_grid_item_data(grid_data: (pd.DataFrame, GridType), site_session: requests.sessions.Session, DEBUG=False, MAX_COUNT=20) -> pd.DataFrame:
+def get_grid_item_data(grid_data: (pd.DataFrame, GridType), CHUNK_MODE=False, MAX_CHUNK_SIZE=500):
     """
     Gets the respective data for each symbol item (Radical, Kanji or Vocabulary) in grid_data from their respective pages.
 
     :param grid_data: A base set of data use to create all the items in a respective symbol type's grid.
-    :param site_session: The "logged in" state of the WaniKani site.
-    :param DEBUG: Changes the DEBUG state of the function (False -> Works like normal, True -> Stops at a specific point).
-    :param MAX_COUNT: If DEBUG is True, stop the method after MAX_COUNT items.
+    :param CHUNK_MODE: Changes the SPLIT_MODE state of the function (False -> Works like normal, True -> Stops at a specific point). TODO: Update this
+    :param MAX_CHUNK_SIZE: If SPLIT_MODE is True, stop the method after SPLIT_SIZE items. TODO: Update this
     :return: The contents of each symbol item's data as a Dataframe.
     """
-    # Get item data from the grid page
+    # Set up the grid data variables
     grid_df = grid_data[0]
     grid_type = grid_data[1]
 
-    grid_items = to_item_list(grid_df)
-    item_list = [convert_type(item, grid_type) for item in grid_items]
+    total_item_count = len(grid_df)
+    print("\033[1;32;40m" + f"Total Item Count: { total_item_count }" + "\033[0m")
 
-    # Set up the progress tracking
-    tracker = stats.TimeTracker(total_items=len(item_list))
+    # Set up the default chunk size if disabled
+    if CHUNK_MODE is False:
+        MAX_CHUNK_SIZE = total_item_count
 
-    # Find and save the respecive data for each symbol in the grid
-    output_data = {}
+    # Set up the chunk data
+    total_chunk_count = math.ceil(total_item_count / MAX_CHUNK_SIZE)
+    all_chunk_item_data = np.array_split(grid_df, total_chunk_count)
 
-    count = 0 # -- DEBUG
-    for item in item_list:
-        if DEBUG and count == MAX_COUNT: # -- DEBUG
-            break
+    # Go through each chunk and get all its respective item data
+    for cur_chunk in range(total_chunk_count):
+        print("\033[1;32;40m" + f"Processing Chunk { cur_chunk + 1 } / { total_chunk_count }" + "\033[0m")
 
-        # Start the time tracking
-        tracker.start()
+        # Gets the item data for the current chunk
+        chunk_item_data = all_chunk_item_data[cur_chunk]
+        chunk_item_data.reset_index(drop=True, inplace=True)
 
-        # Find the respective symbol data inside the page
+        chunk_common_items = to_item_list(chunk_item_data)
+        chunk_converted_items = [convert_type(common_item, grid_type) for common_item in chunk_common_items]
+
+        # Gets the site settion for this split
+        site_session = site.get_session()
+
+        # Set up the progress tracking
+        tracker = stats.TimeTracker(total_items=len(chunk_converted_items))
+
+        # Prapare the output template for the respective grid type
+        output_data = {}
         if grid_type == GridType.Radical:
-            output_data = get_radical_data(item, site_session)
-
+            output_data = {
+                "Level": [],
+                "Symbol": [],
+                "Meaning": [],
+                "Meaning Mnemonic": []
+            }
         elif grid_type == GridType.Kanji:
-            output_data = get_kanji_data(item, site_session)
-
+            output_data = {
+                "Level": [],
+                "Symbol": [],
+                "Meaning": [],
+                "Radical Component Name": [],
+                "Radical Component Symbol": [],
+                "Meaning Mnemonic": [],
+                "Reading Onyomi": [],
+                "Reading Kunyomi": [],
+                "Reading Nanori": [],
+                "Reading Whitelist": [],
+                "Reading Mnemonic": []
+            }
         elif grid_type == GridType.Vocabulary:
-            output_data = get_vocabulary_data(item, site_session)
+            output_data = {
+                "Level": [],
+                "Symbol": [],
+                "Meaning": [],
+                "Kanji Component Name": [],
+                "Kanji Component Symbol": [],
+                "Meaning Mnemonic": [],
+                "Word Type": [],
+                "Reading": [],
+                "Reading Whitelist": [],
+                "Reading Mnemonic": [],
+                "Reading Audio Male": [],
+                "Reading Audio Female": [],
+                "Context 1-EN": [],
+                "Context 1-JP": [],
+                "Context 2-EN": [],
+                "Context 2-JP": [],
+                "Context 3-EN": [],
+                "Context 3-JP": [],
+                "Context 4-EN": [],
+                "Context 4-JP": []
+            }
 
-        # End the time tracking and print result
-        tracker.end()
-        tracker.print_progress()
-        tracker.print_stats()
-        tracker.print_delay()
-        print("\n")
+        # Find and save the respecive data for each symbol in the grid
+        for item in chunk_converted_items:
+            # Start the time tracking
+            tracker.start()
 
-        count += 1 # -- DEBUG
+            # Find the respective symbol data inside the page
+            if grid_type == GridType.Radical:
+                get_radical_data(item, output_data, site_session)
 
-    return pd.DataFrame(data=output_data)
+            elif grid_type == GridType.Kanji:
+                get_kanji_data(item, output_data, site_session)
+
+            elif grid_type == GridType.Vocabulary:
+                get_vocabulary_data(item, output_data, site_session)
+
+            # End the time tracking and print result
+            tracker.end()
+            tracker.print_progress()
+            tracker.print_stats()
+            tracker.print_delay()
+            print("\n")
+
+        pd.DataFrame(data=output_data).to_csv(f"-Output/WaniKani_{ str(grid_type.name) }_Data_Chunk_{ cur_chunk + 1 }.csv", index=False)
 
 
 # region - Item Data
 """
     Some Comment
 """
-def get_radical_data(item: Radical, site_session: requests.sessions.Session) -> {}:
+def get_radical_data(item: Radical, output: {}, site_session: requests.sessions.Session) -> {}:
     """
     Pulls the data needed from the respective Radical's page.
 
     :param item: The Radical symbol object.
+    :param output: Data output templates.
     :param site_session: The "logged in" state of the WaniKani site.
     :return: A dict containing all the data pulled from the respective Radical's page.
     """
+    print(f"Current Item: Name ({item.name}) | Symbol: {item.symbol}")
+
     # Sets the Radical object's page soup
     item.set_page_soup(site_session)
-
-    # Prepare the output format
-    output = DataPresets.RADICAL.value
 
     # Find the Level and Symbol
     output["Level"].append(item.get_level()) # (The level at which you learn this Radical)
@@ -664,19 +676,19 @@ def get_radical_data(item: Radical, site_session: requests.sessions.Session) -> 
     return output
 
 
-def get_kanji_data(item: Kanji, site_session: requests.sessions.Session) -> {}:
+def get_kanji_data(item: Kanji, output: {}, site_session: requests.sessions.Session) -> {}:
     """
     Pulls the data needed from the respective Kanji's page.
 
     :param item: The Kanji symbol object.
+    :param output: Data output templates.
     :param site_session: The "logged in" state of the WaniKani site.
     :return: A dict containing all the data pulled from the respective Kanji's page.
     """
+    print(f"Current Item: Name ({item.name}) | Symbol: {item.symbol}")
+
     # Sets the Kanji object's page soup
     item.set_page_soup(site_session)
-
-    # Prepare the output format
-    output = DataPresets.KANJI.value
 
     # Find the Level and Symbol
     output["Level"].append(item.get_level()) # (The level at which you learn this Kanji)
@@ -712,20 +724,19 @@ def get_kanji_data(item: Kanji, site_session: requests.sessions.Session) -> {}:
     return output
 
 
-def get_vocabulary_data(item: Vocabulary, site_session: requests.sessions.Session) -> {}:
+def get_vocabulary_data(item: Vocabulary, output: {}, site_session: requests.sessions.Session) -> {}:
     """
     Pulls the data needed from the respective Vocabulary's page.
 
     :param item: The Vocabulary symbol object.
+    :param output: Data output templates.
     :param site_session: The "logged in" state of the WaniKani site.
     :return: A dict containing all the data pulled from the respective Vocabulary's page.
     """
+    print(f"Current Item: Name ({item.name}) | Symbol: {item.symbol}")
+
     # Sets the Vocabulary object's page soup
     item.set_page_soup(site_session)
-    print(item.symbol)
-
-    # Prepare the output format
-    output = DataPresets.VOCABULARY.value
 
     # Find the Level and Symbol
     output["Level"].append(item.get_level()) # (The level at which you learn this Vocabulary)
