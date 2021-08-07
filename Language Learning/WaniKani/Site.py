@@ -1,5 +1,5 @@
 import json
-import pandas as pd
+import time
 
 import requests
 from bs4 import BeautifulSoup
@@ -53,8 +53,10 @@ def get_page(page_url: str, site_session: requests.sessions.Session):
 
     result = site_session.get(page_url, headers=dict(referer=page_url))
 
-    if result.status_code == 404:
-        print("ERROR: Could not load WaniKani page, status 404")
-        return None
+    if result.status_code != 200:
+        while result.status_code != 200:
+            print(f"ERROR: Could not load WaniKani page, status {result.status_code} - Retrying site load (3 sec per retry)")
+            result = site_session.get(page_url, headers=dict(referer=page_url))
+            time.sleep(3)
 
     return BeautifulSoup(result.content, "html.parser")
