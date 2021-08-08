@@ -640,8 +640,7 @@ def get_grid_item_data(grid_data: (pd.DataFrame, GridType), CHUNK_MODE=False, MA
             tracker.print_delay()
             print("\n")
 
-        pd.DataFrame(data=output_data).to_csv(f"-Output/WaniKani_{ str(grid_type.name) }_Data_Chunk_{ cur_chunk + 1 }.csv", index=False)
-
+        pd.DataFrame(data=output_data).to_csv(f"-Output/WaniKani_{ str(grid_type.name) }_Data_Chunk_{ cur_chunk + 1 }.csv", index=False, sep="\t")
 
 # region - Item Data
 """
