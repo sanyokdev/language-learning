@@ -2,7 +2,7 @@ import pandas as pd
 
 
 def generate_radical_deck():
-    radical_data = pd.read_excel("-Input/WaniKani_Radical_Data.xlsx")
+    radical_data = pd.read_excel("D:\Python Dev\Language-Learning Repo\Japanese Data\Complete\WaniKani_Radical_Data.xlsx")
 
     output_data = {
         "Level": [],
@@ -29,11 +29,11 @@ def generate_radical_deck():
 
         output_data["Tags"].append(f'Radical Level_{ radical_data["Level"][i] }')
 
-    pd.DataFrame(data=output_data).to_csv(f"-Output/Anki_Radical_Notes.csv", index=False, header=False, sep="\t")
+    pd.DataFrame(data=output_data).to_csv("-Output/Anki_Radical_Notes.csv", index=False, header=False, sep="\t")
 
 
 def generate_kanji_meaning_deck():
-    kanji_data = pd.read_excel("-Input/WaniKani_Kanji_Data.xlsx")
+    kanji_data = pd.read_excel("D:\Python Dev\Language-Learning Repo\Japanese Data\Complete\WaniKani_Kanji_Data.xlsx")
 
     output_data = {
         "Level": [],
@@ -91,11 +91,11 @@ def generate_kanji_meaning_deck():
 
         output_data["Tags"].append(f'Kanji_Meaning Level_{ kanji_data["Level"][i] }')
 
-    pd.DataFrame(data=output_data).to_csv(f"-Output/Anki_Kanji_Meaning_Notes.csv", index=False, header=False, sep="\t")
+    pd.DataFrame(data=output_data).to_csv("-Output/Anki_Kanji_Meaning_Notes.csv", index=False, header=False, sep="\t")
 
 
 def generate_vocabulary_meaning_deck():
-    vocabulary_data = pd.read_excel("-Input/WaniKani_Vocabulary_Data.xlsx")
+    vocabulary_data = pd.read_excel("D:\Python Dev\Language-Learning Repo\Japanese Data\Complete\WaniKani_Vocabulary_Data.xlsx")
 
     output_data = {
         "Level": [],
@@ -172,11 +172,11 @@ def generate_vocabulary_meaning_deck():
 
         output_data["Tags"].append(f'Vocabulary_Meaning Level_{ vocabulary_data["Level"][i] }')
 
-    pd.DataFrame(data=output_data).to_csv(f"-Output/Anki_Vocabulary_Meaning_Notes.csv", index=False, header=False, sep="\t")
+    pd.DataFrame(data=output_data).to_csv("-Output/Anki_Vocabulary_Meaning_Notes.csv", index=False, header=False, sep="\t")
 
 
 def generate_kanji_reading_deck():
-    kanji_data = pd.read_excel("-Input/WaniKani_Kanji_Data.xlsx")
+    kanji_data = pd.read_excel("D:\Python Dev\Language-Learning Repo\Japanese Data\Complete\WaniKani_Kanji_Data.xlsx")
 
     output_data = {
         "Level": [],
@@ -212,10 +212,10 @@ def generate_kanji_reading_deck():
 
         output_data["Tags"].append(f'Kanji_Reading Level_{ kanji_data["Level"][i] }')
 
-    pd.DataFrame(data=output_data).to_csv(f"-Output/Anki_Kanji_Reading_Notes.csv", index=False, header=False, sep="\t")
+    pd.DataFrame(data=output_data).to_csv("-Output/Anki_Kanji_Reading_Notes.csv", index=False, header=False, sep="\t")
 
 def generate_vocabulary_reading_deck():
-    vocabulary_data = pd.read_excel("-Input/WaniKani_Vocabulary_Data.xlsx")
+    vocabulary_data = pd.read_excel("D:\Python Dev\Language-Learning Repo\Japanese Data\Complete\WaniKani_Vocabulary_Data.xlsx")
 
     output_data = {
         "Level": [],
@@ -266,4 +266,4 @@ def generate_vocabulary_reading_deck():
 
         output_data["Tags"].append(f'Vocabulary_Reading Level_{ vocabulary_data["Level"][i] }')
 
-    pd.DataFrame(data=output_data).to_csv(f"-Output/Anki_Vocabulary_Reading_Notes.csv", index=False, header=False, sep="\t")
+    pd.DataFrame(data=output_data).to_csv("-Output/Anki_Vocabulary_Reading_Notes.csv", index=False, header=False, sep="\t")
