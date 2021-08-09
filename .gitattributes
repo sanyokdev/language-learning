@@ -6,3 +6,4 @@
 
 # Anki Files
 *.apkg filter=lfs diff=lfs merge=lfs -text
+*.colpkg filter=lfs diff=lfs merge=lfs -text
