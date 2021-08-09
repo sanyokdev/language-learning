@@ -271,10 +271,10 @@ class Vocabulary(_Common):
         for element in kanji_elements:
             link_element = element.find("a")
 
-            name_element = link_element.find("span")
+            name_element = link_element.find_all("li")[1]
             kanji_names.append(name_element.contents[0])
 
-            symbol_element = link_element.find_all("li")[1]
+            symbol_element = link_element.find("span")
             kanji_symbols.append(symbol_element.contents[0])
 
         return [kanji_names, kanji_symbols]
@@ -530,13 +530,14 @@ def get_grid_data(grid_type: GridType) -> (pd.DataFrame, GridType):
     return pd.DataFrame(data=grid_data), grid_type
 
 
-def get_grid_item_data(grid_data: (pd.DataFrame, GridType), CHUNK_MODE=False, MAX_CHUNK_SIZE=500):
+def get_grid_item_data(grid_data: (pd.DataFrame, GridType), CHUNK_MODE=False, MAX_CHUNK_SIZE=500, GET_AUDIO=True):
     """
     Gets the respective data for each symbol item (Radical, Kanji or Vocabulary) in grid_data from their respective pages.
 
     :param grid_data: A base set of data use to create all the items in a respective symbol type's grid.
     :param CHUNK_MODE: Changes the SPLIT_MODE state of the function (False -> Works like normal, True -> Stops at a specific point). TODO: Update this
     :param MAX_CHUNK_SIZE: If SPLIT_MODE is True, stop the method after SPLIT_SIZE items. TODO: Update this
+    :param GET_AUDIO: TODO: Update this
     :return: The contents of each symbol item's data as a Dataframe.
     """
     # Set up the grid data variables
@@ -631,7 +632,7 @@ def get_grid_item_data(grid_data: (pd.DataFrame, GridType), CHUNK_MODE=False, MA
                 get_kanji_data(item, output_data, site_session)
 
             elif grid_type == GridType.Vocabulary:
-                get_vocabulary_data(item, output_data, site_session)
+                get_vocabulary_data(item, output_data, GET_AUDIO, site_session)
 
             # End the time tracking and print result
             tracker.end()
@@ -723,12 +724,13 @@ def get_kanji_data(item: Kanji, output: {}, site_session: requests.sessions.Sess
     return output
 
 
-def get_vocabulary_data(item: Vocabulary, output: {}, site_session: requests.sessions.Session) -> {}:
+def get_vocabulary_data(item: Vocabulary, output: {}, get_audio: bool, site_session: requests.sessions.Session) -> {}:
     """
     Pulls the data needed from the respective Vocabulary's page.
 
     :param item: The Vocabulary symbol object.
     :param output: Data output templates.
+    :param get_audio: # TODO: Update this
     :param site_session: The "logged in" state of the WaniKani site.
     :return: A dict containing all the data pulled from the respective Vocabulary's page.
     """
@@ -775,7 +777,8 @@ def get_vocabulary_data(item: Vocabulary, output: {}, site_session: requests.ses
     # TODO: Clean/recode this method or Document it
     audio_reading_data = item.get_audio_reading_data()
     audio_data = item.get_audio_data(audio_reading_data)
-    item.download_audio(audio_reading_data)
+    if get_audio:
+        item.download_audio(audio_reading_data)
 
     output["Reading Audio Male"].append(",".join(audio_data["Male"]))
     output["Reading Audio Female"].append(",".join(audio_data["Female"]))
