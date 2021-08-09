@@ -137,6 +137,10 @@ def format_mnemonic(mnemonic_data: []) -> str:
         mnemonic = ""
         element_data = element.contents
 
+        hints_offset = ""
+        if element.parent.name == "aside":
+            hints_offset = "- Hint: "
+
         for item in element_data:
             if type(item) == Tag:
                 item_class = item.get("class")
@@ -168,7 +172,11 @@ def format_mnemonic(mnemonic_data: []) -> str:
             else:
                 mnemonic += item
 
-        mnemonic_list.append(mnemonic)
+        spacing = "<br><br>"
+        if element == mnemonic_data[-1]:
+            spacing = ""
+
+        mnemonic_list.append(hints_offset + mnemonic + spacing)
 
     return "\n\n".join(mnemonic_list)
 
