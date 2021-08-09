@@ -171,7 +171,29 @@ def format_mnemonic(mnemonic_data: []) -> str:
                     mnemonic += item_tag
 
                 elif item.name == "a":
-                    mnemonic += item.contents[0]
+                    sub_item = item.contents[0]
+                    if type(sub_item) == Tag:
+                        sub_item_class = sub_item.get("class")
+
+                        if sub_item.name == "span":
+                            sub_item_content = sub_item.contents[0]
+                            sub_item_tag = ""
+
+                            if sub_item_class is not None:
+                                if sub_item_class[0] == "radical-highlight":
+                                    sub_item_tag = f"<radical>{sub_item_content}</radical>"
+
+                                elif sub_item_class[0] == "kanji-highlight":
+                                    sub_item_tag = f"<kanji>{sub_item_content}</kanji>"
+
+                                elif sub_item_class[0] == "vocabulary-highlight":
+                                    sub_item_tag = f"<vocabulary>{sub_item_content}</vocabulary>"
+
+                                elif sub_item_class[0] == "reading-highlight":
+                                    sub_item_tag = f"<reading>{sub_item_content}</reading>"
+                            mnemonic += sub_item_tag
+                    else:
+                        mnemonic += sub_item
 
             else:
                 mnemonic += item
