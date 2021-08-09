@@ -7,6 +7,7 @@
 - Meaning Mnemonic
 - Type
 - DO NOT CHANGE
+- Tag
 
 ### Example 
 ## Level:
@@ -17,7 +18,7 @@
 > Disc,Jade Disc
 ## Meaning Elements:
 > ```html
-><p class="meaning-item primary">Disc</p>,<p class="meaning-item">Jade Disc</p>
+><p class="element-item primary">Disc</p>,<p class="element-item">Jade Disc</p>
 > ```
 ## Radical Components:
 > ```html
@@ -59,3 +60,5 @@
 > Kanji Meaning
 ## DO NOT CHANGE:
 > \-
+## Tag:
+> Kanji_Meaning Level_38

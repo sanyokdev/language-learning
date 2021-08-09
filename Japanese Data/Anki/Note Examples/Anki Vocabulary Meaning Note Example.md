@@ -9,6 +9,7 @@
 - Context Elements
 - Type
 - DO NOT CHANGE
+- Tag
 
 ### Example
 ## Level:
@@ -23,7 +24,7 @@
 > Watch,Clock
 ## Meaning Elements:
 > ```html
-><p class="meaning-item primary">Watch</p>,<p class="meaning-item">Clock</p>
+><p class="element-item primary">Watch</p>,<p class="element-item">Clock</p>
 > ```
 ## Kanji Components:
 > ```html
@@ -69,15 +70,11 @@
 >       <jp>ねぇ、あなたの時計に唾が着いてない？</jp>
 >       <p>Hey, isn’t that spit on your watch?</p>
 >   </div>
->
->   <div class="context-item">
->       <h1>Context 4</h1>
->       <p>None</p>
->       <p>None</p>
->   </div>
 ></div>
 > ```
 ## Type:
 > Vocabulary Meaning
 ## DO NOT CHANGE:
 > \-
+## Tag:
+> Vocabulary_Meaning Level_15

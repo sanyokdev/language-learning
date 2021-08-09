@@ -7,6 +7,7 @@
 - Reading Mnemonic
 - Type
 - DO NOT CHANGE
+- Tag
 
 ### Example
 ## Level:
@@ -21,11 +22,13 @@
 > とけい
 ## Reading Elements:
 > ```html
-> <div class="vocab-reading-grid">
->   <span class="vocab-reading-item">
+><div class="reading-grid">
+>   <div class="reading-item">
 >       <reading><jp>とけい</jp></reading>
->       <reading-audio>[sound:Vocab-とけい-Male.mp3]</reading>
->   </span>
+>       <reading-audio class="audio-male">[sound:Vocab-とけい-Male.mp3]</reading-audio>
+>       <reading-audio class="audio-female">[sound:Vocab-とけい-Female.mp3]</reading-audio>
+>   </div>
+></div>
 > ```
 ## Reading Mnemonic:
 > ```html
@@ -35,3 +38,5 @@
 > Vocabulary Reading
 ## DO NOT CHANGE:
 > \-
+## Tag:
+> Vocabulary_Reading Level_15

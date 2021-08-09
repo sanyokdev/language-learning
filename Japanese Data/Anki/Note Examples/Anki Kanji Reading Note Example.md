@@ -6,6 +6,7 @@
 - Reading Mnemonic
 - Type
 - DO NOT CHANGE
+- Tag
 
 ### Example 
 ## Level:
@@ -16,28 +17,22 @@
 > へき
 ## Reading Elements:
 > ```html
-> <div class="reading-grid">
->   <div class="onyomi">
+><div class="reading-grid">
+>   <div class="reading-item">
 >       <h1>On'yomi</h1>
->
->       <span class="reading-item">
->           <reading><jp>へき</jp></reading>
->       </span>
+>       <reading><jp>へき</jp></reading>
 >   </div>
 >
->   <div class="kunyomi">
+>   <div class="reading-item">
 >       <h1>Kun'yomi</h1>
->       <span class="reading-item">
->           <jp>たま</jp>
->       </span>
+>       <jp>たま</jp>
 >   </div>
 >
->   <div class="nanori">
+>   <div class="reading-item">
 >       <h1>Nanori</h1>
->       <span class="reading-item">
->           <p>None</p>
->       </span>
->   </span>
+>       <p>None</p>
+>   </div>
+></div>
 > ```
 ## Reading Mnemonic:
 > ```html
@@ -49,3 +44,5 @@
 > Kanji Reading
 ## DO NOT CHANGE:
 > \-
+## Tag:
+> Kanji_Reading Level_38
