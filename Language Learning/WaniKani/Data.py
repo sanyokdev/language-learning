@@ -169,6 +169,10 @@ def format_mnemonic(mnemonic_data: []) -> str:
                             item_tag = f"<jp>{item_content}</jp>"
 
                     mnemonic += item_tag
+
+                elif item.name == "a":
+                    mnemonic += item.contents[0]
+
             else:
                 mnemonic += item
 
