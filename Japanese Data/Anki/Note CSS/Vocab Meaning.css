@@ -1,0 +1,51 @@
+/* Word Type Section */
+.word-type {
+	top: 2.25em;
+	position: absolute;
+	
+	font-family: "Open Sans Regular";
+	font-size: 26px;
+
+	text-shadow: 2px 2px 0 #00000050;
+}
+
+/* Context Section */
+.context-grid {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.context-item {
+	margin-bottom: 1.5em;
+	line-height: 26px;
+}
+
+.context-item h1 {
+	font-size: 18px;
+}
+
+.context-item h1:before {
+	content: "[ ";
+}
+
+.context-item h1:after {
+	content: " ] ";
+}
+
+.context-item jp {
+	position: relative;
+	left: 0.425em;
+}
+
+.context-item jp:before {
+	content: "JP: ";
+	font-family: "Open Sans Regular";
+	color: yellow;
+}
+
+.context-item p:before {
+	content: "EN: ";
+	font-family: "Open Sans Regular";
+	color: yellow;
+}

@@ -1,0 +1,305 @@
+/*#region Fonts*/
+@font-face {
+	font-family: "Open Sans Regular";
+	src: url("_OpenSans-Regular.ttf");
+}
+
+@font-face {
+	font-family: "Open Sans Light";
+	src: url("_OpenSans-Light.ttf");
+}
+
+@font-face {
+	font-family: "Hiragino Kaku Gothic Pro W3";
+	src: url("_hirakakyprow3.otf");
+}
+
+@font-face {
+	font-family: "Noto Sans JP";
+	src: url("_NotoSansCJKjp-Regular.otf");
+}
+
+/*#region WaniKani Radical Font - TheWinterDev: Alessandro Nikolaev 2021*/
+@font-face {
+    font-family: "WaniRadicals";
+    src: url("_WaniRadicals.ttf") format("truetype"), url("_WaniRadicals.svg#WaniRadicals") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+[data-icon]:before { content: attr(data-icon); }
+
+[data-icon]:before,
+.radical-bar:before,
+.radical-bear:before,
+.radical-beggar:before,
+.radical-blackjack:before,
+.radical-cactus:before,
+.radical-cape:before,
+.radical-chinese:before,
+.radical-cleat:before,
+.radical-comb:before,
+.radical-coral:before,
+.radical-creeper:before,
+.radical-death-star:before,
+.radical-elf:before,
+.radical-explosion:before,
+.radical-gladiator:before,
+.radical-grass:before,
+.radical-gun:before,
+.radical-hat:before,
+.radical-hills:before,
+.radical-horns:before,
+.radical-kick:before,
+.radical-leaf:before,
+.radical-morning:before,
+.radical-pope:before,
+.radical-psychopath:before,
+.radical-satellite:before,
+.radical-saw:before,
+.radical-scooter:before,
+.radical-spikes:before,
+.radical-spring:before,
+.radical-squid:before,
+.radical-stick:before,
+.radical-tofu:before,
+.radical-trash:before,
+.radical-triceratops:before,
+.radical-viking:before,
+.radical-yurt:before,
+.radical-zombie:before {
+	display: inline-block;
+	 
+	font-family: "WaniRadicals";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	line-height: 1;
+	
+	text-decoration: inherit;
+	text-rendering: optimizeLegibility;
+	text-transform: none;
+	
+	font-smooth: antialiased;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.radical-bar:before { content: "\E000"; }
+.radical-bear:before { content: "\E001"; }
+.radical-beggar:before { content: "\E002"; }
+.radical-blackjack:before { content: "\E003"; }
+.radical-cactus:before { content: "\E004"; }
+.radical-cape:before { content: "\E005"; }
+.radical-chinese:before { content: "\E006"; }
+.radical-cleat:before { content: "\E007"; }
+.radical-comb:before { content: "\E008"; }
+.radical-coral:before { content: "\E009"; }
+.radical-creeper:before { content: "\E00a"; }
+.radical-death-star:before { content: "\E00b"; }
+.radical-elf:before { content: "\E00c"; }
+.radical-explosion:before { content: "\E00d"; }
+.radical-gladiator:before { content: "\E00e"; }
+.radical-grass:before { content: "\E00f"; }
+.radical-gun:before { content: "\E010"; }
+.radical-hat:before { content: "\E011"; }
+.radical-hills:before { content: "\E012"; }
+.radical-horns:before { content: "\E013"; }
+.radical-kick:before { content: "\E014"; }
+.radical-leaf:before { content: "\E015"; }
+.radical-morning:before { content: "\E016"; }
+.radical-pope:before { content: "\E017"; }
+.radical-psychopath:before { content: "\E018"; }
+.radical-satellite:before { content: "\E019"; }
+.radical-saw:before { content: "\E01a"; }
+.radical-scooter:before { content: "\E01b"; }
+.radical-spikes:before { content: "\E01c"; }
+.radical-spring:before { content: "\E01d"; }
+.radical-squid:before { content: "\E01e"; }
+.radical-stick:before { content: "\E01f"; }
+.radical-tofu:before { content: "\E020"; }
+.radical-trash:before { content: "\E021"; }
+.radical-triceratops:before { content: "\E022"; }
+.radical-viking:before { content: "\E023"; }
+.radical-yurt:before { content: "\E024"; }
+.radical-zombie:before { content: "\E025"; }
+/*#endregion */
+/*#endregion */
+
+/* Base Setup */
+:root {
+    --background-color: #1F222E;
+    --light-accent-color: #555A6A;
+
+	--font-color-light: white;
+	
+	--correct-color: #48C774;
+	--incorrect-color: #FF0033;
+	
+	--radical-color: #00A1F1;
+	--kanji-color: #F100A1;
+	--vocabulary-color: #A100F1;
+	--reading-color: #F07800;
+}
+
+* {
+	margin: 0px;
+	padding: 0px;
+	
+	font-family: "Open Sans Light";
+}
+
+.main-container {
+	font-size: 20px;
+	line-height: 1.6;
+	text-align: left;
+	
+	color: var(--font-color-light);
+	background-color: var(--background-color);
+}
+
+hr {	
+	border-style: none;
+	background-color: var(--light-accent-color);
+	
+	height: 2px;
+	margin: 0 15%;
+
+	box-shadow: 5px 5px 0 #00000050;
+}
+
+/* Section Base */
+.section-title {	
+	font-size: 30px;
+	text-align: center;
+
+	color: var(--font-color-light);
+	text-shadow: 3px 3px 0 #00000050;
+}
+
+
+.section-container {	
+	margin-bottom: 1em;
+	padding: 10px 15%;
+	
+	font-size: 22px;	
+
+	background-color: var(--background-color);
+}
+
+/* Question Section */
+.question {
+	padding: 10px;
+	
+	font-family: "Hiragino Kaku Gothic Pro W3";
+    font-size: 120px;
+    text-align: center;
+    line-height: normal;
+
+	background-color: var(--vocabulary-color);
+	text-shadow: 5px 5px 0 #00000030;
+}
+
+.type {
+	position: absolute;
+	
+	font-family: "Open Sans Regular";
+	font-size: 26px;
+
+	text-shadow: 2px 2px 0 #00000050;
+}
+
+.level {
+	right: 2em;
+	position: absolute;
+	
+	font-family: "Open Sans Regular";
+	font-size: 26px;
+
+	text-shadow: 2px 2px 0 #00000050;
+}
+
+/* Item Types */
+radical {
+	margin: 0 0.15em;
+	padding: 0 0.3em;
+	
+	background-color: var(--radical-color);
+	border-radius: 5px;
+
+	font-family: "Open Sans Regular";
+
+	box-shadow: 0px 2px 0 #00000050;
+}
+
+kanji {
+	margin: 0 0.15em;
+	padding: 0 0.3em;
+	
+	background-color: var(--kanji-color);
+	border-radius: 5px;
+
+	font-family: "Open Sans Regular";
+
+	box-shadow: 2px 2px 0 #00000050;
+}
+
+vocabulary {
+	margin: 0 0.15em;
+	padding: 0 0.3em;
+	
+	background-color: var(--vocabulary-color);
+	border-radius: 5px;
+
+	font-family: "Open Sans Regular";
+
+	box-shadow: 2px 2px 0 #00000050;
+}
+
+reading {
+	margin: 0 0.15em;
+	padding: 0 0.3em;
+	
+	background-color: var(--reading-color);
+	border-radius: 5px;
+
+	font-family: "Open Sans Regular";
+
+	box-shadow: 2px 2px 0 #00000050;
+}
+
+jp {
+	font-family: "Noto Sans JP";
+}
+
+jp-symbol {
+	font-size: 70px;
+
+	font-family: "Hiragino Kaku Gothic Pro W3";
+}
+
+/* Input Box */
+#typeans {
+	padding: 0.25em;	
+
+	height: 40px;
+	border: 0;
+	outline-style: none;
+	
+	font-family: "Noto Sans JP";
+	font-size: 26px;
+	text-align: center;
+	line-height: 26px;
+
+	box-shadow: 0px 4px 5px 0px darkgrey;	
+}
+
+.correct {
+	color: var(--font-color-light);
+	background: var(--correct-color);
+}
+
+.incorrect {
+	color: var(--font-color-light);
+	background: var(--incorrect-color);
+}

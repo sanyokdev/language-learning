@@ -1,0 +1,20 @@
+/* Component Section */
+.component-grid {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.component {
+	margin: 0 1em;
+}
+
+.component span {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.component p {
+	text-align: center;
+}

@@ -1,0 +1,23 @@
+/* Reading Audio */
+reading-audio {
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+}
+
+.reading-item a {
+	font-family: "Open Sans Regular";
+	color: var(--font-color-light);
+}
+
+.audio-male a:after {
+	margin-left: 0.2em;
+	
+	content: "- Male";
+}
+
+.audio-female a:after  {
+	margin-left: 0.2em;
+	
+	content: "- Female";
+}

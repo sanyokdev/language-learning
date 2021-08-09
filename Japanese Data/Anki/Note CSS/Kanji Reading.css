@@ -1,0 +1,16 @@
+/* Reading Section */
+.reading-grid {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.reading-item {
+	margin: 0 1em;
+	
+	text-align: center;
+}
+
+.reading-item h1 {
+	font-size: 24px;
+}
