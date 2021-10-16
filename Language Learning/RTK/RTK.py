@@ -19,7 +19,7 @@ class RTKVersion(Enum): # The "Remembering the Kanji" by James Heisig books
 """
     Some Comment
 """
-def get_kanji_preset(version: RTKVersion):
+def get_kanji_preset(version: RTKVersion) -> []:
     url = version.value
     page = requests.get(url)
     soup = BeautifulSoup(page.content, "html.parser")
@@ -28,7 +28,7 @@ def get_kanji_preset(version: RTKVersion):
 
     symbolList = []
     for element in symbolElements:
-        symbolList.append(helper.get_element_text(element))
+        symbolList.append(element.contents[0])
 
     return symbolList
 
